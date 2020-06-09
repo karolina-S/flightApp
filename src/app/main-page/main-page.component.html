@@ -1,0 +1,21 @@
+<a routerLink="/login-page">Zaloguj</a>
+<a routerLink="/seat-choice">Seats</a>
+
+
+<label for="start">Wylot z:</label>
+<select name="start" #start>
+  <option [value]="" selected disabled>Wybierz miasto</option>
+  <option *ngFor="let country of countries" [value]="country.id">{{country.name}}</option>
+</select>
+
+<label for="destination">Przylot do:</label>
+<select name="destination" #destination>
+  <option [value]="" selected disabled>Wybierz miasto</option>
+  <option *ngFor="let country of countries" [value]="country.id">{{country.name}}</option>
+</select>
+
+
+
+<a routerLink="/login-page"><button (click)="saving(start.value, destination.value)">Dalej</button></a>
+
+<router-outlet></router-outlet>

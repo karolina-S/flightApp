@@ -1,0 +1,13 @@
+<div class="container">
+  <a routerLink="/main-page"><button class="button-back">Wróć do strony głównej</button></a>
+  <div class="login">
+    <h1 class="login__title">Logowanie</h1>
+    <label for="login" class="login__label">E-mail</label>
+    <input type="email" #login name="login" class="login__input" placeholder="">
+    <label for="password" class="login__label">Hasło</label>
+    <input type="password" #password name="password" class="login__input" placeholder="">
+    <p class="login__txt">Nie pamiętam hasła</p>
+    <button (click)="logIn([login.value, password.value])" class="login__button">Zaloguj</button>
+    <p class="login__txt">Nie masz jeszcze konta? Zarejestruj się!</p>
+  </div>
+</div>
