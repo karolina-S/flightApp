@@ -20,4 +20,5 @@ export class DetailsPageComponent implements OnInit {
     this.startInput = document.getElementById('destination');
     this.startInput.setAttribute('value', localStorage.getItem('destination'))
   }
+
 }

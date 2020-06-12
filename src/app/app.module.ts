@@ -13,6 +13,7 @@ import { NavigationBarComponent } from './navigation-bar/navigation-bar.componen
 import { SummaryBoxComponent } from './summary-box/summary-box.component';
 import { SeatChoiceComponent } from './seat-choice/seat-choice.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

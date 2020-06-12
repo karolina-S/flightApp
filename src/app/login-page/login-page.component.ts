@@ -18,7 +18,7 @@ export class LoginPageComponent implements OnInit {
     for (let i = 0; i < users.length; i++) {
       if (users[i].login == login) {
         if (users[i].password == password) {
-          this.router.navigate(['/details-page']);
+          this.router.navigate(['/passengers-page']);
         }
         else {
           alert('błędne hasło')

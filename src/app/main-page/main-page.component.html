@@ -1,7 +1,3 @@
-<a routerLink="/login-page">Zaloguj</a>
-<a routerLink="/seat-choice">Seats</a>
-
-
 <label for="start">Wylot z:</label>
 <select name="start" #start>
   <option [value]="" selected disabled>Wybierz miasto</option>
@@ -14,8 +10,52 @@
   <option *ngFor="let country of countries" [value]="country.id">{{country.name}}</option>
 </select>
 
+<label for="startDate">Wylot</label>
+<input type="date" #startDate name="trip-start" value="2018-07-22" min="2018-01-01" max="2018-12-31">
+<label for="endDate">Powrót</label>
+<input type="date" #endDate name="trip-end" value="2018-07-22" min="2018-01-01" max="2018-12-31">
 
-
-<a routerLink="/login-page"><button (click)="saving(start.value, destination.value)">Dalej</button></a>
+<p>Pasażerowie</p>
+<label for="adults">Dorośli</label>
+<select name="adults" #adults>
+  <option value="1" selected>1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+  <option value="9">9</option>
+</select>
+<label for="children">Dzieci</label>
+<select name="children" #children>
+  <option value="0" selected>0</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+  <option value="9">9</option>
+</select>
+<label for="babies">Niemowlęta</label>
+<select name="babies" #babies>
+  <option value="0" selected>0</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+  <option value="9">9</option>
+</select>
+<a routerLink="/details-page"><button
+    (click)="saveBasicInformation(start.value, destination.value, startDate.value, endDate.value, adults.value, children.value, babies.value)">Lecimy
+    ✈</button></a>
 
 <router-outlet></router-outlet>

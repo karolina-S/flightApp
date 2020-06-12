@@ -13,11 +13,16 @@ export class MainPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  saving(start, destination) {
+  saveBasicInformation(start, destination, startDate, endDate, adults, children, babies) {
     localStorage.clear();
     console.log(start, destination);
     localStorage.setItem('start', start);
     localStorage.setItem('destination', destination);
+    localStorage.setItem('startDate', startDate);
+    localStorage.setItem('endDate', endDate);
+    localStorage.setItem('adults', adults);
+    localStorage.setItem('children', children);
+    localStorage.setItem('babies', babies);
   }
 
   countries = [{
@@ -56,5 +61,4 @@ export class MainPageComponent implements OnInit {
     'id': 'losangeles',
     'name': 'Los Angeles'
   }]
-
 }

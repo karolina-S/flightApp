@@ -12,4 +12,13 @@ export class PassengersPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  savePersonalData(gender, firstName, familyName, emailAddress, phoneNumber) {
+    console.log(gender, firstName, familyName, emailAddress, phoneNumber);
+    localStorage.setItem('gender', gender);
+    localStorage.setItem('firstName', firstName);
+    localStorage.setItem('familyName', familyName);
+    localStorage.setItem('emailAddress', emailAddress);
+    localStorage.setItem('phoneNumber', phoneNumber);
+  }
+
 }
