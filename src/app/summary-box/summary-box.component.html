@@ -1,1 +1,37 @@
 <p>summary-box works!</p>
+<div class="summary-box">
+  <h2>Podsumowanie</h2>
+  <p class="summary-box__date">{{ startDate }}</p>
+  <p class="summary-box__hour-city">Godzina {{ originCity }}</p>
+  <p class="summary-box__hour-city">Godzina {{ destinationCity }}</p>
+
+  <p class="summary-box__date">{{ endDate }}</p>
+  <p class="summary-box__hour-city">Godzina {{ destinationCity }}</p>
+  <p class="summary-box__hour-city">Godzina {{ originCity }}</p>
+
+  <p>Liczba pasażerów: {{total}}</p>
+
+  <p>{{adultsNumber }} x Dorosły</p>
+  <p>448,82 PLN</p>
+  <p>{{childrenNumber }} x Dziecko</p>
+  <p>Cena</p>
+  <p>{{babiesNumber }} x Niemowlę</p>
+  <p>Cena</p>
+
+  <p>Usługi Dodatkowe</p>
+
+  <p>Wybrane miejsca</p>
+  <p>0,00 PLN</p>
+  <p>Dodatkowy bagaż</p>
+  <p>352,08 PLN</p>
+
+  <p>DO ZAPŁATY</p>
+  <p>800,90 PLN</p>
+  <p>Cena zawiera podatki i inne opłaty</p>
+
+  <a routerLink="/login-page"><button>Kontynuuj</button></a>
+</div>
+
+
+
+<router-outlet></router-outlet>

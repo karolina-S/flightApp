@@ -7,7 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailsPageComponent implements OnInit {
   public startInput;
-  constructor() { }
+  public startDate;
+  public endDate;
+  public adultsNumber;
+  public childrenNumber;
+  public babiesNumber;
+
+  constructor() {
+
+  }
 
   ngOnInit(): void {
     this.destinationFill();
@@ -18,7 +26,19 @@ export class DetailsPageComponent implements OnInit {
     this.startInput = document.getElementById('start');
     this.startInput.setAttribute('value', localStorage.getItem('start'));
     this.startInput = document.getElementById('destination');
-    this.startInput.setAttribute('value', localStorage.getItem('destination'))
+    this.startInput.setAttribute('value', localStorage.getItem('destination'));
+    this.startDate = localStorage.getItem('startDate');
+    this.endDate = localStorage.getItem('endDate');
+
   }
+
+  saveTravelOption(option) {
+    localStorage.setItem('option', option);
+    document.getElementById('basic').style.boxShadow = '';
+    document.getElementById('plus').style.boxShadow = '';
+    document.getElementById('premium').style.boxShadow = '';
+    document.getElementById(option).style.boxShadow = "0px 0px 9px 0px grey";
+  }
+
 
 }

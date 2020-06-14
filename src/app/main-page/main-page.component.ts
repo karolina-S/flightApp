@@ -8,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainPageComponent implements OnInit {
 
-  constructor() { }
+  public date = new Date();
+  public allowContinuing = false;
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
@@ -26,39 +30,39 @@ export class MainPageComponent implements OnInit {
   }
 
   countries = [{
-    'id': 'poznan',
+    'id': '1',
     'name': 'Poznań'
   },
   {
-    'id': 'katowice',
+    'id': '2',
     'name': 'Katowice'
   },
   {
-    'id': 'warsaw',
+    'id': '3',
     'name': 'Warszawa'
   },
   {
-    'id': 'lublana',
+    'id': '4',
     'name': 'Lublana'
   },
   {
-    'id': 'milan',
+    'id': '5',
     'name': 'Mediolan'
   },
   {
-    'id': 'dubrovnik',
+    'id': '6',
     'name': 'Dubrovnik'
   },
   {
-    'id': 'toronto',
+    'id': '7',
     'name': 'Toronto'
   },
   {
-    'id': 'newyork',
+    'id': '8',
     'name': 'Nowy Jork'
   },
   {
-    'id': 'losangeles',
+    'id': '9',
     'name': 'Los Angeles'
   }]
 }

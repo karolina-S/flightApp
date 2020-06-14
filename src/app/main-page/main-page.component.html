@@ -1,19 +1,19 @@
 <label for="start">Wylot z:</label>
 <select name="start" #start>
   <option [value]="" selected disabled>Wybierz miasto</option>
-  <option *ngFor="let country of countries" [value]="country.id">{{country.name}}</option>
+  <option *ngFor="let country of countries" [value]="country.name">{{country.name}}</option>
 </select>
 
 <label for="destination">Przylot do:</label>
 <select name="destination" #destination>
   <option [value]="" selected disabled>Wybierz miasto</option>
-  <option *ngFor="let country of countries" [value]="country.id">{{country.name}}</option>
+  <option *ngFor="let country of countries" [value]="country.name">{{country.name}}</option>
 </select>
 
 <label for="startDate">Wylot</label>
-<input type="date" #startDate name="trip-start" value="2018-07-22" min="2018-01-01" max="2018-12-31">
+<input type="date" #startDate name="trip-start" [value]="date | date:'yyyy-MM-dd'">
 <label for="endDate">Powrót</label>
-<input type="date" #endDate name="trip-end" value="2018-07-22" min="2018-01-01" max="2018-12-31">
+<input type="date" #endDate name="trip-end" [value]="date | date:'yyyy-MM-dd'">
 
 <p>Pasażerowie</p>
 <label for="adults">Dorośli</label>

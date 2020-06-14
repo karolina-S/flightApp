@@ -3,10 +3,58 @@
 
 <input type="text" value="" id="start" disabled>
 <input type="text" value="" id="destination" disabled>
-<input type="text" value="" id="startDate" disabled>
-<input type="text" value="" id="startDate" disabled>
-<input type="text" value="" id="endDate" disabled>
+<input type="text" [value]="startDate.split('-').reverse().join('.')" id="startDate" disabled>
+<input type="text" [value]="endDate.split('-').reverse().join('.')" id="endDate" disabled>
 
+<h1>Wybierz wariant podróży</h1>
+<div class="wrapper">
+  <div class="travel-option" #basic id="basic">
+    <h2>Basic</h2>
+    <ul>
+      <li>Bezpłatny bagaż podręczny (40x30x20) w kabinie, umieszczony pod fotelem</li>
+      <li>Odprawa online do 2 dni przed odlotem</li>
+    </ul>
+    <div>
+      <p>Zmiana rezerwacji za dopłatą</p>
+      <p>Brak możliwości zwrotu biletu</p>
+    </div>
+    <button class="travel-option__btn" (click)="saveTravelOption(basic.id)">Wybierz</button>
+  </div>
+  <div class="travel-option" #plus id="plus">
+    <h2>Plus</h2>
+    <ul>
+      <li>Bezpłatny bagaż podręczny (40x30x20) w kabinie, umieszczony pod fotelem</li>
+      <li>Podręczna walizka na kółkach (55x40x23) w kabinie</li>
+      <li>20-kg bagaż rejestrowany</li>
+      <li>Bezpłatny wybór miejsc</li>
+      <li>Pierwszeństwo wejścia na pokład</li>
+      <li>Odprawa online do 30 dni przed odlotem</li>
+    </ul>
+    <div>
+      <p>Zmiana rezerwacji za dopłatą</p>
+      <p>Brak możliwości zwrotu biletu</p>
+    </div>
+    <button class="travel-option__btn" (click)="saveTravelOption(plus.id)">Wybierz</button>
+  </div>
+  <div class="travel-option" #premium id="premium">
+    <h2>Premium</h2>
+    <ul>
+      <li>Bezpłatny bagaż podręczny (40x30x20) w kabinie, umieszczony pod fotelem</li>
+      <li>Podręczna walizka na kółkach (55x40x23) w kabinie</li>
+      <li>32-kg bagaż rejestrowany</li>
+      <li>Bezpłatny wybór miejsc</li>
+      <li>Informacje o locie</li>
+      <li>Pierwszeństwo wejścia na pokład</li>
+      <li>Automatyczna odprawa</li>
+    </ul>
+    <div>
+      <p>Darmowa zmiana rezerwacji</p>
+      <p>Zwrot biletu z odliczeniem opłat</p>
+    </div>
+    <button class="travel-option__btn" (click)="saveTravelOption(premium.id)">Wybierz</button>
+  </div>
+</div>
 
-<a routerLink="/login-page">Zatwierdź i przejdź dalej</a>
+<app-summary-box></app-summary-box>
+
 <router-outlet></router-outlet>
