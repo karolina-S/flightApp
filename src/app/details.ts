@@ -19,7 +19,8 @@ export const flightDetails = [
                 premium: '190'
             },
             babies: '10',
-        }
+        },
+        plane: 'Embraer ERJ-170'
     },
     {
         originCity: 'Poznań',
@@ -41,6 +42,15 @@ export const flightDetails = [
                 premium: '190'
             },
             babies: '10',
+        },
+        plane: 'Boeing 737-400'
+    },
+],
+
+    luggageDetails = [
+        {
+            luggage10: '87',
+            luggage20: '114',
+            luggage32: '158'
         }
-    }
-]
+    ]

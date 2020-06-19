@@ -1,7 +1,5 @@
 .plane-container {
-  position: relative;
   max-width: 70vw;
-  overflow: hidden;
 }
 
 .plane-svg {
@@ -14,4 +12,12 @@
 
 .seat-selected {
   fill: #2286a9;
+}
+
+.seat-occupied {
+  fill: #807a7a;
+}
+
+.seats-container {
+  cursor: pointer;
 }

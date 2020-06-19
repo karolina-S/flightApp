@@ -1,13 +1,13 @@
 <label for="start">Wylot z:</label>
 <select name="start" #start>
   <option [value]="" selected disabled>Wybierz miasto</option>
-  <option *ngFor="let country of countries" [value]="country.name">{{country.name}}</option>
+  <option *ngFor="let city of originCitiesArray" [value]="city">{{city}}</option>
 </select>
 
 <label for="destination">Przylot do:</label>
 <select name="destination" #destination>
   <option [value]="" selected disabled>Wybierz miasto</option>
-  <option *ngFor="let country of countries" [value]="country.name">{{country.name}} </option>
+  <option *ngFor="let city of destinationCitiesArray" [value]="city">{{city}}</option>
 </select>
 
 <label for="startDate">Wylot</label>
@@ -15,47 +15,24 @@
 <label for="endDate">Powrót</label>
 <input type="date" #endDate name="trip-end" [value]="date | date:'yyyy-MM-dd'">
 
-<p>Pasażerowie</p>
-<label for=" adults">Dorośli</label>
-<select name="adults" #adults>
-  <option value="1" selected>1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-  <option value="4">4</option>
-  <option value="5">5</option>
-  <option value="6">6</option>
-  <option value="7">7</option>
-  <option value="8">8</option>
-  <option value="9">9</option>
-</select>
-<label for="children">Dzieci</label>
-<select name="children" #children>
-  <option value="0" selected>0</option>
-  <option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-  <option value="4">4</option>
-  <option value="5">5</option>
-  <option value="6">6</option>
-  <option value="7">7</option>
-  <option value="8">8</option>
-  <option value="9">9</option>
-</select>
-<label for="babies">Niemowlęta</label>
-<select name="babies" #babies>
-  <option value="0" selected>0</option>
-  <option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-  <option value="4">4</option>
-  <option value="5">5</option>
-  <option value="6">6</option>
-  <option value="7">7</option>
-  <option value="8">8</option>
-  <option value="9">9</option>
-</select>
+
+<h2>Pasażerowie</h2>
+<p>Dorośli: </p>
+<button (click)="lessAdultPassengers()">-</button>
+<p class="adult-counter" id="adult-passengers">{{ adultPassengers }}</p>
+<button (click)="moreAdultPassengers()">+</button>
+<p>Dzieci: </p>
+<button (click)="lessChildrenPassengers()">-</button>
+<p class="children-counter" id="adult-passengers">{{ childrenPassengers }}</p>
+<button (click)="moreChildrenPassengers()">+</button>
+<p>Niemowlęta: </p>
+<button (click)="lessBabiesPassengers()">-</button>
+<p class="babies-counter" id="adult-passengers">{{ babiesPassengers }}</p>
+<button (click)="moreBabiesPassengers()">+</button>
+
+
 <a routerLink="/details-page"><button
-    (click)="saveBasicInformation(start.value, destination.value, startDate.value, endDate.value, adults.value, children.value, babies.value)">Lecimy
+    (click)="saveBasicInformation(start.value, destination.value, startDate.value, endDate.value)">Lecimy
     ✈</button></a>
 
 <router-outlet></router-outlet>

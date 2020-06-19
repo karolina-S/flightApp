@@ -23,6 +23,7 @@ export class SummaryBoxComponent implements OnInit {
   public endTimeDestination;
   public startTimeDestination;
   public endTimeOrigin;
+  public seatsChosen;
   public seatsPrice;
   public additionalLuggagePrice;
   public totalPrice;
@@ -39,6 +40,7 @@ export class SummaryBoxComponent implements OnInit {
     this.childrenNumber = localStorage.getItem('children');
     this.babiesNumber = localStorage.getItem('babies');
     this.total = +this.adultsNumber + +this.childrenNumber + +this.babiesNumber;
+    this.seatsChosen = localStorage.getItem('seats');
 
     // Details
     for (let i = 0; i < flightDetails.length; i++) {
@@ -48,20 +50,20 @@ export class SummaryBoxComponent implements OnInit {
         this.startTimeDestination = flightDetails[i].timeStartDestination;
         this.endTimeOrigin = flightDetails[i].timeEndOrigin;
         if (this.travelOptionChosen === 'basic') {
-          this.adultsPriceTotal = +(flightDetails[i].price.adults.basic) * this.adultsNumber
-          this.childrenPriceTotal = +(flightDetails[i].price.children.basic) * this.childrenNumber
+          this.adultsPriceTotal = +(flightDetails[i].price.adults.basic) * 2 * this.adultsNumber
+          this.childrenPriceTotal = +(flightDetails[i].price.children.basic) * 2 * this.childrenNumber
           localStorage.setItem('adultsPrice', this.adultsPriceTotal)
           localStorage.setItem('childrenPrice', this.childrenPriceTotal)
         }
         else if (this.travelOptionChosen === 'plus') {
-          this.adultsPriceTotal = +(flightDetails[i].price.adults.plus) * this.adultsNumber
-          this.childrenPriceTotal = +(flightDetails[i].price.children.plus) * this.childrenNumber
+          this.adultsPriceTotal = +(flightDetails[i].price.adults.plus) * 2 * this.adultsNumber
+          this.childrenPriceTotal = +(flightDetails[i].price.children.plus) * 2 * this.childrenNumber
           localStorage.setItem('adultsPrice', this.adultsPriceTotal)
           localStorage.setItem('childrenPrice', this.childrenPriceTotal)
         }
         else if (this.travelOptionChosen === 'premium') {
-          this.adultsPriceTotal = +(flightDetails[i].price.adults.premium) * this.adultsNumber
-          this.childrenPriceTotal = +(flightDetails[i].price.children.premium) * this.childrenNumber
+          this.adultsPriceTotal = +(flightDetails[i].price.adults.premium) * 2 * this.adultsNumber
+          this.childrenPriceTotal = +(flightDetails[i].price.children.premium) * 2 * this.childrenNumber
           localStorage.setItem('adultsPrice', this.adultsPriceTotal)
           localStorage.setItem('childrenPrice', this.childrenPriceTotal)
         }
@@ -71,8 +73,9 @@ export class SummaryBoxComponent implements OnInit {
     }
 
     // Prices
-    this.totalPrice = this.adultsPriceTotal + this.childrenPriceTotal + this.babiesPriceTotal
+    this.totalPrice = `${this.adultsPriceTotal + this.childrenPriceTotal + this.babiesPriceTotal} ${this.currencyChosen}`
   }
 
+  // Currency
 
 }
