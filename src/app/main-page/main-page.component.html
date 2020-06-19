@@ -7,7 +7,7 @@
 <label for="destination">Przylot do:</label>
 <select name="destination" #destination>
   <option [value]="" selected disabled>Wybierz miasto</option>
-  <option *ngFor="let country of countries" [value]="country.name">{{country.name}}</option>
+  <option *ngFor="let country of countries" [value]="country.name">{{country.name}} </option>
 </select>
 
 <label for="startDate">Wylot</label>
@@ -16,7 +16,7 @@
 <input type="date" #endDate name="trip-end" [value]="date | date:'yyyy-MM-dd'">
 
 <p>Pasażerowie</p>
-<label for="adults">Dorośli</label>
+<label for=" adults">Dorośli</label>
 <select name="adults" #adults>
   <option value="1" selected>1</option>
   <option value="2">2</option>

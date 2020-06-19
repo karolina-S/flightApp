@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PassengersPageComponent implements OnInit {
 
+  public adultsNumber;
+  public childrenNumber;
+  public babiesNumber;
+  public total;
+
   constructor() { }
 
   ngOnInit(): void {
+    this.adultsNumber = localStorage.getItem('adults');
+    this.childrenNumber = localStorage.getItem('children');
+    this.babiesNumber = localStorage.getItem('babies');
+    this.total = +this.adultsNumber + +this.childrenNumber + +this.babiesNumber;
   }
 
   savePersonalData(gender, firstName, familyName, emailAddress, phoneNumber) {

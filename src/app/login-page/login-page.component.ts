@@ -23,12 +23,10 @@ export class LoginPageComponent implements OnInit {
         else {
           alert('błędne hasło')
         }
-        
+
       }
-      else {alert('nie ma takiego użytkowanika')
-      break;}
     }
-    
+
 
   }
 

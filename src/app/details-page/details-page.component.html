@@ -1,11 +1,11 @@
 <app-navigation-bar></app-navigation-bar>
-<p>details-page works!</p>
 
 <input type="text" value="" id="start" disabled>
 <input type="text" value="" id="destination" disabled>
 <input type="text" [value]="startDate.split('-').reverse().join('.')" id="startDate" disabled>
 <input type="text" [value]="endDate.split('-').reverse().join('.')" id="endDate" disabled>
 
+<!-- Taryfy -->
 <h1>Wybierz wariant podróży</h1>
 <div class="wrapper">
   <div class="travel-option" #basic id="basic">
@@ -54,6 +54,26 @@
     <button class="travel-option__btn" (click)="saveTravelOption(premium.id)">Wybierz</button>
   </div>
 </div>
+<!-- Koniec taryf -->
+
+<!-- Usługi dodatkowe -->
+<p>Dodatkowy bagaż do 10 kg</p>
+<button (click)="lessLuggage10()">-</button>
+<p class="luggage-counter" id="luggage-10kg">{{ luggage10kg }}</p>
+<button (click)="moreLuggage10()">+</button>
+<p>Dodatkowy bagaż do 20 kg</p>
+<button (click)="lessLuggage20()">-</button>
+<p class="luggage-counter" id="luggage-20kg">{{ luggage20kg }}</p>
+<button (click)="moreLuggage20()">+</button>
+<p>Dodatkowy bagaż do 32 kg</p>
+<button (click)="lessLuggage32()">-</button>
+<p class="luggage-counter" id="luggage-32kg">{{ luggage32kg }}</p>
+<button (click)="moreLuggage32()">+</button>
+
+<!-- Koniec usług dodatkowych -->
+
+
+<a routerLink="/login-page"><button class="btn-summarybox" (click)="saveLuggage()">Kontynuuj</button></a>
 
 <app-summary-box></app-summary-box>
 

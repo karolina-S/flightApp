@@ -1,32 +1,34 @@
 <p>passengers-page works!</p>
-
-<p>Pasażerowie: 1 dorosły, 1 dziecko</p>
-
-
-<p>Pasażer 1</p>
-<p>Pola obowiązkowe (*)</p>
-<select name="gender" #gender>
-  <option value="female">Pani</option>
-  <option value="male">Pan</option>
-</select>
-<label for="firstName">Imię*</label>
-<input type="text" #firstName>
-<label for="familyName">Nazwisko*</label>
-<input type="text" #familyName>
-
-<p>Dane kontakotowe</p>
-<label for="emailAddress">Adres e-mail</label>
-<input type="text" #emailAddress>
-<label for="phoneNumber">Nr telefonu</label>
-<input type="text" #phoneNumber>
-
-<input type="checkbox" id="rulesAgreement" name="yes" value="agreed">
-<label for="rulesAgreement">Zapoznałem/-am się i akceptuję Warunki Taryfy (w szczególności warunki zmiany/zwrotu
-  biletu), Regulamin Świadczenia Usług Drogą Elektroniczną, Politykę Prywatności oraz Warunki przewozu.*</label><br>
+<div class="wrapper">
+  <p>Pasażerowie: 1 dorosły, 1 dziecko</p>
 
 
+  <p>Pasażer 1</p>
+  <p>Pola obowiązkowe (*)</p>
+  <select name="gender" #gender>
+    <option value="female">Pani</option>
+    <option value="male">Pan</option>
+  </select>
+  <label for="firstName">Imię*</label>
+  <input type="text" #firstName>
+  <label for="familyName">Nazwisko*</label>
+  <input type="text" #familyName>
+
+  <p>Dane kontaktowe</p>
+  <label for="emailAddress">Adres e-mail</label>
+  <input type="text" #emailAddress>
+  <label for="phoneNumber">Nr telefonu</label>
+  <input type="text" #phoneNumber>
+
+  <input type="checkbox" id="rulesAgreement" name="yes" value="agreed" checked>
+  <label for="rulesAgreement">Zapoznałem/-am się i akceptuję Warunki Taryfy (w szczególności warunki zmiany/zwrotu
+    biletu), Regulamin Świadczenia Usług Drogą Elektroniczną, Politykę Prywatności oraz Warunki przewozu.*</label><br>
+
+</div>
 
 <a routerLink="/seat-choice"><button
     (click)="savePersonalData(gender.value, firstName.value, familyName.value, emailAddress.value, phoneNumber.value)">Kontynuuj
     🡺</button></a>
+
+<app-summary-box></app-summary-box>
 <router-outlet></router-outlet>

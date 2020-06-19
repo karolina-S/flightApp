@@ -9,7 +9,6 @@ import { Component, OnInit } from '@angular/core';
 export class MainPageComponent implements OnInit {
 
   public date = new Date();
-  public allowContinuing = false;
 
   constructor() {
   }
@@ -19,7 +18,6 @@ export class MainPageComponent implements OnInit {
 
   saveBasicInformation(start, destination, startDate, endDate, adults, children, babies) {
     localStorage.clear();
-    console.log(start, destination);
     localStorage.setItem('start', start);
     localStorage.setItem('destination', destination);
     localStorage.setItem('startDate', startDate);
