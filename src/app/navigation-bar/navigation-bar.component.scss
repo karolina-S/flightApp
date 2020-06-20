@@ -1,0 +1,25 @@
+.navigation-bar {
+  height: 10vh;
+  background-color: rgb(173, 166, 166);
+  color: #fff;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 2;
+  padding: 0 20px;
+}
+
+.logo {
+  width: auto;
+  height: 8vh;
+  margin: 0 20px;
+}
+
+.done {
+  color: red;
+}
+
+.active {
+  color: green;
+}

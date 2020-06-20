@@ -74,6 +74,14 @@ export class SummaryBoxComponent implements OnInit {
 
     // Prices
     this.totalPrice = `${this.adultsPriceTotal + this.childrenPriceTotal + this.babiesPriceTotal} ${this.currencyChosen}`
+
+    // Show invisible information
+    window.location.href.indexOf("passengers-page") > -1 ? document.getElementById('passengersField').classList.remove('closed') : null;
+    if (window.location.href.indexOf("seat-choice") > -1) {
+      document.getElementById('passengersField').classList.remove('closed');
+      document.getElementById('informationField').classList.remove('closed')
+    }
+
   }
 
   // Currency

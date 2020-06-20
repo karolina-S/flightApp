@@ -1,24 +1,25 @@
-<p>passengers-page works!</p>
+<app-navigation-bar></app-navigation-bar>
 <div class="wrapper">
-  <p>Pasażerowie: 1 dorosły, 1 dziecko</p>
-
-
-  <p>Pasażer 1</p>
+  <p>Pasażerowie: {{ adultsNumber }} dorosły, {{ childrenNumber }} dziecko, {{ babiesNumber }} niemowlęta</p>
   <p>Pola obowiązkowe (*)</p>
-  <select name="gender" #gender>
-    <option value="female">Pani</option>
-    <option value="male">Pan</option>
-  </select>
-  <label for="firstName">Imię*</label>
-  <input type="text" #firstName>
-  <label for="familyName">Nazwisko*</label>
-  <input type="text" #familyName>
+
+  <div id="adultPassengersContainer">
+    <p>Pasażerowie dorośli</p>
+  </div>
+
+  <div id="childrenPassengersContainer">
+    <p>Dzieci</p>
+  </div>
+
+  <div id="babiesPassengersContainer">
+    <p>Niemowlęta</p>
+  </div>
 
   <p>Dane kontaktowe</p>
   <label for="emailAddress">Adres e-mail</label>
-  <input type="text" #emailAddress>
+  <input type="text" #emailAddress required>
   <label for="phoneNumber">Nr telefonu</label>
-  <input type="text" #phoneNumber>
+  <input type="text" #phoneNumber required>
 
   <input type="checkbox" id="rulesAgreement" name="yes" value="agreed" checked>
   <label for="rulesAgreement">Zapoznałem/-am się i akceptuję Warunki Taryfy (w szczególności warunki zmiany/zwrotu
@@ -26,9 +27,10 @@
 
 </div>
 
-<a routerLink="/seat-choice"><button
-    (click)="savePersonalData(gender.value, firstName.value, familyName.value, emailAddress.value, phoneNumber.value)">Kontynuuj
+<a routerLink="/seat-choice"><button>Kontynuuj
     🡺</button></a>
+<!-- <a routerLink="/seat-choice"><button (click)="savePersonalData()">Kontynuuj
+      🡺</button></a> -->
 
 <app-summary-box></app-summary-box>
 <router-outlet></router-outlet>

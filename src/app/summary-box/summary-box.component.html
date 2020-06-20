@@ -1,43 +1,52 @@
 <div class="summary-box">
-  <h2>Podsumowanie</h2>
-  <p class="summary-box__date">{{ startDate }}</p>
-  <p class="summary-box__hour-city">{{ startTimeOrigin }} {{ originCity }}</p>
-  <p class="summary-box__hour-city">{{ endTimeDestination }} {{ destinationCity }}</p>
 
-  <p class="summary-box__date">{{ endDate }}</p>
-  <p class="summary-box__hour-city">{{ startTimeDestination }} {{ destinationCity }}</p>
-  <p class="summary-box__hour-city">{{ endTimeOrigin }} {{ originCity }}</p>
+  <div class="currency-container">
+    <label for="currency-box">Waluta: </label>
+    <select name="currency-box" id="currencyBox" class="currency-box">
+      <option value="pln" class="currency-option">PLN</option>
+      <option value="eur" class="currency-option">EUR</option>
+      <option value="usd" class="currency-option">USD</option>
+    </select>
+  </div>
 
-  <p>Liczba pasażerów: {{ total }}</p>
+  <h2 class="summary-box__title">Twoja rezerwacja</h2>
+  <div class="summary-box__datesAndCities">
+    <p class="summary-box__date">{{ startDate }}</p>
+    <p class="summary-box__hour-city">{{ startTimeOrigin }} {{ originCity }}</p>
+    <p class="summary-box__hour-city">{{ endTimeDestination }} {{ destinationCity }}</p>
 
-  <p>{{ adultsNumber }} x Dorosły {{ adultsPriceTotal }}</p>
-  <p>{{ childrenNumber }} x Dziecko {{ childrenPriceTotal }}</p>
-  <p>{{ babiesNumber }} x Niemowlę {{ babiesPriceTotal }}</p>
+    <p class="summary-box__date">{{ endDate }}</p>
+    <p class="summary-box__hour-city">{{ startTimeDestination }} {{ destinationCity }}</p>
+    <p class="summary-box__hour-city">{{ endTimeOrigin }} {{ originCity }}</p>
+  </div>
+  <div class="summary-box__passengers closed" id="passengersField">
+    <p>Liczba pasażerów: {{ total }}</p>
 
-  <p>Usługi Dodatkowe</p>
+    <p>{{ adultsNumber }} x Dorosły {{ adultsPriceTotal }}</p>
+    <p>{{ childrenNumber }} x Dziecko {{ childrenPriceTotal }}</p>
+    <p>{{ babiesNumber }} x Niemowlę {{ babiesPriceTotal }}</p>
+    <p id="option-field">Wybrana taryfa: {{ travelOptionChosen }}</p>
+  </div>
+  <div class="summary-box__additionalInformation closed" id="informationField">
+    <p>Usługi Dodatkowe</p>
 
-  <p>Wybrane miejsca</p>
-  <p>{{ seatsChosen }}</p>
-  <p>{{ seatsPrice }}</p>
-  <p>Dodatkowy bagaż</p>
-  <p>{{ luggage10 }} x bagaż do 10 kg</p>
-  <p>{{ luggage20 }} x bagaż do 20 kg</p>
-  <p>{{ luggage32 }} x bagaż do 32 kg</p>
-  <p>{{ additionalLuggagePrice }}</p>
-
-  <p>DO ZAPŁATY</p>
-  <p>{{ totalPrice }} {{ currencyChosen }}</p>
-  <p> <small> Cena zawiera podatki i inne opłaty </small></p>
-
+    <p>Dodatkowy bagaż</p>
+    <p>{{ luggage10 }} x bagaż do 10 kg</p>
+    <p>{{ luggage20 }} x bagaż do 20 kg</p>
+    <p>{{ luggage32 }} x bagaż do 32 kg</p>
+    <p>{{ additionalLuggagePrice }}</p>
+  </div>
+  <div class="summary-box__seatsChosen closed" id="seatsField">
+    <p>Wybrane miejsca</p>
+    <p>{{ seatsChosen }}</p>
+    <p>{{ seatsPrice }}</p>
+  </div>
+  <div class="summary-box__totalPrice">
+    <p>DO ZAPŁATY</p>
+    <p>{{ totalPrice }} {{ currencyChosen }}</p>
+    <p> <small> Cena zawiera podatki i inne opłaty </small></p>
+  </div>
 </div>
 
-<div class="currency-container">
-  <label for="currency-box">Waluta: </label>
-  <select name="currency-box" id="currencyBox" class="currency-box">
-    <option value="pln" class="currency-option">PLN</option>
-    <option value="eur" class="currency-option">EUR</option>
-    <option value="usd" class="currency-option">USD</option>
-  </select>
-</div>
 
 <router-outlet></router-outlet>
