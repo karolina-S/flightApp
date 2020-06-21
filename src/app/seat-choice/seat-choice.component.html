@@ -1,713 +1,323 @@
 <app-navigation-bar></app-navigation-bar>
 
-<a routerLink="/summary-page">Zatwierdź i przejdź dalej</a>
-<!-- Plane - start -->
+<h1>Wybór miejsc w samolocie</h1>
+<div class="information-container">
+  <h2>Wybierz miejsca dla wszystkich pasażerów</h2>
+  <p>Wybrane miejsca: <span id="seatsField"></span></p>
+</div>
+
+
+
 <div class="plane-container">
-  <svg id="plane" class="plane-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 248.03 785.11">
+  <!-- Plane svg start -->
+  <svg id="Warstwa_1" data-name="Warstwa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 595.28 826.6"
+    class="plane-svg">
     <defs>
       <style>
-        .cls-1,
-        .cls-3,
-        .cls-7 {
-          isolation: isolate;
-        }
-
-        .cls-1,
-        .cls-7 {
-          font-size: 15px;
-        }
-
-        .cls-1,
-        .cls-3 {
-          font-family: ArialMT, Arial;
-        }
-
-        .cls-2 {
-          letter-spacing: -0.07em;
-        }
-
-        .cls-3 {
-          font-size: 14.18px;
-        }
-
-        .cls-4 {
-          letter-spacing: -0.02em;
-        }
-
-        .cls-5 {
-          letter-spacing: -0.02em;
-        }
-
-        .cls-6 {
+        .cls-1 {
           fill: #e2e1e6;
         }
 
-        .cls-7 {
+        .cls-10,
+        .cls-2,
+        .cls-3,
+        .cls-4,
+        .cls-5,
+        .cls-6,
+        .cls-8,
+        .cls-9 {
+          isolation: isolate;
+        }
+
+        .cls-2 {
+          font-size: 13.73px;
+        }
+
+        .cls-2,
+        .cls-3,
+        .cls-5,
+        .cls-6 {
+          fill: #010101;
+        }
+
+        .cls-10,
+        .cls-2,
+        .cls-3,
+        .cls-5,
+        .cls-8,
+        .cls-9 {
+          font-family: ArialMT, Arial;
+        }
+
+        .cls-3,
+        .cls-5,
+        .cls-6 {
+          font-size: 14.73px;
+        }
+
+        .cls-5 {
+          letter-spacing: -0.07em;
+        }
+
+        .cls-6 {
           font-family: Roboto-Regular, Roboto;
+        }
+
+        .cls-7 {
+          fill: #2386aa;
+        }
+
+        .cls-10,
+        .cls-8,
+        .cls-9 {
+          font-size: 13.92px;
+          fill: #fff;
+        }
+
+        .cls-9 {
+          letter-spacing: -0.04em;
+        }
+
+        .cls-10 {
+          letter-spacing: -0.04em;
+        }
+
+        .cls-11 {
+          fill: #807a7a;
         }
       </style>
     </defs>
-    <g id="plane-2" data-name="plane">
-      <g id="additional">
-        <g id="g1973">
-          <text class="cls-1" transform="translate(11.31 54.68)">
-            1
-          </text>
-          <text class="cls-1" transform="translate(11.3 95.17)">
-            2
-          </text>
-          <text class="cls-1" transform="translate(11.3 135.34)">
-            3
-          </text>
-          <text class="cls-1" transform="translate(11.48 175.63)">
-            4
-          </text>
-          <text class="cls-1" transform="translate(11.08 215.8)">
-            5
-          </text>
-          <text class="cls-1" transform="translate(11.21 256.1)">
-            6
-          </text>
-          <text class="cls-1" transform="translate(11.3 296.4)">
-            7
-          </text>
-          <text class="cls-1" transform="translate(11.43 336.7)">
-            8
-          </text>
-          <text class="cls-1" transform="translate(11.43 376.74)">
-            9
-          </text>
-          <text class="cls-1" transform="translate(2.06 417.2)">
-            10
-          </text>
-          <text class="cls-1" transform="translate(2.91 457.49)">
-            <tspan class="cls-2">1</tspan>
-            <tspan x="7.23" y="0">1</tspan>
-          </text>
-          <text class="cls-1" transform="translate(2.15 497.69)">
-            12
-          </text>
-          <text class="cls-1" transform="translate(2.15 537.99)">
-            13
-          </text>
-          <text class="cls-1" transform="translate(2.02 578.3)">
-            14
-          </text>
-          <text class="cls-1" transform="translate(2.29 618.34)">
-            15
-          </text>
-          <text class="cls-1" transform="translate(2.02 658.64)">
-            16
-          </text>
-          <text class="cls-1" transform="translate(1.89 699.08)">
-            17
-          </text>
-          <text class="cls-1" transform="translate(2.02 739.25)">
-            18
-          </text>
-        </g>
-        <g id="g2964">
-          <text class="cls-3" transform="translate(0 780.51) scale(1.12 1)">
-            EXI<tspan class="cls-4" x="22.85" y="0">T</tspan>
-          </text>
-          <text class="cls-3" transform="translate(213.05 780.49) scale(1.12 1)">
-            EXI<tspan class="cls-5" x="22.85" y="0">T</tspan>
-          </text>
-        </g>
-        <g id="g2964-2">
-          <text class="cls-3" transform="translate(0 12.18) scale(1.12 1)">
-            EXI<tspan class="cls-4" x="22.85" y="0">T</tspan>
-          </text>
-          <text class="cls-3" transform="translate(213.05 12.17) scale(1.12 1)">
-            EXI<tspan class="cls-5" x="22.85" y="0">T</tspan>
-          </text>
-        </g>
-      </g>
-      <g id="seats" class="seats-container">
-        <g id="_1a" data-name="1a">
-          <path id="_1a-2" data-name="1a" class="cls-6"
-            d="M203.9,69.5h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H203.9a4.44,4.44,0,0,1-4.4-4.4V73.9A4.37,4.37,0,0,1,203.9,69.5Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(44.31 54.48)">
-            A
-          </text>
-        </g>
-        <g id="_1b" data-name="1b">
-          <path id="_1b-2" data-name="1b" class="cls-6"
-            d="M244.2,69.5h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H244.2a4.44,4.44,0,0,1-4.4-4.4V73.9A4.44,4.44,0,0,1,244.2,69.5Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(84.84 54.68)">
-            B
-          </text>
-        </g>
-        <g id="_1c" data-name="1c">
-          <path id="_1c-2" data-name="1c" class="cls-6"
-            d="M317.5,69.5h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H317.5a4.44,4.44,0,0,1-4.4-4.4V73.9A4.44,4.44,0,0,1,317.5,69.5Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(157.85 54.72)">
-            C
-          </text>
-        </g>
-        <g id="_1d" data-name="1d">
-          <path id="_1d-2" data-name="1d" class="cls-6"
-            d="M357.8,69.5h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H357.8a4.44,4.44,0,0,1-4.4-4.4V73.9A4.44,4.44,0,0,1,357.8,69.5Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(198.14 54.44)">
-            D
-          </text>
-        </g>
-        <g id="_2a" data-name="2a">
-          <path id="_2a-2" data-name="2a" class="cls-6"
-            d="M203.9,109.9h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H203.9a4.44,4.44,0,0,1-4.4-4.4V114.3A4.31,4.31,0,0,1,203.9,109.9Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(44.31 94.8)">
-            A
-          </text>
-        </g>
-        <g id="_2b" data-name="2b">
-          <path id="_2b-2" data-name="2b" class="cls-6"
-            d="M244.2,109.9h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H244.2a4.44,4.44,0,0,1-4.4-4.4V114.3A4.37,4.37,0,0,1,244.2,109.9Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(84.84 94.99)">
-            B
-          </text>
-        </g>
-        <g id="_2c" data-name="2c">
-          <path id="_2c-2" data-name="2c" class="cls-6"
-            d="M317.5,109.9h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H317.5a4.44,4.44,0,0,1-4.4-4.4V114.3A4.37,4.37,0,0,1,317.5,109.9Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(157.85 95.04)">
-            C
-          </text>
-        </g>
-        <g id="_2d" data-name="2d">
-          <path id="_2d-2" data-name="2d" class="cls-6 seat-occupied"
-            d="M357.8,109.9h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H357.8a4.44,4.44,0,0,1-4.4-4.4V114.3A4.37,4.37,0,0,1,357.8,109.9Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(198.14 94.76)">
-            D
-          </text>
-        </g>
-        <g id="_3a" data-name="3a">
-          <path id="_3a-2" data-name="3a" class="cls-6"
-            d="M203.9,150.2h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H203.9a4.44,4.44,0,0,1-4.4-4.4V154.6A4.31,4.31,0,0,1,203.9,150.2Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(44.31 135.12)">
-            A
-          </text>
-        </g>
-        <g id="_3b" data-name="3b">
-          <path id="_3b-2" data-name="3b" class="cls-6"
-            d="M244.2,150.2h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H244.2a4.44,4.44,0,0,1-4.4-4.4V154.6A4.37,4.37,0,0,1,244.2,150.2Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(84.84 135.31)">
-            B
-          </text>
-        </g>
-        <g id="_3c" data-name="3c">
-          <path id="_3c-2" data-name="3c" class="cls-6"
-            d="M317.5,150.2h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H317.5a4.44,4.44,0,0,1-4.4-4.4V154.6A4.37,4.37,0,0,1,317.5,150.2Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(157.85 135.35)">
-            C
-          </text>
-        </g>
-        <g id="_3d" data-name="3d">
-          <path id="_3d-2" data-name="3d" class="cls-6"
-            d="M357.8,150.2h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H357.8a4.44,4.44,0,0,1-4.4-4.4V154.6A4.37,4.37,0,0,1,357.8,150.2Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(198.14 135.08)">
-            D
-          </text>
-        </g>
-        <g id="_4a" data-name="4a">
-          <path id="_4a-2" data-name="4a" class="cls-6"
-            d="M203.9,190.5h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H203.9a4.44,4.44,0,0,1-4.4-4.4V194.9A4.37,4.37,0,0,1,203.9,190.5Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(44.31 175.3)">
-            A
-          </text>
-        </g>
-        <g id="_4b" data-name="4b">
-          <path id="_4b-2" data-name="4b" class="cls-6 seat-occupied"
-            d="M244.2,190.5h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H244.2a4.44,4.44,0,0,1-4.4-4.4V194.9A4.44,4.44,0,0,1,244.2,190.5Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(84.84 175.49)">
-            B
-          </text>
-        </g>
-        <g id="_4c" data-name="4c">
-          <path id="_4c-2" data-name="4c" class="cls-6"
-            d="M317.5,190.5h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H317.5a4.44,4.44,0,0,1-4.4-4.4V194.9A4.44,4.44,0,0,1,317.5,190.5Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(157.85 175.54)">
-            C
-          </text>
-        </g>
-        <g id="_4d" data-name="4a">
-          <path id="_4d-2" data-name="4d" class="cls-6"
-            d="M357.8,190.5h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H357.8a4.44,4.44,0,0,1-4.4-4.4V194.9A4.44,4.44,0,0,1,357.8,190.5Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(198.14 175.26)">
-            D
-          </text>
-        </g>
-        <g id="_5a" data-name="5a">
-          <path id="_5a-2" data-name="5a" class="cls-6 seat-occupied"
-            d="M203.9,230.6h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H203.9a4.44,4.44,0,0,1-4.4-4.4V235A4.37,4.37,0,0,1,203.9,230.6Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(44.31 215.55)">
-            A
-          </text>
-        </g>
-        <g id="_5b" data-name="5b">
-          <path id="_5b-2" data-name="5b" class="cls-6 seat-occupied"
-            d="M244.2,230.6h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H244.2a4.44,4.44,0,0,1-4.4-4.4V235A4.44,4.44,0,0,1,244.2,230.6Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(84.84 215.74)">
-            B
-          </text>
-        </g>
-        <g id="_5c" data-name="5c">
-          <path id="_5c-2" data-name="5c" class="cls-6"
-            d="M317.5,230.6h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H317.5a4.44,4.44,0,0,1-4.4-4.4V235A4.44,4.44,0,0,1,317.5,230.6Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(157.85 215.79)">
-            C
-          </text>
-        </g>
-        <g id="_5d" data-name="5d">
-          <path id="_5d-2" data-name="5d" class="cls-6"
-            d="M357.8,230.6h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H357.8a4.44,4.44,0,0,1-4.4-4.4V235A4.44,4.44,0,0,1,357.8,230.6Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(198.14 215.51)">
-            D
-          </text>
-        </g>
-        <g id="_6a" data-name="6a">
-          <path id="_6a-2" data-name="6a" class="cls-6"
-            d="M203.9,270.9h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H203.9a4.44,4.44,0,0,1-4.4-4.4V275.3A4.37,4.37,0,0,1,203.9,270.9Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(44.31 255.87)">
-            A
-          </text>
-        </g>
-        <g id="_6b" data-name="6b">
-          <path id="_6b-2" data-name="6b" class="cls-6"
-            d="M244.2,270.9h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H244.2a4.44,4.44,0,0,1-4.4-4.4V275.3A4.44,4.44,0,0,1,244.2,270.9Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(84.84 256.06)">
-            B
-          </text>
-        </g>
-        <g id="_6c" data-name="6c">
-          <path id="_6c-2" data-name="6c" class="cls-6"
-            d="M317.5,270.9h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H317.5a4.44,4.44,0,0,1-4.4-4.4V275.3A4.44,4.44,0,0,1,317.5,270.9Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(157.85 256.1)">
-            C
-          </text>
-        </g>
-        <g id="_6d" data-name="6d">
-          <path id="_6d-2" data-name="6d" class="cls-6"
-            d="M357.8,270.9h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H357.8a4.44,4.44,0,0,1-4.4-4.4V275.3A4.44,4.44,0,0,1,357.8,270.9Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(198.14 255.83)">
-            D
-          </text>
-        </g>
-        <g id="_7a" data-name="7a">
-          <path id="_7a-2" data-name="7a" class="cls-6"
-            d="M203.9,311.2h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H203.9a4.44,4.44,0,0,1-4.4-4.4V315.6A4.37,4.37,0,0,1,203.9,311.2Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(44.31 296.19)">
-            A
-          </text>
-        </g>
-        <g id="_7b" data-name="7b">
-          <path id="_7b-2" data-name="7b" class="cls-6"
-            d="M244.2,311.2h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H244.2a4.44,4.44,0,0,1-4.4-4.4V315.6A4.44,4.44,0,0,1,244.2,311.2Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(84.84 296.38)">
-            B
-          </text>
-        </g>
-        <g id="_7c" data-name="7c">
-          <path id="_7c-2" data-name="7c" class="cls-6"
-            d="M317.5,311.2h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H317.5a4.44,4.44,0,0,1-4.4-4.4V315.6A4.44,4.44,0,0,1,317.5,311.2Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(157.85 296.42)">
-            C
-          </text>
-        </g>
-        <g id="_7d" data-name="7d">
-          <path id="_7d-2" data-name="7d" class="cls-6"
-            d="M357.8,311.2h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H357.8a4.44,4.44,0,0,1-4.4-4.4V315.6A4.44,4.44,0,0,1,357.8,311.2Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(198.14 296.15)">
-            D
-          </text>
-        </g>
-        <g id="_8a" data-name="8a">
-          <path id="_8a-2" data-name="8a" class="cls-6"
-            d="M203.9,351.6h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H203.9a4.44,4.44,0,0,1-4.4-4.4V356A4.31,4.31,0,0,1,203.9,351.6Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(44.31 336.51)">
-            A
-          </text>
-        </g>
-        <g id="_8b" data-name="8b">
-          <path id="_8b-2" data-name="8b" class="cls-6"
-            d="M244.2,351.6h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H244.2a4.44,4.44,0,0,1-4.4-4.4V356A4.37,4.37,0,0,1,244.2,351.6Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(84.84 336.7)">
-            B
-          </text>
-        </g>
-        <g id="_8c" data-name="8c">
-          <path id="_8c-2" data-name="8c" class="cls-6"
-            d="M317.5,351.6h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H317.5a4.44,4.44,0,0,1-4.4-4.4V356A4.37,4.37,0,0,1,317.5,351.6Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(157.85 336.74)">
-            C
-          </text>
-        </g>
-        <g id="_8d" data-name="8d">
-          <path id="_8d-2" data-name="8d" class="cls-6"
-            d="M357.8,351.6h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H357.8a4.44,4.44,0,0,1-4.4-4.4V356A4.37,4.37,0,0,1,357.8,351.6Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(198.14 336.47)">
-            D
-          </text>
-        </g>
-        <g id="_9a" data-name="9a">
-          <path id="_9a-2" data-name="9a" class="cls-6"
-            d="M203.9,391.7h27.9a4.44,4.44,0,0,1,4.4,4.4V424a4.44,4.44,0,0,1-4.4,4.4H203.9a4.44,4.44,0,0,1-4.4-4.4V396A4.29,4.29,0,0,1,203.9,391.7Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(44.31 376.62)">
-            A
-          </text>
-        </g>
-        <g id="_9b" data-name="9b">
-          <path id="_9b-2" data-name="9b" class="cls-6"
-            d="M244.2,391.7h27.9a4.44,4.44,0,0,1,4.4,4.4V424a4.44,4.44,0,0,1-4.4,4.4H244.2a4.44,4.44,0,0,1-4.4-4.4V396A4.35,4.35,0,0,1,244.2,391.7Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(84.84 376.81)">
-            B
-          </text>
-        </g>
-        <g id="_9c" data-name="9c">
-          <path id="_9c-2" data-name="9c" class="cls-6"
-            d="M317.5,391.7h27.9a4.44,4.44,0,0,1,4.4,4.4V424a4.44,4.44,0,0,1-4.4,4.4H317.5a4.44,4.44,0,0,1-4.4-4.4V396A4.35,4.35,0,0,1,317.5,391.7Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(157.85 376.86)">
-            C
-          </text>
-        </g>
-        <g id="_9d" data-name="9d">
-          <path id="_9d-2" data-name="9d" class="cls-6"
-            d="M357.8,391.7h27.9a4.44,4.44,0,0,1,4.4,4.4V424a4.44,4.44,0,0,1-4.4,4.4H357.8a4.44,4.44,0,0,1-4.4-4.4V396A4.35,4.35,0,0,1,357.8,391.7Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(198.14 376.58)">
-            D
-          </text>
-        </g>
-        <g id="_10a" data-name="10a">
-          <path id="_10a-2" data-name="10a" class="cls-6"
-            d="M203.9,432h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H203.9a4.44,4.44,0,0,1-4.4-4.4V436.4A4.37,4.37,0,0,1,203.9,432Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(44.31 416.94)">
-            A
-          </text>
-        </g>
-        <g id="_10b" data-name="10b">
-          <path id="_10b-2" data-name="10b" class="cls-6"
-            d="M244.2,432h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H244.2a4.44,4.44,0,0,1-4.4-4.4V436.4A4.44,4.44,0,0,1,244.2,432Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(84.84 417.13)">
-            B
-          </text>
-        </g>
-        <g id="_10c" data-name="10c">
-          <path id="_10c-2" data-name="10c" class="cls-6"
-            d="M317.5,432h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H317.5a4.44,4.44,0,0,1-4.4-4.4V436.4A4.44,4.44,0,0,1,317.5,432Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(157.85 417.17)">
-            C
-          </text>
-        </g>
-        <g id="_10d" data-name="10d">
-          <path id="_10d-2" data-name="10d" class="cls-6"
-            d="M357.8,432h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H357.8a4.44,4.44,0,0,1-4.4-4.4V436.4A4.44,4.44,0,0,1,357.8,432Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(198.14 416.9)">
-            D
-          </text>
-        </g>
-        <g id="_11a" data-name="11a">
-          <path id="_11a-2" data-name="11a" class="cls-6"
-            d="M203.9,472.3h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H203.9a4.44,4.44,0,0,1-4.4-4.4V476.7A4.37,4.37,0,0,1,203.9,472.3Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(44.31 457.26)">
-            A
-          </text>
-        </g>
-        <g id="_11b" data-name="11b">
-          <path id="_11b-2" data-name="11b" class="cls-6"
-            d="M244.2,472.3h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H244.2a4.44,4.44,0,0,1-4.4-4.4V476.7A4.44,4.44,0,0,1,244.2,472.3Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(84.84 457.45)">
-            B
-          </text>
-        </g>
-        <g id="_11c" data-name="11c">
-          <path id="_11c-2" data-name="11c" class="cls-6"
-            d="M317.5,472.3h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H317.5a4.44,4.44,0,0,1-4.4-4.4V476.7A4.44,4.44,0,0,1,317.5,472.3Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(157.85 457.49)">
-            C
-          </text>
-        </g>
-        <g id="_11d" data-name="11d">
-          <path id="_11d-2" data-name="11d" class="cls-6"
-            d="M357.8,472.3h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H357.8a4.44,4.44,0,0,1-4.4-4.4V476.7A4.44,4.44,0,0,1,357.8,472.3Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(198.14 457.22)">
-            D
-          </text>
-        </g>
-        <g id="_12a" data-name="12a">
-          <path id="_12a-2" data-name="12a" class="cls-6"
-            d="M203.9,512.6h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H203.9a4.44,4.44,0,0,1-4.4-4.4V517A4.37,4.37,0,0,1,203.9,512.6Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(44.31 497.57)">
-            A
-          </text>
-        </g>
-        <g id="_12b" data-name="12b">
-          <path id="_12b-2" data-name="12b" class="cls-6"
-            d="M244.2,512.6h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H244.2a4.44,4.44,0,0,1-4.4-4.4V517A4.44,4.44,0,0,1,244.2,512.6Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(84.84 497.77)">
-            B
-          </text>
-        </g>
-        <g id="_12c" data-name="12c">
-          <path id="_12c-2" data-name="12c" class="cls-6"
-            d="M317.5,512.6h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H317.5a4.44,4.44,0,0,1-4.4-4.4V517A4.44,4.44,0,0,1,317.5,512.6Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(157.85 497.81)">
-            C
-          </text>
-        </g>
-        <g id="_12d" data-name="12d">
-          <path id="_12d-2" data-name="12d" class="cls-6"
-            d="M357.8,512.6h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H357.8a4.44,4.44,0,0,1-4.4-4.4V517A4.44,4.44,0,0,1,357.8,512.6Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(198.14 497.54)">
-            D
-          </text>
-        </g>
-        <g id="_13a" data-name="13a">
-          <path id="_13a-2" data-name="13a" class="cls-6"
-            d="M203.9,552.7h27.9a4.44,4.44,0,0,1,4.4,4.4V585a4.44,4.44,0,0,1-4.4,4.4H203.9a4.44,4.44,0,0,1-4.4-4.4V557.1A4.37,4.37,0,0,1,203.9,552.7Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(44.31 537.69)">
-            A
-          </text>
-        </g>
-        <g id="_13b" data-name="13b">
-          <path id="_13b-2" data-name="13b" class="cls-6"
-            d="M244.2,552.7h27.9a4.44,4.44,0,0,1,4.4,4.4V585a4.44,4.44,0,0,1-4.4,4.4H244.2a4.44,4.44,0,0,1-4.4-4.4V557.1A4.44,4.44,0,0,1,244.2,552.7Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(84.84 537.88)">
-            B
-          </text>
-        </g>
-        <g id="_13c" data-name="13c">
-          <path id="_13c-2" data-name="13c" class="cls-6 seat-occupied"
-            d="M317.5,552.7h27.9a4.44,4.44,0,0,1,4.4,4.4V585a4.44,4.44,0,0,1-4.4,4.4H317.5a4.44,4.44,0,0,1-4.4-4.4V557.1A4.44,4.44,0,0,1,317.5,552.7Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(157.85 537.92)">
-            C
-          </text>
-        </g>
-        <g id="_13d" data-name="13d">
-          <path id="_13d-2" data-name="13d" class="cls-6 seat-occupied"
-            d="M357.8,552.7h27.9a4.44,4.44,0,0,1,4.4,4.4V585a4.44,4.44,0,0,1-4.4,4.4H357.8a4.44,4.44,0,0,1-4.4-4.4V557.1A4.44,4.44,0,0,1,357.8,552.7Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(198.14 537.65)">
-            D
-          </text>
-        </g>
-        <g id="_14a" data-name="14a">
-          <path id="_14a-2" data-name="14a" class="cls-6 seat-occupied"
-            d="M203.9,593.1h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H203.9a4.44,4.44,0,0,1-4.4-4.4V597.5A4.31,4.31,0,0,1,203.9,593.1Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(44.31 578.01)">
-            A
-          </text>
-        </g>
-        <g id="_14b" data-name="14b">
-          <path id="_14b-2" data-name="14b" class="cls-6"
-            d="M244.2,593.1h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H244.2a4.44,4.44,0,0,1-4.4-4.4V597.5A4.37,4.37,0,0,1,244.2,593.1Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(84.84 578.2)">
-            B
-          </text>
-        </g>
-        <g id="_14c" data-name="14c">
-          <path id="_14c-2" data-name="14c" class="cls-6"
-            d="M317.5,593.1h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H317.5a4.44,4.44,0,0,1-4.4-4.4V597.5A4.37,4.37,0,0,1,317.5,593.1Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(157.85 578.24)">
-            C
-          </text>
-        </g>
-        <g id="_14d" data-name="14d">
-          <path id="_14d-2" data-name="14d" class="cls-6"
-            d="M357.8,593.1h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H357.8a4.44,4.44,0,0,1-4.4-4.4V597.5A4.37,4.37,0,0,1,357.8,593.1Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(198.14 577.97)">
-            D
-          </text>
-        </g>
-        <g id="_15a" data-name="15a">
-          <path id="_15a-2" data-name="15a" class="cls-6"
-            d="M203.9,633.2h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H203.9a4.44,4.44,0,0,1-4.4-4.4V637.6A4.31,4.31,0,0,1,203.9,633.2Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(44.31 618.32)">
-            A
-          </text>
-        </g>
-        <g id="_15b" data-name="15b">
-          <path id="_15b-2" data-name="15b" class="cls-6"
-            d="M244.2,633.2h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H244.2a4.44,4.44,0,0,1-4.4-4.4V637.6A4.37,4.37,0,0,1,244.2,633.2Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(84.84 618.52)">
-            B
-          </text>
-        </g>
-        <g id="_15c" data-name="15c">
-          <path id="_15c-2" data-name="15c" class="cls-6"
-            d="M317.5,633.2h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H317.5a4.44,4.44,0,0,1-4.4-4.4V637.6A4.37,4.37,0,0,1,317.5,633.2Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(157.85 618.56)">
-            C
-          </text>
-        </g>
-        <g id="_15d" data-name="15d">
-          <path id="_15d-2" data-name="15d" class="cls-6"
-            d="M357.8,633.2h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H357.8a4.44,4.44,0,0,1-4.4-4.4V637.6A4.37,4.37,0,0,1,357.8,633.2Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(198.14 618.29)">
-            D
-          </text>
-        </g>
-        <g id="_16a" data-name="16a">
-          <path id="_16a-2" data-name="16a" class="cls-6"
-            d="M203.9,673.5h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H203.9a4.44,4.44,0,0,1-4.4-4.4V677.9A4.37,4.37,0,0,1,203.9,673.5Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(44.31 658.64)">
-            A
-          </text>
-        </g>
-        <g id="_16b" data-name="16b">
-          <path id="_16b-2" data-name="16b" class="cls-6"
-            d="M244.2,673.5h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H244.2a4.44,4.44,0,0,1-4.4-4.4V677.9A4.44,4.44,0,0,1,244.2,673.5Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(84.84 658.84)">
-            B
-          </text>
-        </g>
-        <g id="_16c" data-name="16c">
-          <path id="_16c-2" data-name="16c" class="cls-6"
-            d="M317.5,673.5h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H317.5a4.44,4.44,0,0,1-4.4-4.4V677.9A4.44,4.44,0,0,1,317.5,673.5Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(157.85 658.88)">
-            C
-          </text>
-        </g>
-        <g id="_16d" data-name="16d">
-          <path id="_16d-2" data-name="16d" class="cls-6"
-            d="M357.8,673.5h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H357.8a4.44,4.44,0,0,1-4.4-4.4V677.9A4.44,4.44,0,0,1,357.8,673.5Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(198.14 658.6)">
-            D
-          </text>
-        </g>
-        <g id="_17a" data-name="17a">
-          <path id="_17a-2" data-name="17a" class="cls-6"
-            d="M203.9,713.8h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H203.9a4.44,4.44,0,0,1-4.4-4.4V718.2A4.37,4.37,0,0,1,203.9,713.8Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(44.31 698.96)">
-            A
-          </text>
-        </g>
-        <g id="_17b" data-name="17b">
-          <path id="_17b-2" data-name="17b" class="cls-6 seat-occupied"
-            d="M244.2,713.8h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H244.2a4.44,4.44,0,0,1-4.4-4.4V718.2A4.44,4.44,0,0,1,244.2,713.8Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(84.84 699.15)">
-            B
-          </text>
-        </g>
-        <g id="_17c" data-name="17c">
-          <path id="_17c-2" data-name="17c" class="cls-6 seat-occupied"
-            d="M317.5,713.8h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H317.5a4.44,4.44,0,0,1-4.4-4.4V718.2A4.44,4.44,0,0,1,317.5,713.8Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(157.85 699.2)">
-            C
-          </text>
-        </g>
-        <g id="_17d" data-name="17d">
-          <path id="_17d-2" data-name="17d" class="cls-6 seat-occupied"
-            d="M357.8,713.8h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H357.8a4.44,4.44,0,0,1-4.4-4.4V718.2A4.44,4.44,0,0,1,357.8,713.8Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(198.14 698.92)">
-            D
-          </text>
-        </g>
-        <g id="_18a" data-name="18a">
-          <path id="_18a-2" data-name="18a" class="cls-6"
-            d="M203.9,754.1h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H203.9a4.44,4.44,0,0,1-4.4-4.4V758.5A4.37,4.37,0,0,1,203.9,754.1Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(44.31 739.28)">
-            A
-          </text>
-        </g>
-        <g id="_18b" data-name="18b">
-          <path id="_18b-2" data-name="18b" class="cls-6"
-            d="M244.2,754.1h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H244.2a4.44,4.44,0,0,1-4.4-4.4V758.5A4.44,4.44,0,0,1,244.2,754.1Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(84.84 739.47)">
-            B
-          </text>
-        </g>
-        <g id="_18c" data-name="18c">
-          <path id="_18c-2" data-name="18c" class="cls-6"
-            d="M317.5,754.1h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H317.5a4.44,4.44,0,0,1-4.4-4.4V758.5A4.44,4.44,0,0,1,317.5,754.1Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(157.85 739.52)">
-            C
-          </text>
-        </g>
-        <g id="_18d" data-name="18d">
-          <path id="_18d-2" data-name="18d" class="cls-6"
-            d="M357.8,754.1h27.9a4.44,4.44,0,0,1,4.4,4.4v27.9a4.44,4.44,0,0,1-4.4,4.4H357.8a4.44,4.44,0,0,1-4.4-4.4V758.5A4.44,4.44,0,0,1,357.8,754.1Z"
-            transform="translate(-168.66 -38.64)" />
-          <text class="cls-7" transform="translate(198.14 739.24)">
-            D
-          </text>
-        </g>
+    <rect id="_2a" data-name=" 2a" class="cls-1" x="183.53" y="131.82" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_2b" data-name=" 2b" class="cls-1 seat-occupied" x="218.28" y="131.82" width="31.59" height="31.59"
+      rx="3.76" />
+    <rect id="_2c" data-name=" 2c" class="cls-1" x="342.58" y="131.82" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_2d" data-name=" 2d" class="cls-1" x="377.33" y="131.82" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_3a" data-name=" 3a" class="cls-1" x="183.53" y="166.57" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_3b" data-name=" 3b" class="cls-1" x="218.28" y="166.57" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_4a" data-name=" 4a" class="cls-1" x="183.53" y="201.32" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_4b" data-name=" 4b" class="cls-1" x="218.28" y="201.32" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_3c" data-name=" 3c" class="cls-1" x="342.58" y="166.57" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_3d" data-name=" 3d" class="cls-1" x="377.33" y="166.57" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_4c" data-name=" 4c" class="cls-1" x="342.58" y="201.32" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_4d" data-name=" 4d" class="cls-1" x="377.33" y="201.32" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_5a" data-name=" 5a" class="cls-1" x="183.53" y="235.89" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_5b" data-name=" 5b" class="cls-1" x="218.28" y="235.89" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_6a" data-name=" 6a" class="cls-1" x="183.53" y="270.64" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_6b" data-name=" 6b" class="cls-1" x="218.28" y="270.64" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_5c" data-name=" 5c" class="cls-1" x="342.58" y="235.89" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_5d" data-name=" 5d" class="cls-1" x="377.33" y="235.89" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_6c" data-name=" 6c" class="cls-1" x="342.58" y="270.64" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_6d" data-name=" 6d" class="cls-1" x="377.33" y="270.64" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_7a" data-name=" 7a" class="cls-1" x="183.53" y="305.39" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_7b" data-name=" 7b" class="cls-1" x="218.28" y="305.39" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_8a" data-name=" 8a" class="cls-1" x="183.53" y="340.13" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_8b" data-name=" 8b" class="cls-1" x="218.28" y="340.13" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_7c" data-name=" 7c" class="cls-1" x="342.58" y="305.39" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_7d" data-name=" 7d" class="cls-1" x="377.33" y="305.39" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_8c" data-name=" 8c" class="cls-1 seat-occupied" x="342.58" y="340.13" width="31.59" height="31.59"
+      rx="3.76" />
+    <rect id="_8d" data-name=" 8d" class="cls-1 seat-occupied" x="377.33" y="340.13" width="31.59" height="31.59"
+      rx="3.76" />
+    <rect id="_9a" data-name=" 9a" class="cls-1" x="183.53" y="374.71" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_9b" data-name=" 9b" class="cls-1" x="218.28" y="374.71" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_10a" data-name=" 10a" class="cls-1" x="183.53" y="409.46" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_10b" data-name=" 10b" class="cls-1" x="218.28" y="409.46" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_9c" data-name=" 9c" class="cls-1" x="342.58" y="374.71" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_9d" data-name=" 9d" class="cls-1" x="377.33" y="374.71" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_10c" data-name=" 10c" class="cls-1" x="342.58" y="409.46" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_10d" data-name=" 10d" class="cls-1" x="377.33" y="409.46" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_11a" data-name=" 11a" class="cls-1" x="183.53" y="444.2" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_11b" data-name=" 11b" class="cls-1" x="218.28" y="444.2" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_12a" data-name=" 12a" class="cls-1 seat-occupied" x="183.53" y="478.95" width="31.59" height="31.59"
+      rx="3.76" />
+    <rect id="_12b" data-name=" 12b" class="cls-1" x="218.28" y="478.95" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_11c" data-name=" 11c" class="cls-1" x="342.58" y="444.2" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_11d" data-name=" 11d" class="cls-1" x="377.33" y="444.2" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_12c" data-name=" 12c" class="cls-1" x="342.58" y="478.95" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_12d" data-name=" 12d" class="cls-1" x="377.33" y="478.95" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_13a" data-name=" 13a" class="cls-1" x="183.53" y="513.53" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_13b" data-name=" 13b" class="cls-1" x="218.28" y="513.53" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_14a" data-name=" 14a" class="cls-1" x="183.53" y="548.27" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_14b" data-name=" 14b" class="cls-1" x="218.28" y="548.27" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_13c" data-name=" 13c" class="cls-1" x="342.58" y="513.53" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_13d" data-name=" 13d" class="cls-1" x="377.33" y="513.53" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_14c" data-name=" 14c" class="cls-1" x="342.58" y="548.27" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_14d" data-name=" 14d" class="cls-1 seat-occupied" x="377.33" y="548.27" width="31.59" height="31.59"
+      rx="3.76" />
+    <rect id="_15a" data-name=" 15a" class="cls-1" x="183.53" y="582.85" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_15b" data-name=" 15b" class="cls-1" x="218.28" y="582.85" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_16a" data-name=" 16a" class="cls-1" x="183.53" y="617.6" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_16b" data-name=" 16b" class="cls-1" x="218.28" y="617.6" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_15c" data-name=" 15c" class="cls-1" x="342.58" y="582.85" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_15d" data-name=" 15d" class="cls-1" x="377.33" y="582.85" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_16c" data-name=" 16c" class="cls-1" x="342.58" y="617.6" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_16d" data-name=" 16d" class="cls-1" x="377.33" y="617.6" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_17a" data-name=" 17a" class="cls-1" x="183.53" y="652.34" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_17b" data-name=" 17b" class="cls-1" x="218.28" y="652.34" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_18a" data-name=" 18a" class="cls-1" x="183.53" y="687.09" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_18b" data-name=" 18b" class="cls-1" x="218.28" y="687.09" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_17c" data-name=" 17c" class="cls-1" x="342.58" y="652.34" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_17d" data-name=" 17d" class="cls-1" x="377.33" y="652.34" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_18c" data-name=" 18c" class="cls-1" x="342.58" y="687.09" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_18d" data-name=" 18d" class="cls-1" x="377.33" y="687.09" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_1d" data-name=" 1d" class="cls-1" x="377.33" y="97.07" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_1c" data-name=" 1c" class="cls-1" x="342.58" y="97.07" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_1b" data-name=" 1b" class="cls-1" x="218.28" y="97.07" width="31.59" height="31.59" rx="3.76" />
+    <rect id="_1a" data-name=" 1a" class="cls-1" x="183.53" y="97.07" width="31.59" height="31.59" rx="3.76" />
+    <text class="cls-2" transform="translate(292.8 117.82)">
+      1
+    </text>
+    <text class="cls-2" transform="translate(292.53 152.49)">
+      2
+    </text>
+    <text class="cls-2" transform="translate(292.66 187.43)">
+      3
+    </text>
+    <text class="cls-2" transform="translate(292.8 222.18)">
+      4
+    </text>
+    <text class="cls-2" transform="translate(292.53 256.91)">
+      5
+    </text>
+    <text class="cls-2" transform="translate(292.41 291.63)">
+      6
+    </text>
+    <text class="cls-2" transform="translate(292.66 326.34)">
+      7
+    </text>
+    <text class="cls-2" transform="translate(292.53 360.94)">
+      8
+    </text>
+    <text class="cls-2" transform="translate(292.41 395.93)">
+      9
+    </text>
+    <text class="cls-3" transform="translate(287.56 430.71)">
+      10
+    </text>
+    <g class="cls-4">
+      <text class="cls-5" transform="translate(288.86 465.42)">
+        1
+      </text>
+      <text class="cls-3" transform="translate(295.95 465.42)">
+        1
+      </text>
+    </g>
+    <text class="cls-3" transform="translate(287.56 500.04)">
+      12
+    </text>
+    <text class="cls-3" transform="translate(287.56 534.63)">
+      13
+    </text>
+    <text class="cls-3" transform="translate(287.56 569.35)">
+      14
+    </text>
+    <text class="cls-3" transform="translate(287.3 604.2)">
+      15
+    </text>
+    <text class="cls-3" transform="translate(287.3 638.66)">
+      16
+    </text>
+    <text class="cls-3" transform="translate(287.3 673.51)">
+      17
+    </text>
+    <text class="cls-3" transform="translate(287.3 708.23)">
+      18
+    </text>
+    <g id="text1228-9-8-3-5-8">
+      <text class="cls-6" transform="translate(194.33 739.32)">
+        A
+      </text>
+    </g>
+    <g id="text1228-1-1-1-5-0-3">
+      <text class="cls-6" transform="translate(229.81 739.32)">
+        B
+      </text>
+    </g>
+    <g id="text1228-13-3-3-5-1-1">
+      <text class="cls-6" transform="translate(353.08 739.31)">
+        C
+      </text>
+    </g>
+    <g id="text1228-1-2-2-5-7-8-8">
+      <text class="cls-6" transform="translate(388.97 739.31)">
+        D
+      </text>
+    </g>
+    <g id="text1228-9-8-3-5-8-2" data-name="text1228-9-8-3-5-8">
+      <text class="cls-6" transform="translate(194.33 86.85)">
+        A
+      </text>
+    </g>
+    <g id="text1228-1-1-1-5-0-3-2" data-name="text1228-1-1-1-5-0-3">
+      <text class="cls-6" transform="translate(229.81 86.85)">
+        B
+      </text>
+    </g>
+    <g id="text1228-13-3-3-5-1-1-2" data-name="text1228-13-3-3-5-1-1">
+      <text class="cls-6" transform="translate(353.08 86.85)">
+        C
+      </text>
+    </g>
+    <g id="text1228-1-2-2-5-7-8-8-2" data-name="text1228-1-2-2-5-7-8-8">
+      <text class="cls-6" transform="translate(388.29 86.85)">
+        D
+      </text>
+    </g>
+    <rect class="cls-7" x="163.59" y="34.84" width="39.88" height="16.75" />
+    <g id="text2940-2">
+      <g class="cls-4">
+        <text class="cls-8" transform="translate(165.85 48.25) scale(1.12 1)">
+          EXI
+        </text>
+        <text class="cls-9" transform="translate(190.98 48.25) scale(1.12 1)">
+          T
+        </text>
       </g>
     </g>
+    <rect class="cls-7" x="388.97" y="34.84" width="39.88" height="16.75" />
+    <g id="text2940-2-2" data-name="text2940-2">
+      <g class="cls-4">
+        <text class="cls-8" transform="translate(391.24 48.25) scale(1.12 1)">
+          EXI
+        </text>
+        <text class="cls-10" transform="translate(416.36 48.25) scale(1.12 1)">
+          T
+        </text>
+      </g>
+    </g>
+    <rect class="cls-7" x="167.87" y="787.1" width="39.88" height="16.75" />
+    <g id="text2940-2-3" data-name="text2940-2">
+      <g class="cls-4">
+        <text class="cls-8" transform="translate(170.14 800.51) scale(1.12 1)">
+          EXI
+        </text>
+        <text class="cls-9" transform="translate(195.26 800.51) scale(1.12 1)">
+          T
+        </text>
+      </g>
+    </g>
+    <rect class="cls-7" x="393.26" y="787.1" width="39.88" height="16.75" />
+    <g id="text2940-2-4" data-name="text2940-2">
+      <g class="cls-4">
+        <text class="cls-8" transform="translate(395.52 800.51) scale(1.12 1)">
+          EXI
+        </text>
+        <text class="cls-10" transform="translate(420.65 800.51) scale(1.12 1)">
+          T
+        </text>
+      </g>
+    </g>
+    <rect class="cls-11" x="443.46" width="8.02" height="826.6" />
+    <polygon class="cls-11" points="152.54 826.6 144.52 826.6 144.52 303.8 144.52 0 152.54 0 152.54 826.6" />
+    <path class="cls-1" d="M143.79,595.57,0,650.31V426.7L143.79,313.34Z" transform="translate(0 -15.71)" />
+    <path class="cls-1" d="M451.48,595.57l143.8,54.74V426.7Q523.37,370,451.48,313.34Z"
+      transform="translate(0 -15.71)" />
   </svg>
   <!-- Plane - end -->
 </div>
 
 
 <app-summary-box></app-summary-box>
-
+<a routerLink="/summary-page"> <button class="button">Kontynuuj 🡺</button> </a>
 
 <router-outlet></router-outlet>

@@ -1,10 +1,40 @@
 .wrapper {
   display: flex;
-  max-width: 70%;
   justify-content: space-around;
 }
 
 .travel-option {
   background-color: #ddd;
   max-width: 30%;
+}
+
+.flight-information {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 50%;
+}
+
+.details-page-wrapper {
+  width: 80%;
+}
+
+.flight-information-wrapper {
+  display: flex;
+}
+
+.page-title {
+  text-align: center;
+  padding: 20px;
+}
+
+.luggage-wrapper,
+  {
+  display: flex;
+  justify-content: space-around;
+}
+
+.luggage-wrapper__counter {
+  display: flex;
+  justify-content: space-around;
 }

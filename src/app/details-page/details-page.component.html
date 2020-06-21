@@ -1,80 +1,136 @@
 <app-navigation-bar></app-navigation-bar>
+<div class="details-page-wrapper">
+  <h1 class="page-title">Twój lot</h1>
+  <!-- ✈ -->
+  <!-- Informacje o locie -->
+  <div class="flight-information-wrapper">
+    <div class="flight-information">
+      <div class="flight-information__details">
+        <h2> {{ originCity }} </h2>
+        <p>{{ startDate }}</p>
+        <p>19:30</p>
+      </div>
+      <div class="arrow-symbol">⟶</div>
+      <div class="flight-information__details">
+        <h2>{{ destinationCity }}</h2>
+        <p>55 minut</p>
+        <p>20:25</p>
+      </div>
+    </div>
+    <div class="flight-information">
+      <div class="flight-information__details">
+        <h2>{{ destinationCity }}</h2>
+        <p>{{ endDate }}</p>
+        <p>10:45</p>
+      </div>
+      <div class="arrow-symbol">⟶</div>
+      <div class="flight-information__details">
+        <h2> {{ originCity }} </h2>
+        <p>55 minut</p>
+        <p>12:15</p>
+      </div>
+    </div>
+  </div>
 
+
+  <!-- Koniec informacji o locie -->
+
+  <!-- 
 <input type="text" value="" id="start" disabled>
 <input type="text" value="" id="destination" disabled>
 <input type="text" [value]="startDate.split('-').reverse().join('.')" id="startDate" disabled>
-<input type="text" [value]="endDate.split('-').reverse().join('.')" id="endDate" disabled>
+<input type="text" [value]="endDate.split('-').reverse().join('.')" id="endDate" disabled> -->
 
-<!-- Taryfy -->
-<h1>Wybierz wariant podróży</h1>
-<div class="wrapper">
-  <div class="travel-option" #basic id="basic">
-    <h2>Basic</h2>
-    <ul>
-      <li>Bezpłatny bagaż podręczny (40x30x20) w kabinie, umieszczony pod fotelem</li>
-      <li>Odprawa online do 2 dni przed odlotem</li>
-    </ul>
-    <div>
-      <p>Zmiana rezerwacji za dopłatą</p>
-      <p>Brak możliwości zwrotu biletu</p>
+  <!-- Taryfy -->
+  <h2 class="deatils-section-title">Wybierz wariant podróży</h2>
+  <div class="wrapper">
+    <div class="travel-option" #basic id="basic">
+      <h2>Basic</h2>
+      <div class="travel-option__conditions">
+        <ul>
+          <li>Bezpłatny bagaż podręczny (40x30x20) w kabinie, umieszczony pod fotelem</li>
+          <li>Odprawa online do 2 dni przed odlotem</li>
+        </ul>
+      </div>
+      <div>
+        <p>Zmiana rezerwacji za dopłatą</p>
+        <p>Brak możliwości zwrotu biletu</p>
+      </div>
+      <button class="travel-option__btn" (click)="saveTravelOption(basic.id)">Wybierz</button>
     </div>
-    <button class="travel-option__btn" (click)="saveTravelOption(basic.id)">Wybierz</button>
-  </div>
-  <div class="travel-option" #plus id="plus">
-    <h2>Plus</h2>
-    <ul>
-      <li>Bezpłatny bagaż podręczny (40x30x20) w kabinie, umieszczony pod fotelem</li>
-      <li>Podręczna walizka na kółkach (55x40x23) w kabinie</li>
-      <li>20-kg bagaż rejestrowany</li>
-      <li>Bezpłatny wybór miejsc</li>
-      <li>Pierwszeństwo wejścia na pokład</li>
-      <li>Odprawa online do 30 dni przed odlotem</li>
-    </ul>
-    <div>
-      <p>Zmiana rezerwacji za dopłatą</p>
-      <p>Brak możliwości zwrotu biletu</p>
+    <div class="travel-option" #plus id="plus">
+      <h2>Plus</h2>
+      <div class="travel-option__conditions">
+        <ul>
+          <li>Bezpłatny bagaż podręczny (40x30x20) w kabinie, umieszczony pod fotelem</li>
+          <li>Podręczna walizka na kółkach (55x40x23) w kabinie</li>
+          <li>20-kg bagaż rejestrowany</li>
+          <li>Bezpłatny wybór miejsc</li>
+          <li>Pierwszeństwo wejścia na pokład</li>
+          <li>Odprawa online do 30 dni przed odlotem</li>
+        </ul>
+      </div>
+      <div>
+        <p>Zmiana rezerwacji za dopłatą</p>
+        <p>Brak możliwości zwrotu biletu</p>
+      </div>
+      <button class="travel-option__btn" (click)="saveTravelOption(plus.id)">Wybierz</button>
     </div>
-    <button class="travel-option__btn" (click)="saveTravelOption(plus.id)">Wybierz</button>
-  </div>
-  <div class="travel-option" #premium id="premium">
-    <h2>Premium</h2>
-    <ul>
-      <li>Bezpłatny bagaż podręczny (40x30x20) w kabinie, umieszczony pod fotelem</li>
-      <li>Podręczna walizka na kółkach (55x40x23) w kabinie</li>
-      <li>32-kg bagaż rejestrowany</li>
-      <li>Bezpłatny wybór miejsc</li>
-      <li>Informacje o locie</li>
-      <li>Pierwszeństwo wejścia na pokład</li>
-      <li>Automatyczna odprawa</li>
-    </ul>
-    <div>
-      <p>Darmowa zmiana rezerwacji</p>
-      <p>Zwrot biletu z odliczeniem opłat</p>
+    <div class="travel-option" #premium id="premium">
+      <h2>Premium</h2>
+      <div class="travel-option__conditions">
+        <ul>
+          <li>Bezpłatny bagaż podręczny (40x30x20) w kabinie, umieszczony pod fotelem</li>
+          <li>Podręczna walizka na kółkach (55x40x23) w kabinie</li>
+          <li>32-kg bagaż rejestrowany</li>
+          <li>Bezpłatny wybór miejsc</li>
+          <li>Informacje o locie</li>
+          <li>Pierwszeństwo wejścia na pokład</li>
+          <li>Automatyczna odprawa</li>
+        </ul>
+      </div>
+      <div>
+        <p>Darmowa zmiana rezerwacji</p>
+        <p>Zwrot biletu z odliczeniem opłat</p>
+      </div>
+      <button class="travel-option__btn" (click)="saveTravelOption(premium.id)">Wybierz</button>
     </div>
-    <button class="travel-option__btn" (click)="saveTravelOption(premium.id)">Wybierz</button>
   </div>
+  <!-- Koniec taryf -->
+
+  <!-- Usługi dodatkowe -->
+  <h2 class="deatils-section-title">Dodatkowy bagaż</h2>
+  <div class="luggage-wrapper">
+    <div class="luggage-wrapper__item">
+      <p>do 10 kg</p>
+      <div class="luggage-wrapper__counter">
+        <button (click)="lessLuggage10()">-</button>
+        <p class="luggage-counter" id="luggage-10kg">{{ luggage10kg }}</p>
+        <button (click)="moreLuggage10()">+</button>
+      </div>
+    </div>
+    <div class="luggage-wrapper__item">
+      <p>do 20 kg</p>
+      <div class="luggage-wrapper__counter">
+        <button (click)="lessLuggage20()">-</button>
+        <p class="luggage-counter" id="luggage-20kg">{{ luggage20kg }}</p>
+        <button (click)="moreLuggage20()">+</button>
+      </div>
+    </div>
+    <div class="luggage-wrapper__item">
+      <p>do 32 kg</p>
+      <div class="luggage-wrapper__counter">
+        <button (click)="lessLuggage32()">-</button>
+        <p class="luggage-counter" id="luggage-32kg">{{ luggage32kg }}</p>
+        <button (click)="moreLuggage32()">+</button>
+      </div>
+    </div>
+  </div>
+  <!-- Koniec usług dodatkowych -->
+
+
+  <a routerLink="/login-page"><button class="btn-summarybox" (click)="saveLuggage()">Kontynuuj 🡺</button></a>
 </div>
-<!-- Koniec taryf -->
-
-<!-- Usługi dodatkowe -->
-<p>Dodatkowy bagaż do 10 kg</p>
-<button (click)="lessLuggage10()">-</button>
-<p class="luggage-counter" id="luggage-10kg">{{ luggage10kg }}</p>
-<button (click)="moreLuggage10()">+</button>
-<p>Dodatkowy bagaż do 20 kg</p>
-<button (click)="lessLuggage20()">-</button>
-<p class="luggage-counter" id="luggage-20kg">{{ luggage20kg }}</p>
-<button (click)="moreLuggage20()">+</button>
-<p>Dodatkowy bagaż do 32 kg</p>
-<button (click)="lessLuggage32()">-</button>
-<p class="luggage-counter" id="luggage-32kg">{{ luggage32kg }}</p>
-<button (click)="moreLuggage32()">+</button>
-
-<!-- Koniec usług dodatkowych -->
-
-
-<a routerLink="/login-page"><button class="btn-summarybox" (click)="saveLuggage()">Kontynuuj</button></a>
-
 <app-summary-box></app-summary-box>
 
 <router-outlet></router-outlet>

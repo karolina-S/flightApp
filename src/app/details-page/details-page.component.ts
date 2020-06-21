@@ -6,33 +6,37 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./details-page.component.scss']
 })
 export class DetailsPageComponent implements OnInit {
-  public startInput;
-  public startDate;
-  public endDate;
-  public adultsNumber;
-  public childrenNumber;
-  public babiesNumber;
+  // public startInput;
+  // public startDate;
+  // public endDate;
+  // public adultsNumber;
+  // public childrenNumber;
+  // public babiesNumber;
   public luggage10kg = 0;
   public luggage20kg = 0;
   public luggage32kg = 0;
+  public originCity = localStorage.getItem('start');
+  public destinationCity = localStorage.getItem('destination');
+  public startDate = localStorage.getItem('startDate').split('-').reverse().join('.');
+  public endDate = localStorage.getItem('endDate').split('-').reverse().join('.');
 
   constructor() {
 
   }
 
   ngOnInit(): void {
-    this.destinationFill();
+    // this.destinationFill();
   }
 
   // Autouzupełnianie inputów nazwami krajów
-  destinationFill() {
-    this.startInput = document.getElementById('start');
-    this.startInput.setAttribute('value', localStorage.getItem('start'));
-    this.startInput = document.getElementById('destination');
-    this.startInput.setAttribute('value', localStorage.getItem('destination'));
-    this.startDate = localStorage.getItem('startDate');
-    this.endDate = localStorage.getItem('endDate');
-  }
+  // destinationFill() {
+  //   this.startInput = document.getElementById('start');
+  //   this.startInput.setAttribute('value', localStorage.getItem('start'));
+  //   this.startInput = document.getElementById('destination');
+  //   this.startInput.setAttribute('value', localStorage.getItem('destination'));
+  //   this.startDate = localStorage.getItem('startDate');
+  //   this.endDate = localStorage.getItem('endDate');
+  // }
 
   // Adding and removing luggage
   lessLuggage10() {

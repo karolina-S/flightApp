@@ -22,7 +22,7 @@ export class PassengersPageComponent implements OnInit {
     this.total = +this.adultsNumber + +this.childrenNumber + +this.babiesNumber;
 
     for (let i = 0; i < this.adultsNumber; i++) {
-      //  Pasażer nr
+      //  Pasażer + nr
       const p = document.createElement("p");
       document.getElementById('adultPassengersContainer').appendChild(p);
       p.textContent = `Pasażer nr ${i + 1}`
@@ -63,7 +63,7 @@ export class PassengersPageComponent implements OnInit {
     }
 
     for (let i = 0; i < this.childrenNumber; i++) {
-      //  Pasażer nr
+      //  Pasażer + nr
       const p = document.createElement("p");
       document.getElementById('childrenPassengersContainer').appendChild(p);
       p.textContent = `Pasażer nr ${+this.adultsNumber + i + 1}`;
@@ -89,7 +89,7 @@ export class PassengersPageComponent implements OnInit {
       childBirthDateInput.setAttribute('type', 'date');
     }
     for (let i = 0; i < this.babiesNumber; i++) {
-      //  Pasażer nr
+      //  Pasażer + nr
       const p = document.createElement("p");
       document.getElementById('babiesPassengersContainer').appendChild(p);
       p.textContent = `Pasażer nr ${+this.adultsNumber + +this.childrenNumber + i + 1}`;

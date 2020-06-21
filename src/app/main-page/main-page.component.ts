@@ -9,6 +9,11 @@ import { flightDetails } from '../details'
 export class MainPageComponent implements OnInit {
 
   public date = new Date();
+  public yearToday = this.date.getFullYear()
+  public monthToday = ((this.date.getMonth() + 1) < 9 ? '0' + (this.date.getMonth() + 1) : (this.date.getMonth() + 1));
+  public dayToday = (this.date.getDate() < 9) ? '0' + this.date.getDate() : this.date.getDate();
+  public dateToday = `${this.yearToday}-${this.monthToday}-${this.dayToday}`;
+  public dateMax = `${this.yearToday + 1}-${this.monthToday}-${this.dayToday}`;
   public originCitiesArray = [];
   public destinationCitiesArray = [];
   public adultPassengers = 1;
@@ -32,6 +37,13 @@ export class MainPageComponent implements OnInit {
         console.log(this.destinationCitiesArray);
       }
     }
+
+    document.getElementById('startDate').setAttribute('value', `${this.dateToday}`)
+    document.getElementById('startDate').setAttribute('min', `${this.dateToday}`)
+    document.getElementById('startDate').setAttribute('max', `${this.dateMax}`)
+    document.getElementById('endDate').setAttribute('min', `${this.dateToday}`)
+    document.getElementById('endDate').setAttribute('max', `${this.dateMax}`)
+
   }
 
   saveBasicInformation(start, destination, startDate, endDate) {
@@ -93,4 +105,6 @@ export class MainPageComponent implements OnInit {
       this.babiesPassengers = this.babiesPassengers + 1;
     }
   }
+
+
 }

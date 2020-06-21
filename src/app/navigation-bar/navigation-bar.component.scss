@@ -1,6 +1,6 @@
 .navigation-bar {
   height: 10vh;
-  background-color: rgb(173, 166, 166);
+  background-color: #bdb9c6;
   color: #fff;
   width: 100%;
   display: flex;
@@ -8,6 +8,13 @@
   align-items: center;
   z-index: 2;
   padding: 0 20px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+
+  &__step {
+    color: #e2e1e6;
+  }
 }
 
 .logo {
@@ -17,9 +24,10 @@
 }
 
 .done {
-  color: red;
+  color: #807a7a;
 }
 
 .active {
-  color: green;
+  color: #2286a9;
+  font-weight: bold;
 }

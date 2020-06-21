@@ -11,28 +11,29 @@
 </select>
 
 <label for="startDate">Wylot</label>
-<input type="date" #startDate name="trip-start" [value]="date | date:'yyyy-MM-dd'">
+<input type="date" #startDate id="startDate" name="trip-start" [value]="date | date:'yyyy-MM-dd'">
 <label for="endDate">Powrót</label>
-<input type="date" #endDate name="trip-end" [value]="date | date:'yyyy-MM-dd'">
+<input type="date" #endDate id="endDate" name="trip-end" [value]="date | date:'yyyy-MM-dd'">
 
 
 <h2>Pasażerowie</h2>
-<p>Dorośli: </p>
+<p>Dorośli: <small>pow. 16 lat</small></p>
 <button (click)="lessAdultPassengers()">-</button>
 <p class="adult-counter" id="adult-passengers">{{ adultPassengers }}</p>
 <button (click)="moreAdultPassengers()">+</button>
-<p>Dzieci: </p>
+<p>Dzieci: <small>pow. 2 lat</small></p>
 <button (click)="lessChildrenPassengers()">-</button>
 <p class="children-counter" id="adult-passengers">{{ childrenPassengers }}</p>
 <button (click)="moreChildrenPassengers()">+</button>
-<p>Niemowlęta: </p>
+<p>Niemowlęta: <small>do 24 miesięcy</small></p>
 <button (click)="lessBabiesPassengers()">-</button>
 <p class="babies-counter" id="adult-passengers">{{ babiesPassengers }}</p>
 <button (click)="moreBabiesPassengers()">+</button>
 
 
-<a routerLink="/details-page"><button
-    (click)="saveBasicInformation(start.value, destination.value, startDate.value, endDate.value)">Lecimy
-    ✈</button></a>
+<a routerLink="/details-page">
+  <button (click)="saveBasicInformation(start.value, destination.value, startDate.value, endDate.value)">Lecimy
+    ✈</button>
+</a>
 
 <router-outlet></router-outlet>

@@ -31,6 +31,7 @@ export class SummaryBoxComponent implements OnInit {
   public luggage20 = localStorage.getItem('luggage20');
   public luggage32 = localStorage.getItem('luggage32');
   public currencyChosen;
+  public currencyField;
 
   constructor() { }
 
@@ -73,17 +74,33 @@ export class SummaryBoxComponent implements OnInit {
     }
 
     // Prices
-    this.totalPrice = `${this.adultsPriceTotal + this.childrenPriceTotal + this.babiesPriceTotal} ${this.currencyChosen}`
+    this.totalPrice = `${this.adultsPriceTotal + this.childrenPriceTotal + this.babiesPriceTotal}`
 
     // Show invisible information
-    window.location.href.indexOf("passengers-page") > -1 ? document.getElementById('passengersField').classList.remove('closed') : null;
+    if (window.location.href.indexOf("passengers-page") > -1) {
+      document.getElementById('passengersField').classList.remove('closed');
+      document.getElementById('totalField').classList.remove('closed');
+    }
     if (window.location.href.indexOf("seat-choice") > -1) {
       document.getElementById('passengersField').classList.remove('closed');
-      document.getElementById('informationField').classList.remove('closed')
+      document.getElementById('informationField').classList.remove('closed');
+      document.getElementById('totalField').classList.remove('closed');
     }
 
+    // Currencies
+    this.currencyChosen = document.getElementById('currencyBox');
+    this.currencyChosen.addEventListener('change', function () {
+      if (this.value !== 'pln') {
+        fetch(`https://api.nbp.pl/api/exchangerates/rates/A/${this.value}/?format=json`)
+          .then((resp) => resp.json())
+          .then(function (data) {
+            this.currencyField = document.getElementById('currencyField');
+            console.log(this.currencyField);
+            this.currencyField.textContent = `${data.code}`;
+          })
+      }
+
+    })
   }
-
-  // Currency
-
 }
+

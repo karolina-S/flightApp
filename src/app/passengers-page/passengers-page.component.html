@@ -1,5 +1,6 @@
 <app-navigation-bar></app-navigation-bar>
 <div class="wrapper">
+  <h1>Pasażerowie</h1>
   <p>Pasażerowie: {{ adultsNumber }} dorosły, {{ childrenNumber }} dziecko, {{ babiesNumber }} niemowlęta</p>
   <p>Pola obowiązkowe (*)</p>
 
@@ -8,11 +9,11 @@
   </div>
 
   <div id="childrenPassengersContainer">
-    <p>Dzieci</p>
+    <p *ngIf="childrenNumber > 0">Dzieci</p>
   </div>
 
   <div id="babiesPassengersContainer">
-    <p>Niemowlęta</p>
+    <p *ngIf="babiesNumber > 0">Niemowlęta</p>
   </div>
 
   <p>Dane kontaktowe</p>
