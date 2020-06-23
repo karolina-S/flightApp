@@ -1,21 +1,33 @@
 import { Component, OnInit } from '@angular/core';
-import { flightDetails } from '../details'
+import { flightConnections } from '../details';
+import { ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-main-page',
   templateUrl: './main-page.component.html',
-  styleUrls: ['./main-page.component.scss']
+  styleUrls: ['./main-page.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class MainPageComponent implements OnInit {
 
+  public options;
+  public start = document.getElementById('start');;
+  public startCities = document.querySelectorAll('[name="startCity"]');;
+  public startCitiesContainer = document.querySelectorAll('.cities-container__item');;
+  public startArray = Array.from(this.startCities);;
+  public flightConnections;
+  public optionsContainer;
+
   public date = new Date();
-  public yearToday = this.date.getFullYear()
-  public monthToday = ((this.date.getMonth() + 1) < 9 ? '0' + (this.date.getMonth() + 1) : (this.date.getMonth() + 1));
   public dayToday = (this.date.getDate() < 9) ? '0' + this.date.getDate() : this.date.getDate();
+  public monthToday = ((this.date.getMonth() + 1) < 9 ? '0' + (this.date.getMonth() + 1) : (this.date.getMonth() + 1));
+  public yearToday = this.date.getFullYear();
   public dateToday = `${this.yearToday}-${this.monthToday}-${this.dayToday}`;
+  public dateTomorrow = `${this.yearToday}-${this.monthToday}-${+this.dayToday + 1}`;
   public dateMax = `${this.yearToday + 1}-${this.monthToday}-${this.dayToday}`;
-  public originCitiesArray = [];
-  public destinationCitiesArray = [];
+  public startDateFiled;
+  public endDateField;
+
   public adultPassengers = 1;
   public childrenPassengers = 0;
   public babiesPassengers = 0;
@@ -24,86 +36,78 @@ export class MainPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    for (let i = 0; i < flightDetails.length; i++) {
-      if (this.originCitiesArray.indexOf(flightDetails[i].originCity) == -1) {
-        this.originCitiesArray.push(flightDetails[i].originCity);
-        console.log(this.originCitiesArray);
-      }
-    }
-
-    for (let i = 0; i < flightDetails.length; i++) {
-      if (this.destinationCitiesArray.indexOf(flightDetails[i].destinationCity) == -1) {
-        this.destinationCitiesArray.push(flightDetails[i].destinationCity);
-        console.log(this.destinationCitiesArray);
-      }
-    }
-
-    document.getElementById('startDate').setAttribute('value', `${this.dateToday}`)
-    document.getElementById('startDate').setAttribute('min', `${this.dateToday}`)
-    document.getElementById('startDate').setAttribute('max', `${this.dateMax}`)
-    document.getElementById('endDate').setAttribute('min', `${this.dateToday}`)
-    document.getElementById('endDate').setAttribute('max', `${this.dateMax}`)
-
+    this.optionsContainer = document.getElementById('selected_destination');
+    this.startDateFiled = document.getElementById('startDate');
+    this.endDateField = document.getElementById('endDate');
+    this.startDateFiled.setAttribute('value', `${this.dateToday}`)
+    this.endDateField.setAttribute('value', `${this.dateTomorrow}`)
+    this.startDateFiled.setAttribute('min', `${this.dateToday}`)
+    this.startDateFiled.setAttribute('max', `${this.dateMax}`)
+    this.endDateField.setAttribute('min', `${this.dateTomorrow}`)
+    this.endDateField.setAttribute('max', `${this.dateMax}`)
+    document.getElementById('selected').addEventListener('click', function () {
+      // .classList.toggle('clicked');
+      console.log('yes')
+      Array.from(document.querySelectorAll('#start > .cities-container__item')).forEach(element => {
+        element.classList.toggle('clicked')
+      });
+    })
   }
 
-  saveBasicInformation(start, destination, startDate, endDate) {
+  getDestinations(start) {
+    this.options = document.getElementById('options');
+    document.getElementById('selected_destination').innerHTML = 'Wybierz miasto';
     localStorage.clear();
-    localStorage.setItem('start', start);
-    localStorage.setItem('destination', destination);
+    localStorage.setItem('startCity', start);
+    for (let i = 0; i < flightConnections.length; i++) {
+      if (flightConnections[i].id == start) {
+        document.getElementById('selected').innerText = `${flightConnections[i].start}`
+        for (let j = 0; j < flightConnections[i].destinations.length; j++) {
+          const input = document.createElement('input');
+          const label = document.createElement('label');
+          const div = document.createElement('div');
+          div.classList.add('cities-container__item'); // klasa
+          div.addEventListener('click', function () {
+            document.getElementById('selected_destination').innerText = flightConnections[i].destinations[j].name;
+            localStorage.setItem('endCity', flightConnections[i].destinations[j].id);
+          });
+          this.options.appendChild(div);
+          div.appendChild(input);
+          div.appendChild(label);
+          input.setAttribute('type', 'radio');
+          input.setAttribute('id', `${flightConnections[i].destinations[j].id}_destination`)
+          input.setAttribute('name', 'destinationCity');
+          label.textContent = `${flightConnections[i].destinations[j].name} `;
+          label.setAttribute('for', `${flightConnections[i].destinations[j].id}_destination`)
+        }
+      }
+    }
+  }
+
+  lessAdultPassengers() { this.adultPassengers <= 1 ? alert("Nieprawidłowa ilość!") : this.adultPassengers = this.adultPassengers - 1 }
+  moreAdultPassengers() {
+    (this.adultPassengers >= 9) || ((this.adultPassengers + this.childrenPassengers + this.babiesPassengers) >= 9) ?
+      alert("Osiągnięto maksymalną ilość osób") : this.adultPassengers = this.adultPassengers + 1
+  }
+
+  lessChildrenPassengers() { this.childrenPassengers <= 0 ? alert("Nieprawidłowa ilość!") : this.childrenPassengers = this.childrenPassengers - 1 }
+  moreChildrenPassengers() {
+    (this.childrenPassengers >= 9) || ((this.adultPassengers + this.childrenPassengers + this.babiesPassengers) >= 9) ?
+      alert("Osiągnięto maksymalną ilość osób") : this.childrenPassengers = this.childrenPassengers + 1
+  }
+
+  lessBabiesPassengers() { this.babiesPassengers <= 0 ? alert("Nieprawidłowa ilość!") : this.babiesPassengers = this.babiesPassengers - 1 }
+  moreBabiesPassengers() {
+    (this.babiesPassengers >= 9) || ((this.adultPassengers + this.childrenPassengers + this.babiesPassengers) >= 9) ?
+      alert("Osiągnięto maksymalną ilość osób") : this.babiesPassengers = this.babiesPassengers + 1
+  }
+
+  saveBasicInformation(startDate, endDate) {
     localStorage.setItem('startDate', startDate);
     localStorage.setItem('endDate', endDate);
     localStorage.setItem('children', this.childrenPassengers.toString());
     localStorage.setItem('babies', this.babiesPassengers.toString());
     localStorage.setItem('adults', this.adultPassengers.toString());
-  }
-
-
-  lessAdultPassengers() {
-    if (this.adultPassengers <= 1) {
-      alert("Nieprawidłowa ilość!");
-    } else {
-      this.adultPassengers = this.adultPassengers - 1;
-    }
-  }
-
-  moreAdultPassengers() {
-    if ((this.adultPassengers >= 9) || ((this.adultPassengers + this.childrenPassengers + this.babiesPassengers) >= 9)) {
-      alert("Osiągnięto maksymalną ilość osób");
-    } else {
-      this.adultPassengers = this.adultPassengers + 1;
-    }
-  }
-
-  lessChildrenPassengers() {
-    if (this.childrenPassengers <= 0) {
-      alert("Nieprawidłowa ilość!");
-    } else {
-      this.childrenPassengers = this.childrenPassengers - 1;
-    }
-  }
-
-  moreChildrenPassengers() {
-    if ((this.childrenPassengers >= 9) || ((this.adultPassengers + this.childrenPassengers + this.babiesPassengers) >= 9)) {
-      alert("Osiągnięto maksymalną ilość osób");
-    } else {
-      this.childrenPassengers = this.childrenPassengers + 1;
-    }
-  }
-
-  lessBabiesPassengers() {
-    if (this.babiesPassengers <= 0) {
-      alert("Nieprawidłowa ilość!");
-    } else {
-      this.babiesPassengers = this.babiesPassengers - 1;
-    }
-  }
-
-  moreBabiesPassengers() {
-    if ((this.babiesPassengers >= 9) || ((this.adultPassengers + this.childrenPassengers + this.babiesPassengers) >= 9)) {
-      alert("Osiągnięto maksymalną ilość osób");
-    } else {
-      this.babiesPassengers = this.babiesPassengers + 1;
-    }
   }
 
 
