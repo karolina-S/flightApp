@@ -6,10 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./summary-page.component.scss']
 })
 export class SummaryPageComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }

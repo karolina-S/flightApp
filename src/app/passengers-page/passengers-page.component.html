@@ -18,20 +18,20 @@
 
   <p>Dane kontaktowe</p>
   <label for="emailAddress">Adres e-mail</label>
-  <input type="text" #emailAddress required>
+  <input type="text" #emailAddress id="emailAddress">
   <label for="phoneNumber">Nr telefonu</label>
-  <input type="text" #phoneNumber required>
+  <input type="text" #phoneNumber id="phoneNumber">
 
-  <input type="checkbox" id="rulesAgreement" name="yes" value="agreed" checked>
+  <input type="checkbox" id="rulesAgreement" name="yes" value="agreed" #rulesAgreement checked>
   <label for="rulesAgreement">Zapoznałem/-am się i akceptuję Warunki Taryfy (w szczególności warunki zmiany/zwrotu
     biletu), Regulamin Świadczenia Usług Drogą Elektroniczną, Politykę Prywatności oraz Warunki przewozu.*</label><br>
-
 </div>
 
-<a routerLink="/seat-choice"><button>Kontynuuj
-    🡺</button></a>
-<!-- <a routerLink="/seat-choice"><button (click)="savePersonalData()">Kontynuuj
-      🡺</button></a> -->
+<a routerLink="/seat-choice">
+  <button>Kontynuuj
+    🡺</button>
+</a>
 
+<!-- (click)="savePersonalData(emailAddress.value, phoneNumber.value, rulesAgreement.checked)" -->
 <app-summary-box></app-summary-box>
 <router-outlet></router-outlet>

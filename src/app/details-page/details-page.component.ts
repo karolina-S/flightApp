@@ -6,12 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./details-page.component.scss']
 })
 export class DetailsPageComponent implements OnInit {
-  // public startInput;
-  // public startDate;
-  // public endDate;
-  // public adultsNumber;
-  // public childrenNumber;
-  // public babiesNumber;
   public luggage10kg = 0;
   public luggage20kg = 0;
   public luggage32kg = 0;
@@ -19,24 +13,15 @@ export class DetailsPageComponent implements OnInit {
   public destinationCity = localStorage.getItem('destination');
   public startDate = localStorage.getItem('startDate').split('-').reverse().join('.');
   public endDate = localStorage.getItem('endDate').split('-').reverse().join('.');
+  public optionClicked = false;
+  public classClicked = false;
 
   constructor() {
 
   }
 
   ngOnInit(): void {
-    // this.destinationFill();
   }
-
-  // Autouzupełnianie inputów nazwami krajów
-  // destinationFill() {
-  //   this.startInput = document.getElementById('start');
-  //   this.startInput.setAttribute('value', localStorage.getItem('start'));
-  //   this.startInput = document.getElementById('destination');
-  //   this.startInput.setAttribute('value', localStorage.getItem('destination'));
-  //   this.startDate = localStorage.getItem('startDate');
-  //   this.endDate = localStorage.getItem('endDate');
-  // }
 
   // Adding and removing luggage
   lessLuggage10() {
@@ -96,11 +81,23 @@ export class DetailsPageComponent implements OnInit {
     document.getElementById('plus').style.boxShadow = '';
     document.getElementById('premium').style.boxShadow = '';
     document.getElementById(option).style.boxShadow = "0px 0px 9px 0px grey";
+    this.optionClicked = true;
+    this.optionClicked && this.classClicked ? document.getElementById('button').removeAttribute('disabled') : null;
   }
 
   saveLuggage() {
     localStorage.setItem('luggage10', this.luggage10kg.toString());
     localStorage.setItem('luggage20', this.luggage20kg.toString());
     localStorage.setItem('luggage32', this.luggage32kg.toString());
+  }
+
+  saveClass(classOption) {
+    localStorage.setItem('class', classOption);
+    document.getElementById('economy').style.boxShadow = '';
+    document.getElementById('premiumeconomy').style.boxShadow = '';
+    document.getElementById('business').style.boxShadow = '';
+    document.getElementById(classOption).style.boxShadow = "0px 0px 9px 0px grey";
+    this.classClicked = true;
+    this.optionClicked && this.classClicked ? document.getElementById('button').removeAttribute('disabled') : null;
   }
 }

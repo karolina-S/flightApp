@@ -1,52 +1,53 @@
 <div class="form">
   <h1 class="component-title">Znajdź lot dla siebie</h1>
-  <div class="form__container cities-container">
-    <h2 class="form__label">Miejsce wylotu</h2>
-    <div id="start" class="cities-container__group">
-      <p class="cities-container__item-selected" id="selected">
-        Wybierz miasto
-      </p>
-      <div class="cities-container__item" (click)="getDestinations(warsaw.id)">
-        <input type="radio" id="warsaw" name="startCity" #warsaw>
-        <label for="warsaw">Warszawa</label>
+
+  <div class="form__container">
+    <div id="start" class="cities-container">
+      <div class="cities-container__item-selected" id="selected">Miasto wylotu</div>
+      <div class="cities-container__item-group" id="citiesContainer">
+        <div class="cities-container__item" (click)="getDestinations(warsaw.id)">
+          <input type="radio" class="radio" id="warsaw" name="startCity" #warsaw>
+          <label for="warsaw">Warszawa</label>
+        </div>
+        <div class="cities-container__item" (click)="getDestinations(poznan.id)">
+          <input type="radio" class="radio" id="poznan" name="startCity" #poznan>
+          <label for="poznan">Poznań</label></div>
+        <div class="cities-container__item" (click)="getDestinations(katowice.id)">
+          <input type="radio" class="radio" id="katowice" name="startCity" #katowice>
+          <label for="katowice">Katowice</label></div>
+        <div class="cities-container__item" (click)="getDestinations(dubrovnik.id)">
+          <input type="radio" class="radio" id="dubrovnik" name="startCity" #dubrovnik>
+          <label for="dubrovnik">Dubrovnik</label></div>
+        <div class="cities-container__item" (click)="getDestinations(prague.id)">
+          <input type="radio" class="radio" id="prague" name="startCity" #prague>
+          <label for="prague">Praga</label></div>
+        <div class="cities-container__item" (click)="getDestinations(milan.id)">
+          <input type="radio" class="radio" id="milan" name="startCity" #milan>
+          <label for="milan">Mediolan</label></div>
+        <div class="cities-container__item" (click)="getDestinations(helsinki.id)">
+          <input type="radio" class="radio" id="helsinki" name="startCity" #helsinki>
+          <label for="helsinki">Helsinki</label></div>
+        <div class="cities-container__item" (click)="getDestinations(cannes.id)">
+          <input type="radio" class="radio" id="cannes" name="startCity" #cannes>
+          <label for="cannes">Cannes</label></div>
+        <div class="cities-container__item" (click)="getDestinations(toronto.id)">
+          <input type="radio" class="radio" id="toronto" name="startCity" #toronto>
+          <label for="toronto">Toronto</label></div>
+        <div class="cities-container__item" (click)="getDestinations(newyork.id)">
+          <input type="radio" class="radio" id="newyork" name="startCity" #newyork>
+          <label for="newyork">Nowy Jork</label></div>
+        <div class="cities-container__item" (click)="getDestinations(losangeles.id)">
+          <input type="radio" class="radio" id="losangeles" name="startCity" #losangeles>
+          <label for="losangeles">Los Angeles</label></div>
+        <div class="cities-container__item" (click)="getDestinations(nairobi.id)">
+          <input type="radio" class="radio" id="nairobi" name="startCity" #nairobi>
+          <label for="nairobi">Nairobi</label></div>
       </div>
-      <div class="cities-container__item" (click)="getDestinations(poznan.id)">
-        <input type="radio" id="poznan" name="startCity" #poznan>
-        <label for="poznan">Poznań</label></div>
-      <div class="cities-container__item" (click)="getDestinations(katowice.id)">
-        <input type="radio" id="katowice" name="startCity" #katowice>
-        <label for="katowice">Katowice</label></div>
-      <div class="cities-container__item" (click)="getDestinations(dubrovnik.id)">
-        <input type="radio" id="dubrovnik" name="startCity" #dubrovnik>
-        <label for="dubrovnik">Dubrovnik</label></div>
-      <div class="cities-container__item" (click)="getDestinations(prague.id)">
-        <input type="radio" id="prague" name="startCity" #prague>
-        <label for="prague">Praga</label></div>
-      <div class="cities-container__item" (click)="getDestinations(milan.id)">
-        <input type="radio" id="milan" name="startCity" #milan>
-        <label for="milan">Mediolan</label></div>
-      <div class="cities-container__item" (click)="getDestinations(helsinki.id)">
-        <input type="radio" id="helsinki" name="startCity" #helsinki>
-        <label for="helsinki">Helsinki</label></div>
-      <div class="cities-container__item" (click)="getDestinations(cannes.id)">
-        <input type="radio" id="cannes" name="startCity" #cannes>
-        <label for="cannes">Cannes</label></div>
-      <div class="cities-container__item" (click)="getDestinations(toronto.id)">
-        <input type="radio" id="toronto" name="startCity" #toronto>
-        <label for="toronto">Toronto</label></div>
-      <div class="cities-container__item" (click)="getDestinations(newyork.id)">
-        <input type="radio" id="newyork" name="startCity" #newyork>
-        <label for="newyork">Nowy Jork</label></div>
-      <div class="cities-container__item" (click)="getDestinations(losangeles.id)">
-        <input type="radio" id="losangeles" name="startCity" #losangeles>
-        <label for="losangeles">Los Angeles</label></div>
-      <div class="cities-container__item" (click)="getDestinations(nairobi.id)">
-        <input type="radio" id="nairobi" name="startCity" #nairobi>
-        <label for="nairobi">Nairobi</label></div>
     </div>
-    <h2 class="form__label">Cel podróży</h2>
-    <div id="options" class="cities-container__group">
-      <p class="cities-container__item-selected" id="selected_destination">Wybierz miasto</p>
+  </div>
+  <div class="form__container">
+    <div id="options" class="cities-container">
+      <div class=" cities-container__item-selected" id="destinationSelected">Wybierz miasto wylotu</div>
     </div>
   </div>
 
@@ -75,7 +76,7 @@
 
 </div>
 <a routerLink="/details-page">
-  <button (click)="saveBasicInformation(startDate.value, endDate.value)">Lecimy
+  <button (click)="saveBasicInformation(startDate.value, endDate.value)" id="button" disabled>Lecimy
     ✈</button>
 </a>
 

@@ -1,0 +1,6 @@
+[0624/194644.838:ERROR:process_reader_win.cc(151)] SuspendThread: Odmowa dostêpu. (0x5)
+[0624/194644.841:ERROR:exception_snapshot_win.cc(98)] thread ID 12460 not found in process
+[0624/194644.842:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: Podjêto próbê uzyskania dostêpu do procesu koñcz¹cego dzia³anie. (0xc000010a)
+[0624/195442.522:ERROR:process_info.cc(329)] VirtualQueryEx: Odmowa dostêpu. (0x5)
+[0624/195442.522:ERROR:process_info.cc(556)] ReadMemoryInfo failed
+[0624/195442.522:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: Podjêto próbê uzyskania dostêpu do procesu koñcz¹cego dzia³anie. (0xc000010a)

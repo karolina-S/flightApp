@@ -32,6 +32,12 @@ export class MainPageComponent implements OnInit {
   public childrenPassengers = 0;
   public babiesPassengers = 0;
 
+  public originSelected;
+  public destinationSelected;
+  public originOptionsContainer;
+  public destinationOptionsContainer;
+
+
   constructor() {
   }
 
@@ -45,18 +51,30 @@ export class MainPageComponent implements OnInit {
     this.startDateFiled.setAttribute('max', `${this.dateMax}`)
     this.endDateField.setAttribute('min', `${this.dateTomorrow}`)
     this.endDateField.setAttribute('max', `${this.dateMax}`)
-    document.getElementById('selected').addEventListener('click', function () {
-      // .classList.toggle('clicked');
-      console.log('yes')
-      Array.from(document.querySelectorAll('#start > .cities-container__item')).forEach(element => {
-        element.classList.toggle('clicked')
-      });
-    })
+
+    this.originSelected = document.getElementById('selected');
+    this.originOptionsContainer = document.getElementById('citiesContainer');
+
+
+    this.originSelected.addEventListener('click', () => {
+      this.originOptionsContainer.classList.toggle('active');
+    });
   }
 
   getDestinations(start) {
+    this.originOptionsContainer.classList.toggle('active');
     this.options = document.getElementById('options');
-    document.getElementById('selected_destination').innerHTML = 'Wybierz miasto';
+    this.options.innerHTML = '<div class="cities-container__item-selected" id="destinationSelected">Cel podróży</div>';
+    this.destinationSelected = document.getElementById('destinationSelected');
+    this.destinationSelected.addEventListener('click', () => {
+      document.getElementById('optionsContainer').classList.toggle('active');
+      console.log('działa')
+      console.log(this)
+    });
+    const divGroup = document.createElement('div');
+    divGroup.setAttribute('id', 'optionsContainer');
+    divGroup.classList.add('cities-container__item-group')
+    this.options.appendChild(divGroup);
     localStorage.clear();
     localStorage.setItem('startCity', start);
     for (let i = 0; i < flightConnections.length; i++) {
@@ -68,14 +86,17 @@ export class MainPageComponent implements OnInit {
           const div = document.createElement('div');
           div.classList.add('cities-container__item'); // klasa
           div.addEventListener('click', function () {
-            document.getElementById('selected_destination').innerText = flightConnections[i].destinations[j].name;
+            document.getElementById('destinationSelected').innerText = flightConnections[i].destinations[j].name;
             localStorage.setItem('endCity', flightConnections[i].destinations[j].id);
+            document.getElementById('button').removeAttribute('disabled');
+            document.getElementById('optionsContainer').classList.remove('active');
           });
-          this.options.appendChild(div);
+          divGroup.appendChild(div);
           div.appendChild(input);
           div.appendChild(label);
           input.setAttribute('type', 'radio');
           input.setAttribute('id', `${flightConnections[i].destinations[j].id}_destination`)
+          input.classList.add('radio');
           input.setAttribute('name', 'destinationCity');
           label.textContent = `${flightConnections[i].destinations[j].name} `;
           label.setAttribute('for', `${flightConnections[i].destinations[j].id}_destination`)

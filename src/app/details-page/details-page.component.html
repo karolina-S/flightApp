@@ -32,15 +32,6 @@
     </div>
   </div>
 
-
-  <!-- Koniec informacji o locie -->
-
-  <!-- 
-<input type="text" value="" id="start" disabled>
-<input type="text" value="" id="destination" disabled>
-<input type="text" [value]="startDate.split('-').reverse().join('.')" id="startDate" disabled>
-<input type="text" [value]="endDate.split('-').reverse().join('.')" id="endDate" disabled> -->
-
   <!-- Taryfy -->
   <h2 class="deatils-section-title">Wybierz wariant podróży</h2>
   <div class="wrapper">
@@ -98,6 +89,24 @@
   </div>
   <!-- Koniec taryf -->
 
+  <!-- Klasy -->
+  <h2 class="deatils-section-title">Wybierz wariant podróży</h2>
+  <div class="class wrapper">
+    <div class="class__item" #economy id="economy">
+      <h3>Economy</h3>
+      <button class="class__btn" (click)="saveClass(economy.id)">Wybierz</button>
+    </div>
+    <div class="class__item" #premiumeconomy id="premiumeconomy">
+      <h3>Premium economy</h3>
+      <button class="class__btn" (click)="saveClass(premiumeconomy.id)">Wybierz</button>
+    </div>
+    <div class="class__item" #business id="business">
+      <h3>Business</h3>
+      <button class="class__btn" (click)="saveClass(business.id)">Wybierz</button>
+    </div>
+  </div>
+  <!-- Koniec klas -->
+
   <!-- Usługi dodatkowe -->
   <h2 class="deatils-section-title">Dodatkowy bagaż</h2>
   <div class="luggage-wrapper">
@@ -129,7 +138,8 @@
   <!-- Koniec usług dodatkowych -->
 
 
-  <a routerLink="/login-page"><button class="btn-summarybox" (click)="saveLuggage()">Kontynuuj 🡺</button></a>
+  <a routerLink="/login-page"><button class="btn-summarybox" (click)="saveLuggage()" id="button" disabled>Kontynuuj
+      🡺</button></a>
 </div>
 <app-summary-box></app-summary-box>
 
