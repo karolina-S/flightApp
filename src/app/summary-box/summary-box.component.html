@@ -1,37 +1,29 @@
 <div class="summary-box">
   <h2 class="summary-box__title">Twoja rezerwacja</h2>
-  <div class="summary-box__datesAndCities">
-    <p class="summary-box__date">{{ startDate }}</p>
-    <p class="summary-box__hour-city">{{ startTimeOrigin }} {{ originCity }}</p>
-    <p class="summary-box__hour-city">{{ endTimeDestination }} {{ destinationCity }}</p>
-
-    <p class="summary-box__date">{{ endDate }}</p>
-    <p class="summary-box__hour-city">{{ startTimeDestination }} {{ destinationCity }}</p>
-    <p class="summary-box__hour-city">{{ endTimeOrigin }} {{ originCity }}</p>
+  <div class="summary-box__container">
+    <p class="summary-box__date"><i class="fas fa-plane"></i>{{ startDate }}</p>
+    <p class="summary-box__hour-city">{{ startTimeThere }} {{ originCity }}</p>
+    <p class="summary-box__hour-city">{{ endTimeThere }} {{ destinationCity }}</p>
   </div>
-  <div class="summary-box__passengers closed" id="passengersField">
-    <p>Liczba pasażerów: {{ total }}</p>
-
+  <div class="summary-box__container">
+    <p class="summary-box__date"><i class="fas fa-plane second-plane"></i>{{ endDate }}</p>
+    <p class="summary-box__hour-city">{{ startTimeBack }} {{ destinationCity }}</p>
+    <p class="summary-box__hour-city">{{ endTimeBack }} {{ originCity }}</p>
+  </div>
+  <div class="summary-box__container closed" id="passengersField">
+    <p class="summary-box__label"><i class="fas fa-users"></i> Liczba pasażerów: {{ total }}</p>
     <p>{{ adultsNumber }} x Dorosły {{ adultsPriceTotal }}</p>
     <p>{{ childrenNumber }} x Dziecko {{ childrenPriceTotal }}</p>
     <p>{{ babiesNumber }} x Niemowlę {{ babiesPriceTotal }}</p>
-    <p id="option-field">Wybrana taryfa: {{ travelOptionChosen }}</p>
   </div>
-  <div class="summary-box__additionalInformation closed" id="informationField">
-    <p>Usługi Dodatkowe</p>
-
-    <p>Dodatkowy bagaż</p>
+  <div class="summary-box__container closed" id="informationField">
+    <p class="summary-box__label"><i class="fas fa-suitcase"></i> Dodatkowy bagaż</p>
     <p>{{ luggage10 }} x bagaż do 10 kg</p>
     <p>{{ luggage20 }} x bagaż do 20 kg</p>
     <p>{{ luggage32 }} x bagaż do 32 kg</p>
     <p>{{ additionalLuggagePrice }}</p>
   </div>
-  <div class="summary-box__seatsChosen closed" id="seatsField">
-    <p>Wybrane miejsca</p>
-    <p>{{ seatsChosen }}</p>
-    <p>{{ seatsPrice }}</p>
-  </div>
-  <div class="summary-box__totalPrice closed" id="totalField">
+  <div class="summary-box__container closed" id="totalField">
     <p>DO ZAPŁATY</p>
     <p>{{ totalPrice }}</p>
     <p id="currencyField">PLN</p>

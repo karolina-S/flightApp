@@ -1,86 +1,129 @@
 <app-navigation-bar></app-navigation-bar>
 <div class="details-page-wrapper">
-  <h1 class="page-title">Twój lot</h1>
-  <!-- ✈ -->
+  <h1 class="component-title">Twój lot</h1>
   <!-- Informacje o locie -->
   <div class="flight-information-wrapper">
     <div class="flight-information">
       <div class="flight-information__details">
-        <h2> {{ originCity }} </h2>
         <p>{{ startDate }}</p>
-        <p>19:30</p>
+        <h2 class="flight-information__airportAbbr">{{ originCity }}</h2>
+        <p>{{ startTimeThere }}</p>
       </div>
       <div class="arrow-symbol">⟶</div>
       <div class="flight-information__details">
-        <h2>{{ destinationCity }}</h2>
-        <p>55 minut</p>
-        <p>20:25</p>
+        <p>{{ startDate }}</p>
+        <h2 class="flight-information__airportAbbr">{{ destinationCity }}</h2>
+        <p>{{ endTimeThere }}</p>
       </div>
     </div>
     <div class="flight-information">
       <div class="flight-information__details">
-        <h2>{{ destinationCity }}</h2>
         <p>{{ endDate }}</p>
-        <p>10:45</p>
+        <h2 class="flight-information__airportAbbr">{{ destinationCity }}</h2>
+        <p>{{ startTimeBack }}</p>
       </div>
       <div class="arrow-symbol">⟶</div>
       <div class="flight-information__details">
-        <h2> {{ originCity }} </h2>
-        <p>55 minut</p>
-        <p>12:15</p>
+        <p>{{ endDate }}</p>
+        <h2 class="flight-information__airportAbbr">{{ originCity }}</h2>
+        <p>{{ endTimeBack }}</p>
       </div>
     </div>
   </div>
+  <!-- Klasy -->
+  <h2 class="deatils-section-title">Wybierz klasę podróży</h2>
+  <div class="class">
+    <div class="class__item" #economy id="economy">
+      <button class="class__btn" id="economyButton" (click)="saveClass(economy.id)">Economy</button>
+    </div>
+    <div class=" class__item" #premiumeconomy id="premiumeconomy">
+      <button class="class__btn" id="premiumeconomyButton" (click)="saveClass(premiumeconomy.id)">Premium
+        economy</button>
+    </div>
+    <div class="class__item" #business id="business">
+      <button class="class__btn" id="businessButton" (click)="saveClass(business.id)">Business</button>
+    </div>
+  </div>
+  <!-- Koniec klas -->
 
   <!-- Taryfy -->
   <h2 class="deatils-section-title">Wybierz wariant podróży</h2>
   <div class="wrapper">
     <div class="travel-option" #basic id="basic">
-      <h2>Basic</h2>
+      <h2 class="travel-option__title">Basic</h2>
       <div class="travel-option__conditions">
-        <ul>
-          <li>Bezpłatny bagaż podręczny (40x30x20) w kabinie, umieszczony pod fotelem</li>
-          <li>Odprawa online do 2 dni przed odlotem</li>
+        <ul class="travel-option__conditions-list">
+          <li class="travel-option__conditions-list-item"><i
+              class="fas fa-shopping-bag travel-option__conditions-list-icon"></i> Bezpłatny bagaż
+            podręczny (40x30x20) w kabinie, umieszczony
+            pod fotelem</li>
+          <li class="travel-option__conditions-list-item"><i
+              class="fas fa-globe travel-option__conditions-list-icon"></i> Odprawa online do 2 dni przed
+            odlotem</li>
         </ul>
       </div>
-      <div>
+      <div class="travel-option__additional">
         <p>Zmiana rezerwacji za dopłatą</p>
         <p>Brak możliwości zwrotu biletu</p>
       </div>
       <button class="travel-option__btn" (click)="saveTravelOption(basic.id)">Wybierz</button>
     </div>
     <div class="travel-option" #plus id="plus">
-      <h2>Plus</h2>
+      <h2 class="travel-option__title">Plus</h2>
       <div class="travel-option__conditions">
-        <ul>
-          <li>Bezpłatny bagaż podręczny (40x30x20) w kabinie, umieszczony pod fotelem</li>
-          <li>Podręczna walizka na kółkach (55x40x23) w kabinie</li>
-          <li>20-kg bagaż rejestrowany</li>
-          <li>Bezpłatny wybór miejsc</li>
-          <li>Pierwszeństwo wejścia na pokład</li>
-          <li>Odprawa online do 30 dni przed odlotem</li>
+        <ul class="travel-option__conditions-list">
+          <li class="travel-option__conditions-list-item"><i
+              class="fas fa-shopping-bag travel-option__conditions-list-icon"></i> Bezpłatny bagaż
+            podręczny (40x30x20) w kabinie, umieszczony
+            pod fotelem</li>
+          <li class="travel-option__conditions-list-item"><i
+              class="fas fa-suitcase-rolling travel-option__conditions-list-icon"></i> Podręczna walizka na
+            kółkach (55x40x23) w kabinie</li>
+          <li class="travel-option__conditions-list-item"> <i
+              class="fas fa-luggage-cart travel-option__conditions-list-icon"></i>20-kg bagaż rejestrowany
+          </li>
+          <li class="travel-option__conditions-list-item"><i
+              class="fas fa-map-pin travel-option__conditions-list-icon"></i> Bezpłatny wybór miejsc</li>
+          <li class="travel-option__conditions-list-item"><i
+              class="fas fa-medal travel-option__conditions-list-icon"></i> Pierwszeństwo wejścia na pokład
+          </li>
+          <li class="travel-option__conditions-list-item"><i
+              class="fas fa-globe travel-option__conditions-list-icon"></i> Odprawa online do 30 dni przed
+            odlotem</li>
         </ul>
       </div>
-      <div>
+      <div class="travel-option__additional">
         <p>Zmiana rezerwacji za dopłatą</p>
         <p>Brak możliwości zwrotu biletu</p>
       </div>
       <button class="travel-option__btn" (click)="saveTravelOption(plus.id)">Wybierz</button>
     </div>
     <div class="travel-option" #premium id="premium">
-      <h2>Premium</h2>
+      <h2 class="travel-option__title">Premium</h2>
       <div class="travel-option__conditions">
-        <ul>
-          <li>Bezpłatny bagaż podręczny (40x30x20) w kabinie, umieszczony pod fotelem</li>
-          <li>Podręczna walizka na kółkach (55x40x23) w kabinie</li>
-          <li>32-kg bagaż rejestrowany</li>
-          <li>Bezpłatny wybór miejsc</li>
-          <li>Informacje o locie</li>
-          <li>Pierwszeństwo wejścia na pokład</li>
-          <li>Automatyczna odprawa</li>
+        <ul class="travel-option__conditions-list">
+          <li class="travel-option__conditions-list-item"><i
+              class="fas fa-shopping-bag travel-option__conditions-list-icon"></i> Bezpłatny bagaż
+            podręczny (40x30x20) w kabinie, umieszczony
+            pod fotelem</li>
+          <li class="travel-option__conditions-list-item"><i
+              class="fas fa-suitcase-rolling travel-option__conditions-list-icon"></i> Podręczna walizka na
+            kółkach (55x40x23) w kabinie</li>
+          <li class="travel-option__conditions-list-item"><i
+              class="fas fa-luggage-cart travel-option__conditions-list-icon"></i> 32-kg bagaż rejestrowany
+          </li>
+          <li class="travel-option__conditions-list-item"><i
+              class="fas fa-map-pin travel-option__conditions-list-icon"></i> Bezpłatny wybór miejsc</li>
+          <li class="travel-option__conditions-list-item"><i
+              class="fas fa-info-circle travel-option__conditions-list-icon"></i> Informacje o locie</li>
+          <li class="travel-option__conditions-list-item"><i
+              class="fas fa-medal travel-option__conditions-list-icon"></i> Pierwszeństwo wejścia na pokład
+          </li>
+          <li class="travel-option__conditions-list-item"><i
+              class="fas fa-check-circle travel-option__conditions-list-icon"></i> Automatyczna odprawa</li>
         </ul>
       </div>
-      <div>
+      <div class="travel-option__additional">
         <p>Darmowa zmiana rezerwacji</p>
         <p>Zwrot biletu z odliczeniem opłat</p>
       </div>
@@ -89,49 +132,31 @@
   </div>
   <!-- Koniec taryf -->
 
-  <!-- Klasy -->
-  <h2 class="deatils-section-title">Wybierz wariant podróży</h2>
-  <div class="class wrapper">
-    <div class="class__item" #economy id="economy">
-      <h3>Economy</h3>
-      <button class="class__btn" (click)="saveClass(economy.id)">Wybierz</button>
-    </div>
-    <div class="class__item" #premiumeconomy id="premiumeconomy">
-      <h3>Premium economy</h3>
-      <button class="class__btn" (click)="saveClass(premiumeconomy.id)">Wybierz</button>
-    </div>
-    <div class="class__item" #business id="business">
-      <h3>Business</h3>
-      <button class="class__btn" (click)="saveClass(business.id)">Wybierz</button>
-    </div>
-  </div>
-  <!-- Koniec klas -->
-
   <!-- Usługi dodatkowe -->
   <h2 class="deatils-section-title">Dodatkowy bagaż</h2>
   <div class="luggage-wrapper">
     <div class="luggage-wrapper__item">
-      <p>do 10 kg</p>
+      <p class="luggage-name">do 10 kg</p>
       <div class="luggage-wrapper__counter">
-        <button (click)="lessLuggage10()">-</button>
+        <button (click)="lessLuggage10()" class="minusPlusButton">-</button>
         <p class="luggage-counter" id="luggage-10kg">{{ luggage10kg }}</p>
-        <button (click)="moreLuggage10()">+</button>
+        <button (click)="moreLuggage10()" class="minusPlusButton">+</button>
       </div>
     </div>
     <div class="luggage-wrapper__item">
-      <p>do 20 kg</p>
+      <p class="luggage-name">do 20 kg</p>
       <div class="luggage-wrapper__counter">
-        <button (click)="lessLuggage20()">-</button>
+        <button (click)="lessLuggage20()" class="minusPlusButton">-</button>
         <p class="luggage-counter" id="luggage-20kg">{{ luggage20kg }}</p>
-        <button (click)="moreLuggage20()">+</button>
+        <button (click)="moreLuggage20()" class="minusPlusButton">+</button>
       </div>
     </div>
     <div class="luggage-wrapper__item">
-      <p>do 32 kg</p>
+      <p class="luggage-name">do 32 kg</p>
       <div class="luggage-wrapper__counter">
-        <button (click)="lessLuggage32()">-</button>
+        <button (click)="lessLuggage32()" class="minusPlusButton">-</button>
         <p class="luggage-counter" id="luggage-32kg">{{ luggage32kg }}</p>
-        <button (click)="moreLuggage32()">+</button>
+        <button (click)="moreLuggage32()" class="minusPlusButton">+</button>
       </div>
     </div>
   </div>

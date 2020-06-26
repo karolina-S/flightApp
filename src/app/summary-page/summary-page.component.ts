@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./summary-page.component.scss']
 })
 export class SummaryPageComponent implements OnInit {
+
+  public name1 = localStorage.getItem('firstName_user1');
   constructor() { }
 
   ngOnInit(): void {
-
+    document.title = "Podsumowanie | Bon Voyage | Zarezerwuj swój lot!"
   }
-
 }

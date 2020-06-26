@@ -1,114 +1,12 @@
-// .dissappear {
-//   display: none;
-// }
+@import '../variables.scss';
+@import '../general.scss';
 
-// .container {
-//   display: flex;
-// }
-
-// .select-box {
-//   margin-top: 100px;
-//   padding: 32px;
-//   display: flex;
-//   width: 400px;
-//   flex-direction: column;
-// }
-
-// .options-container {
-//   background-color: #807a7a;
-//   color: #fff;
-//   width: 100%;
-//   opacity: 0;
-//   border-radius: 8px;
-//   max-height: 200px;
-//   pointer-events: none;
-
-//   &::-webkit-scrollbar {
-//     width: 10px;
-//     background-color: #F5F5F5;
-//   }
-
-//   &::-webkit-scrollbar-track {
-//     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-//     box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-//     background-color: #F5F5F5;
-//     border-radius: 0 8px 8px 0;
-//   }
-
-//   &::-webkit-scrollbar-thumb {
-//     background-color: #2286A9;
-//     background-image: -webkit-linear-gradient(45deg,
-//         rgba(255, 255, 255, .2) 25%,
-//         transparent 25%,
-//         transparent 50%,
-//         rgba(255, 255, 255, .2) 50%,
-//         rgba(255, 255, 255, .2) 75%,
-//         transparent 75%,
-//         transparent);
-//     border-radius: 0 8px 8px 0;
-//   }
-// }
-
-// .selected {
-//   background-color: #807a7a;
-//   border-radius: 8px;
-//   margin-bottom: 8px;
-//   color: #fff;
-// }
-
-// .options-container.active {
-//   max-height: 200px;
-//   opacity: 1;
-//   overflow-y: scroll;
-//   pointer-events: auto;
-// }
-
-// .option,
-// .selected {
-//   padding: 12px 24px;
-//   cursor: pointer;
-// }
-
-// .option:hover {
-//   background-color: #2286a9;
-// }
-
-// .select-box label {
-//   cursor: pointer;
-// }
-
-// .option .radio {
-//   display: none;
-// }
-
-// .cities-container__item label,
-// .cities-container__item {
-//   cursor: pointer;
-// }
-
-
-// .cities-container {
-//   display: flex;
-
-// }
-
-// .cities-container__group {
-//   display: flex;
-//   flex-direction: column;
-// }
-
-// .cities-container__item,
-// .cities-container__item-selected {
-//   width: 150px;
-//   background-color: rgb(78, 78, 78);
-//   color: white;
-//   border: 1px solid black;
-//   cursor: pointer;
-// }
-
-// // // // // // // // // // //
 .dissappear {
   display: none;
+}
+
+label {
+  cursor: pointer;
 }
 
 .form-container {
@@ -121,16 +19,14 @@
   width: 400px;
   flex-direction: column;
 
-  &label {
-    cursor: pointer;
-  }
-
   &__item {
     padding: 12px 24px;
     cursor: pointer;
+    transition: .5s;
 
     &:hover {
-      background-color: #414b57;
+      background-color: #2286a9;
+      color: #fff;
     }
 
     &>.radio {
@@ -139,11 +35,11 @@
 
 
     &-selected {
-      background-color: #2f3640;
+      background-color: #e2e1e6;
       padding: 12px 24px;
       border-radius: 8px;
       margin-bottom: 8px;
-      color: #f5f6fa;
+      color: #807a7a;
 
       &:hover {
 
@@ -154,22 +50,22 @@
 
 
   &__item-group {
-    background-color: #2f3640;
-    color: #f5f6fa;
+    background-color: #e2e1e6;
+    color: #807a7a;
     width: 100%;
-    opacity: 0;
+    display: none;
     border-radius: 8px;
     max-height: 200px;
     pointer-events: none;
 
     &::-webkit-scrollbar {
-      background-color: #0d141f;
+      background-color: #e2e1e6;
       width: 8px;
       border-radius: 0 8px 8px 0;
     }
 
     &::-webkit-scrollbar-thumb {
-      background-color: #525861;
+      background-color: #2286a9;
       border-radius: 0 8px 8px 0;
     }
   }
@@ -177,7 +73,66 @@
 
 .active {
   max-height: 200px;
-  opacity: 1;
+  display: block;
   overflow-y: scroll;
   pointer-events: auto;
+}
+
+.date {
+  &__container {
+    width: 336px;
+    background-color: #e2e1e6;
+    padding: 12px 24px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    color: #807a7a;
+  }
+
+  &__label {
+    text-transform: uppercase;
+  }
+
+  &__input {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 10px;
+
+    &:focus {
+      outline: none;
+
+    }
+
+    &::-webkit-datetime-edit {
+      margin-right: -40px;
+    }
+
+    &::-webkit-calendar-picker-indicator {
+      background-image: url("https://img.icons8.com/fluent/48/000000/calendar.png");
+      cursor: pointer;
+    }
+  }
+}
+
+.passengers-container {
+
+
+  &__counter {
+    display: flex;
+    line-height: 50px;
+    font-size: 28px;
+    // border: 1px solid $main-color;
+    padding: 3px 12px;
+    border-radius: 5px;
+    background-color: $light-grey;
+    width: 50px;
+    text-align: center;
+  }
+}
+
+.label {
+  text-align: center;
+  padding: 3px 0 5px 0;
 }

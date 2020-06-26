@@ -1,0 +1,25 @@
+@import './variables.scss';
+
+.component-title {
+  font-family: Montserrat-Regular, Montserrat;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: $dark-grey;
+  text-align: center;
+}
+
+
+.closed {
+  display: none;
+}
+
+.minusPlusButton {
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  font-size: 36px;
+  border: none;
+  color: #2286a9;
+  cursor: pointer;
+  outline: none;
+}

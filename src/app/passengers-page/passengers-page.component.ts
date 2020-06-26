@@ -17,6 +17,7 @@ export class PassengersPageComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
+    document.title = "Dane pasażerów | Bon Voyage | Zarezerwuj swój lot!"
     this.adultsNumber = localStorage.getItem('adults');
     this.childrenNumber = localStorage.getItem('children');
     this.babiesNumber = localStorage.getItem('babies');
@@ -89,6 +90,7 @@ export class PassengersPageComponent implements OnInit {
       const p = document.createElement("p");
       document.getElementById('childrenPassengersContainer').appendChild(p);
       p.textContent = `Pasażer nr ${+this.adultsNumber + i + 1}`;
+      const childUserNumber = +this.adultsNumber + i + 1;
       // Imię i nazwisko
       const nameField = document.createElement('div');
       const firstNameLabel = document.createElement("label");
@@ -99,7 +101,7 @@ export class PassengersPageComponent implements OnInit {
       const firstNameInput = document.createElement('input');
       firstNameInput.setAttribute('id', `firstName_user${+this.adultsNumber + i + 1}`);
       firstNameInput.addEventListener('input', function () {
-        localStorage.setItem(`firstName_user${i + 1}`, this.value);
+        localStorage.setItem(`firstName_user${childUserNumber}`, this.value);
       })
       nameField.appendChild(firstNameInput);
       const familyNameLabel = document.createElement("label");
@@ -109,7 +111,7 @@ export class PassengersPageComponent implements OnInit {
       const familyNameInput = document.createElement('input');
       familyNameInput.setAttribute('id', `familyName_user${+this.adultsNumber + i + 1}`);
       familyNameInput.addEventListener('input', function () {
-        localStorage.setItem(`familyName_user${+this.id}`, this.value);
+        localStorage.setItem(`familyName_user${childUserNumber}`, this.value);
       })
       nameField.appendChild(familyNameInput);
       // Data urodzenia
@@ -124,7 +126,7 @@ export class PassengersPageComponent implements OnInit {
       childBirthDateInput.setAttribute('id', `birthDay_user${+this.adultsNumber + i + 1}`)
       childBirthDateInput.setAttribute('type', 'date');
       childBirthDateInput.addEventListener('input', function () {
-        localStorage.setItem(`birthDay_user${+this.id}`, this.value);
+        localStorage.setItem(`birthDay_user${childUserNumber}`, this.value);
       })
     }
     for (let i = 0; i < this.babiesNumber; i++) {
@@ -132,6 +134,7 @@ export class PassengersPageComponent implements OnInit {
       const p = document.createElement("p");
       document.getElementById('babiesPassengersContainer').appendChild(p);
       p.textContent = `Pasażer nr ${+this.adultsNumber + +this.childrenNumber + i + 1}`;
+      const babyUserNumber = +this.adultsNumber + +this.childrenNumber + i + 1;
       // Data urodzenia
       const dateField = document.createElement('div');
       const babyBirthDateLabel = document.createElement("label");
@@ -144,7 +147,7 @@ export class PassengersPageComponent implements OnInit {
       babyBirthDateInput.setAttribute('id', `birthDay_user${+this.adultsNumber + +this.childrenNumber + i + 1}`)
       babyBirthDateInput.setAttribute('type', 'date');
       babyBirthDateInput.addEventListener('input', function () {
-        localStorage.setItem(`birthDay_user${this.id}`, this.value);
+        localStorage.setItem(`birthDay_user${babyUserNumber}`, this.value);
       })
     }
   }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { flightDetails } from '../details'
+import { flightConnections } from '../details'
 
 @Component({
   selector: 'app-summary-box',
@@ -7,8 +7,10 @@ import { flightDetails } from '../details'
   styleUrls: ['./summary-box.component.scss']
 })
 export class SummaryBoxComponent implements OnInit {
-  public originCity = localStorage.getItem('start');
-  public destinationCity = localStorage.getItem('destination');
+  public originCity;
+  public origin = localStorage.getItem('startCity');
+  public destinationCity;
+  public destination = localStorage.getItem('endCity');
   public startDate = localStorage.getItem('startDate').split('-').reverse().join('.');
   public endDate = localStorage.getItem('endDate').split('-').reverse().join('.');
   public adultsNumber;
@@ -19,10 +21,11 @@ export class SummaryBoxComponent implements OnInit {
   public childrenPriceTotal;
   public babiesPriceTotal;
   public travelOptionChosen = localStorage.getItem('option');
-  public startTimeOrigin;
-  public endTimeDestination;
-  public startTimeDestination;
-  public endTimeOrigin;
+  public travelClass = localStorage.getItem('class');
+  public startTimeThere = localStorage.getItem('startTimeThere')
+  public endTimeThere = localStorage.getItem('endTimeThere');
+  public startTimeBack = localStorage.getItem('startTimeBack');
+  public endTimeBack = localStorage.getItem('endTimeBack');
   public seatsChosen;
   public seatsPrice;
   public additionalLuggagePrice;
@@ -43,35 +46,40 @@ export class SummaryBoxComponent implements OnInit {
     this.total = +this.adultsNumber + +this.childrenNumber + +this.babiesNumber;
     this.seatsChosen = localStorage.getItem('seats');
 
+    flightConnections.forEach(origin => {
+      origin.id == this.origin ? this.originCity = origin.start : null;
+    });
+    flightConnections.forEach(destination => {
+      destination.id == this.destination ? this.destinationCity = destination.start : null;
+    });
+
     // Details
-    for (let i = 0; i < flightDetails.length; i++) {
-      if (flightDetails[i].originCity == this.originCity && flightDetails[i].destinationCity == this.destinationCity) {
-        this.startTimeOrigin = flightDetails[i].timeStartOrigin;
-        this.endTimeDestination = flightDetails[i].timeEndDestination;
-        this.startTimeDestination = flightDetails[i].timeStartDestination;
-        this.endTimeOrigin = flightDetails[i].timeEndOrigin;
-        if (this.travelOptionChosen === 'basic') {
-          this.adultsPriceTotal = +(flightDetails[i].price.adults.basic) * 2 * this.adultsNumber
-          this.childrenPriceTotal = +(flightDetails[i].price.children.basic) * 2 * this.childrenNumber
-          localStorage.setItem('adultsPrice', this.adultsPriceTotal)
-          localStorage.setItem('childrenPrice', this.childrenPriceTotal)
-        }
-        else if (this.travelOptionChosen === 'plus') {
-          this.adultsPriceTotal = +(flightDetails[i].price.adults.plus) * 2 * this.adultsNumber
-          this.childrenPriceTotal = +(flightDetails[i].price.children.plus) * 2 * this.childrenNumber
-          localStorage.setItem('adultsPrice', this.adultsPriceTotal)
-          localStorage.setItem('childrenPrice', this.childrenPriceTotal)
-        }
-        else if (this.travelOptionChosen === 'premium') {
-          this.adultsPriceTotal = +(flightDetails[i].price.adults.premium) * 2 * this.adultsNumber
-          this.childrenPriceTotal = +(flightDetails[i].price.children.premium) * 2 * this.childrenNumber
-          localStorage.setItem('adultsPrice', this.adultsPriceTotal)
-          localStorage.setItem('childrenPrice', this.childrenPriceTotal)
-        }
-        this.babiesPriceTotal = +(flightDetails[i].price.babies) * this.babiesNumber
-        localStorage.setItem('babiesPrice', this.babiesPriceTotal)
-      }
-    }
+    // for (let i = 0; i < flightConnections.length; i++) {
+    //   if (flightConnections[i].id == this.originCity && flightConnections[i].destinations.id == this.destinationCity) {
+    //     this.originCity = flightConnections[i].start.name;
+    //     this.destinationCity = flightConnections[i].destinations.name;
+    //     if (this.travelOptionChosen === 'basic') {
+    //       this.adultsPriceTotal = +(flightConnections[i].price.adults.basic) * 2 * this.adultsNumber
+    //       this.childrenPriceTotal = +(flightConnections[i].price.children.basic) * 2 * this.childrenNumber
+    //       localStorage.setItem('adultsPrice', this.adultsPriceTotal)
+    //       localStorage.setItem('childrenPrice', this.childrenPriceTotal)
+    //     }
+    //     else if (this.travelOptionChosen === 'plus') {
+    //       this.adultsPriceTotal = +(flightDetails[i].price.adults.plus) * 2 * this.adultsNumber
+    //       this.childrenPriceTotal = +(flightDetails[i].price.children.plus) * 2 * this.childrenNumber
+    //       localStorage.setItem('adultsPrice', this.adultsPriceTotal)
+    //       localStorage.setItem('childrenPrice', this.childrenPriceTotal)
+    //     }
+    //     else if (this.travelOptionChosen === 'premium') {
+    //       this.adultsPriceTotal = +(flightDetails[i].price.adults.premium) * 2 * this.adultsNumber
+    //       this.childrenPriceTotal = +(flightDetails[i].price.children.premium) * 2 * this.childrenNumber
+    //       localStorage.setItem('adultsPrice', this.adultsPriceTotal)
+    //       localStorage.setItem('childrenPrice', this.childrenPriceTotal)
+    //     }
+    //     this.babiesPriceTotal = +(flightDetails[i].price.babies) * this.babiesNumber
+    //     localStorage.setItem('babiesPrice', this.babiesPriceTotal)
+    //   }
+    // }
 
     // Prices
     this.totalPrice = `${this.adultsPriceTotal + this.childrenPriceTotal + this.babiesPriceTotal}`
@@ -79,28 +87,18 @@ export class SummaryBoxComponent implements OnInit {
     // Show invisible information
     if (window.location.href.indexOf("passengers-page") > -1) {
       document.getElementById('passengersField').classList.remove('closed');
-      document.getElementById('totalField').classList.remove('closed');
+      // document.getElementById('optionsField').classList.remove('closed');
+      document.getElementById('informationField').classList.remove('closed');
+      // document.getElementById('totalField').classList.remove('closed');
     }
     if (window.location.href.indexOf("seat-choice") > -1) {
       document.getElementById('passengersField').classList.remove('closed');
+      // document.getElementById('optionsField').classList.remove('closed');
       document.getElementById('informationField').classList.remove('closed');
       document.getElementById('totalField').classList.remove('closed');
     }
 
-    // Currencies
-    this.currencyChosen = document.getElementById('currencyBox');
-    this.currencyChosen.addEventListener('change', function () {
-      if (this.value !== 'pln') {
-        fetch(`https://api.nbp.pl/api/exchangerates/rates/A/${this.value}/?format=json`)
-          .then((resp) => resp.json())
-          .then(function (data) {
-            this.currencyField = document.getElementById('currencyField');
-            console.log(this.currencyField);
-            this.currencyField.textContent = `${data.code}`;
-          })
-      }
 
-    })
   }
 }
 

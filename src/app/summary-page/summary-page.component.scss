@@ -1,0 +1,212 @@
+@import '../variables.scss';
+@import '../general.scss';
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+}
+
+.bording-pass {
+  width: 20%;
+  margin: 50px;
+}
+
+// // // // // // // // // //
+// // // SVG styles // // //
+// // // // // // // // // //
+.cls-1 {
+  fill: #2386aa;
+}
+
+.cls-2,
+.cls-27,
+.cls-28,
+.cls-29,
+.cls-30,
+.cls-31,
+.cls-39 {
+  fill: none;
+  stroke-miterlimit: 10;
+}
+
+.cls-2,
+.cls-27,
+.cls-28,
+.cls-29,
+.cls-30,
+.cls-31 {
+  stroke: #1d1d1b;
+}
+
+.cls-3 {
+  font-size: 15.39px;
+}
+
+.cls-24,
+.cls-3,
+.cls-6 {
+  fill: #1d1d1b;
+}
+
+.cls-12,
+.cls-18,
+.cls-20,
+.cls-24,
+.cls-3,
+.cls-32,
+.cls-6 {
+  font-family: Montserrat-Regular, Montserrat;
+}
+
+.cls-4 {
+  letter-spacing: -0.01em;
+}
+
+.cls-5 {
+  letter-spacing: -0.04em;
+}
+
+.cls-6 {
+  font-size: 6.6px;
+}
+
+.cls-7 {
+  letter-spacing: -0.01em;
+}
+
+.cls-8 {
+  letter-spacing: 0.01em;
+}
+
+.cls-9 {
+  letter-spacing: 0em;
+}
+
+.cls-10 {
+  letter-spacing: 0em;
+}
+
+.cls-11 {
+  letter-spacing: 0em;
+}
+
+.cls-12,
+.cls-18 {
+  font-size: 4.4px;
+  fill: #807a7a;
+}
+
+.cls-12 {
+  letter-spacing: -0.04em;
+}
+
+.cls-13 {
+  letter-spacing: 0em;
+}
+
+.cls-14 {
+  letter-spacing: -0.03em;
+}
+
+.cls-15 {
+  letter-spacing: -0.01em;
+}
+
+.cls-16 {
+  letter-spacing: -0.03em;
+}
+
+.cls-17 {
+  letter-spacing: -0.02em;
+}
+
+.cls-19 {
+  letter-spacing: -0.04em;
+}
+
+.cls-20 {
+  font-size: 19.79px;
+  letter-spacing: -0.05em;
+}
+
+.cls-20,
+.cls-32,
+.cls-35,
+.cls-36 {
+  fill: #fff;
+}
+
+.cls-21 {
+  letter-spacing: 0em;
+}
+
+.cls-22 {
+  letter-spacing: 0em;
+}
+
+.cls-23 {
+  letter-spacing: -0.01em;
+}
+
+.cls-24 {
+  font-size: 5.5px;
+}
+
+.cls-25 {
+  letter-spacing: 0em;
+}
+
+.cls-26 {
+  letter-spacing: 0em;
+}
+
+.cls-27 {
+  stroke-linecap: square;
+  stroke-width: 0.75px;
+}
+
+.cls-28 {
+  stroke-width: 1.1px;
+}
+
+.cls-29 {
+  stroke-width: 2.25px;
+}
+
+.cls-30 {
+  stroke-width: 3.5px;
+}
+
+.cls-31 {
+  stroke-width: 3px;
+}
+
+.cls-32 {
+  font-size: 10px;
+}
+
+.cls-33 {
+  letter-spacing: -0.01em;
+}
+
+.cls-34 {
+  letter-spacing: -0.04em;
+}
+
+.cls-35 {
+  font-size: 5.54px;
+  font-family: 'Michroma', sans-serif;
+}
+
+.cls-37 {
+  letter-spacing: -0.03em;
+}
+
+.cls-38 {
+  letter-spacing: 0em;
+}
+
+.cls-39 {
+  stroke: #fff;
+  stroke-width: 0.5px;
+}

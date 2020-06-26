@@ -68,8 +68,6 @@ export class MainPageComponent implements OnInit {
     this.destinationSelected = document.getElementById('destinationSelected');
     this.destinationSelected.addEventListener('click', () => {
       document.getElementById('optionsContainer').classList.toggle('active');
-      console.log('działa')
-      console.log(this)
     });
     const divGroup = document.createElement('div');
     divGroup.setAttribute('id', 'optionsContainer');
@@ -89,7 +87,7 @@ export class MainPageComponent implements OnInit {
             document.getElementById('destinationSelected').innerText = flightConnections[i].destinations[j].name;
             localStorage.setItem('endCity', flightConnections[i].destinations[j].id);
             document.getElementById('button').removeAttribute('disabled');
-            document.getElementById('optionsContainer').classList.remove('active');
+            document.getElementById('optionsContainer').classList.toggle('active');
           });
           divGroup.appendChild(div);
           div.appendChild(input);

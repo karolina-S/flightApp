@@ -1,21 +1,42 @@
+@import '../variables.scss';
+@import '../general.scss';
+
 .summary-box {
-  width: 20%;
-  height: 100vh;
-  background-color: #eaf6fb;
+  width: 20vw;
+  height: 90vh;
+  background-color: $light-grey;
   position: fixed;
-  top: 10%;
+  top: 10vh;
   right: 0;
   padding: 20px;
+
+  &__title {
+    text-transform: uppercase;
+    font-weight: 400;
+    color: $main-color;
+    text-align: center;
+  }
+
+  &__container {
+    padding: 10px;
+    margin-top: 10px;
+  }
+
+  &__date,
+  &__label {
+    font-size: .875em;
+    font-weight: bold;
+    color: $main-color;
+  }
 }
 
-.currency-container {
-  position: fixed;
-  bottom: 5vh;
-  right: 5vw;
-}
+.fas {
+  padding: 0 5px;
+  font-size: .75em;
+  margin-bottom: 5px;
 
-// Gotowe
+  &.second-plane {
+    transform: rotate(180deg);
+  }
 
-.closed {
-  display: none;
 }

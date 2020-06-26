@@ -1,18 +1,80 @@
+@import '../variables.scss';
+@import '../general.scss';
+
 .wrapper {
   display: flex;
   justify-content: space-around;
 }
 
 .travel-option {
-  background-color: #ddd;
+  border: 1px solid $dark-grey;
   max-width: 30%;
+  padding: 1.5vw;
+  font-size: 14px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__title {
+    font-family: Montserrat-Regular, Montserrat;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: $dark-grey;
+    margin-bottom: 10px;
+  }
+
+  &__conditions-list {
+    list-style-type: none;
+
+    &-item {
+      padding: 5px 0;
+    }
+
+    &-icon {
+      padding-right: 5px;
+    }
+  }
+
+  &__btn {
+    font-family: Montserrat-Regular, Montserrat;
+    text-transform: uppercase;
+    border: none;
+    background-color: $main-color;
+    text-align: center;
+    width: 90%;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 20px;
+    padding: 10px;
+    margin-top: 10px;
+    outline: none;
+    cursor: pointer;
+  }
+
+  &__additional {
+    margin-top: 50px;
+    font-size: 12px;
+    color: $dark-grey;
+  }
 }
 
 .flight-information {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   width: 50%;
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__airportAbbr {
+    font-size: 32px;
+  }
 }
 
 .details-page-wrapper {
@@ -20,21 +82,92 @@
 }
 
 .flight-information-wrapper {
+  margin-top: 5vh;
   display: flex;
+  justify-content: space-between;
 }
 
-.page-title {
-  text-align: center;
-  padding: 20px;
-}
-
-.luggage-wrapper,
-  {
+.luggage-wrapper {
   display: flex;
   justify-content: space-around;
+  margin-bottom: 5vh;
 }
 
 .luggage-wrapper__counter {
   display: flex;
   justify-content: space-around;
+}
+
+.luggage-counter {
+  line-height: 50px;
+  font-size: 28px;
+  // border: 1px solid $main-color;
+  padding: 3px 12px;
+  border-radius: 5px;
+  background-color: $light-grey;
+  width: 50px;
+  text-align: center;
+}
+
+.luggage-name {
+  text-align: center;
+  padding: 3px 0 5px 0;
+}
+
+.arrow-symbol {
+  padding: 0 20px;
+}
+
+.deatils-section-title {
+  font-family: Montserrat-Regular, Montserrat;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: $dark-grey;
+  margin-top: 5vh;
+  margin-bottom: 1.5vh;
+  text-align: center;
+}
+
+.class {
+  display: flex;
+  justify-content: space-around;
+
+  &__btn {
+    font-family: Montserrat-Regular, Montserrat;
+    text-transform: uppercase;
+    border: none;
+    text-align: center;
+    background-color: $main-color;
+    width: 20vw;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 20px;
+    padding: 10px;
+    margin: 20px;
+    outline: none;
+    cursor: pointer;
+  }
+}
+
+.btn-summarybox {
+  position: fixed;
+  bottom: 5vh;
+  right: 2vw;
+  width: 16vw;
+  background-color: $main-color;
+  z-index: 1;
+  border: none;
+  height: 50px;
+  color: white;
+  font-family: Montserrat-Regular, Montserrat;
+  text-transform: uppercase;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 20px;
+  cursor: pointer;
+  outline: none;
+
+  &:disabled {
+    background-color: $dark-grey;
+  }
 }

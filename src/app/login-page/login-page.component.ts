@@ -12,6 +12,7 @@ export class LoginPageComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
+    document.title = "Logowanie | Bon Voyage | Zarezerwuj swój lot!"
   }
 
   logIn([login, password]) {
