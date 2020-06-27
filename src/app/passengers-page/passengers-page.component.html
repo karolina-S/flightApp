@@ -1,21 +1,21 @@
 <app-navigation-bar></app-navigation-bar>
 <div class="wrapper">
   <h1 class="component-title">Pasażerowie</h1>
-  <p>Pasażerowie: {{ adultsNumber }} dorosły, {{ childrenNumber }} dziecko, {{ babiesNumber }} niemowlęta</p>
-  <p>Pola obowiązkowe (*)</p>
+  <p>Dorośli: {{ adultsNumber }}, dzieci: {{ childrenNumber }}, niemowlęta: {{ babiesNumber }}</p>
+  <div class="passengers">
+    <p class="passengers__title">Pasażerowie dorośli</p>
+    <div id="adultPassengersContainer" class="passengers__item">
 
-  <div id="adultPassengersContainer">
-    <p>Pasażerowie dorośli</p>
+    </div>
+    <p class="passengers__title" *ngIf="childrenNumber > 0">Dzieci</p>
+    <div id="childrenPassengersContainer" class="passengers__item">
+
+    </div>
+    <p class="passengers__title" *ngIf="babiesNumber > 0">Niemowlęta</p>
+    <div id="babiesPassengersContainer" class="passengers__item">
+
+    </div>
   </div>
-
-  <div id="childrenPassengersContainer">
-    <p *ngIf="childrenNumber > 0">Dzieci</p>
-  </div>
-
-  <div id="babiesPassengersContainer">
-    <p *ngIf="babiesNumber > 0">Niemowlęta</p>
-  </div>
-
   <p>Dane kontaktowe</p>
   <label for="emailAddress">Adres e-mail</label>
   <input type="text" #emailAddress id="emailAddress">
@@ -24,7 +24,8 @@
 
   <input type="checkbox" id="rulesAgreement" name="yes" value="agreed" #rulesAgreement checked>
   <label for="rulesAgreement">Zapoznałem/-am się i akceptuję Warunki Taryfy (w szczególności warunki zmiany/zwrotu
-    biletu), Regulamin Świadczenia Usług Drogą Elektroniczną, Politykę Prywatności oraz Warunki przewozu.*</label><br>
+    biletu), Regulamin Świadczenia Usług Drogą Elektroniczną, Politykę Prywatności oraz Warunki przewozu.*</label>
+  <p>Pola obowiązkowe (*)</p>
 </div>
 
 <a routerLink="/seat-choice">

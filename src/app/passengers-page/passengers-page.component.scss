@@ -4,3 +4,41 @@
 .wrapper {
   max-width: 70%;
 }
+
+.passengers {
+  background-color: #f0f;
+  display: flex;
+  flex-direction: column;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color: #00f;
+
+    &__title {
+      background-color: #0ff;
+    }
+  }
+
+  &__gender {
+    background-color: #0f0;
+    cursor: pointer;
+    margin: 10px;
+  }
+
+  &__label {
+    // background-color: green;
+    margin: 10px;
+  }
+
+  &__input {
+    // background-color: #00f;
+    margin: 10px;
+  }
+
+}
+
+.gender-radio {
+  display: none;
+}

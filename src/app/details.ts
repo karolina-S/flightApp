@@ -12,7 +12,7 @@ const flightConnections = [{
     }, {
         id: 'milan',
         name: 'Mediolan (MXP)',
-        duration: '2:15',
+        duration: '1:15',
         timeStart: '11:30',
         timeEnd: '13:45',
         price: '412',
@@ -55,7 +55,7 @@ const flightConnections = [{
         plane: 'international'
     }, {
         id: 'dubrovnik',
-        name: 'Dubrovnik (DBV)',
+        name: 'Dubrownik (DBV)',
         duration: '2:05',
         timeStart: '12:50',
         timeEnd: '14:55',
@@ -104,26 +104,26 @@ const flightConnections = [{
     destinations: [{
         id: 'poznan',
         name: 'Poznań (POZ)',
-        duration: '8:30', // // // // // // //
-        timeStart: '08:05',
-        timeEnd: '22:35',
-        price: '2342',
+        duration: '0:55',
+        timeStart: '13:45',
+        timeEnd: '14:50',
+        price: '123',
         plane: 'country'
     }, {
         id: 'prague',
         name: 'Praga (PRG)',
-        duration: '8:30',
-        timeStart: '08:05',
-        timeEnd: '22:35',
-        price: '2342',
+        duration: '1:15',
+        timeStart: '14:35',
+        timeEnd: '15:50',
+        price: '278',
         plane: 'international'
     }, {
         id: 'warsaw',
         name: 'Warszawa (WAW)',
-        duration: '8:30',
-        timeStart: '08:05',
-        timeEnd: '22:35',
-        price: '2342',
+        duration: '0:55',
+        timeStart: '18:20',
+        timeEnd: '19:15',
+        price: '99',
         plane: 'country'
     }]
 }, {
@@ -132,38 +132,38 @@ const flightConnections = [{
     destinations: [{
         id: 'toronto',
         name: 'Toronto (YYZ)',
-        duration: '8:30',
-        timeStart: '08:05',
-        timeEnd: '22:35',
-        price: '2342',
+        duration: '1:35',
+        timeStart: '11:20',
+        timeEnd: '12:55',
+        price: '330',
         plane: 'international'
     }, {
         id: 'warsaw',
         name: 'Warszawa (WAW)',
         duration: '8:30',
-        timeStart: '08:05',
-        timeEnd: '22:35',
-        price: '2342',
+        timeStart: '09:50',
+        timeEnd: '12:20',
+        price: '2657',
         plane: 'world'
     }]
 }, {
     id: 'dubrovnik',
-    start: 'Dubrovnik (DBV)',
+    start: 'Dubrownik (DBV)',
     destinations: [{
         id: 'milan',
         name: 'Mediolan (MXP)',
-        duration: '8:30',
-        timeStart: '08:05',
-        timeEnd: '22:35',
-        price: '2342',
+        duration: '1:15',
+        timeStart: '11:30',
+        timeEnd: '13:45',
+        price: '412',
         plane: 'international'
     }, {
         id: 'poznan',
         name: 'Poznań (POZ)',
-        duration: '8:30',
-        timeStart: '08:05',
-        timeEnd: '22:35',
-        price: '2342',
+        duration: '2:05',
+        timeStart: '07:00',
+        timeEnd: '09:05',
+        price: '124',
         plane: 'international'
     }]
 }, {
@@ -172,10 +172,10 @@ const flightConnections = [{
     destinations: [{
         id: 'katowice',
         name: 'Katowice (KTW)',
-        duration: '8:30',
-        timeStart: '08:05',
-        timeEnd: '22:35',
-        price: '2342',
+        duration: '1:20',
+        timeStart: '11:35',
+        timeEnd: '12:55',
+        price: '206',
         plane: 'international'
     }]
 }, {
@@ -184,18 +184,26 @@ const flightConnections = [{
     destinations: [{
         id: 'cannes',
         name: 'Cannes (CEQ)',
-        duration: '8:30',
-        timeStart: '08:05',
-        timeEnd: '21:35',
-        price: '2342',
+        duration: '0:55',
+        timeStart: '18:20',
+        timeEnd: '19:15',
+        price: '198',
+        plane: 'international'
+    }, {
+        id: 'dubrovnik',
+        name: 'Dubrownik (DBV)',
+        duration: '1:15',
+        timeStart: '17:25',
+        timeEnd: '18:40',
+        price: '395',
         plane: 'international'
     }, {
         id: 'warsaw',
         name: 'Warszawa (WAW)',
-        duration: '8:30',
-        timeStart: '08:05',
-        timeEnd: '22:35',
-        price: '2342',
+        duration: '1:15',
+        timeStart: '07:55',
+        timeEnd: '09:10',
+        price: '346',
         plane: 'international'
     }]
 }, {
@@ -204,27 +212,19 @@ const flightConnections = [{
     destinations: [{
         id: 'milan',
         name: 'Mediolan (MXP)',
-        duration: '8:30',
-        timeStart: '08:05',
-        timeEnd: '22:35',
-        price: '2342',
+        duration: '0:55',
+        timeStart: '12:10',
+        timeEnd: '13:05',
+        price: '176',
         plane: 'international'
     }, {
         id: 'poznan',
         name: 'Poznań (POZ)',
-        duration: '8:30',
-        timeStart: '08:05',
-        timeEnd: '22:35',
-        price: '2342',
+        duration: '2:30',
+        timeStart: '12:45',
+        timeEnd: '15:15',
+        price: '69',
         plane: 'international'
-    }, {
-        id: 'toronto',
-        name: 'Toronto (YYZ)',
-        duration: '8:30',
-        timeStart: '08:05',
-        timeEnd: '22:35',
-        price: '2342',
-        plane: 'world'
     }]
 }
 ],

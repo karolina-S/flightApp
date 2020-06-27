@@ -91,10 +91,10 @@ export class DetailsPageComponent implements OnInit {
 
   saveClass(classOption) {
     localStorage.setItem('class', classOption);
-    document.getElementById('economyButton').style.boxShadow = '';
-    document.getElementById('premiumeconomyButton').style.boxShadow = '';
-    document.getElementById('businessButton').style.boxShadow = '';
-    document.getElementById(`${classOption}Button`).style.boxShadow = "0px 0px 9px 0px grey";
+    document.getElementById('economy').style.boxShadow = '';
+    document.getElementById('premiumeconomy').style.boxShadow = '';
+    document.getElementById('business').style.boxShadow = '';
+    document.getElementById(classOption).style.boxShadow = "0px 0px 9px 0px #807a7a";
     this.classClicked = true;
     this.optionClicked && this.classClicked ? document.getElementById('button').removeAttribute('disabled') : null;
   }

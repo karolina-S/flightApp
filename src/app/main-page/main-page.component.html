@@ -1,9 +1,9 @@
-<!-- <app-navigation-bar></app-navigation-bar> -->
-
+<nav class="nav">
+  <a routerLink="/main-page"><img class="logo" src="../../assets/img/logo_blue2.png" alt=""></a>
+</nav>
 <main class="main">
-  <h1 class="component-title">Znajdź lot dla siebie</h1>
   <div class="form">
-
+    <h1 class="component-title">Znajdź lot dla siebie</h1>
     <div class="form__container">
       <div class="form__container-item">
         <div id="start" class="cities-container">
@@ -85,7 +85,7 @@
       </div>
     </div>
     <a routerLink="/details-page">
-      <button (click)="saveBasicInformation(startDate.value, endDate.value)" id="button" disabled>Lecimy
+      <button class="btn" (click)="saveBasicInformation(startDate.value, endDate.value)" id="button" disabled>Lecimy
         ✈</button>
     </a>
   </div>

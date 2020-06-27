@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-passengers-page',
   templateUrl: './passengers-page.component.html',
-  styleUrls: ['./passengers-page.component.scss']
+  styleUrls: ['./passengers-page.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class PassengersPageComponent implements OnInit {
 
@@ -38,10 +39,12 @@ export class PassengersPageComponent implements OnInit {
       genderInputMale.setAttribute('id', `male${i + 1}`);
       genderInputMale.setAttribute('name', 'gender');
       genderInputMale.setAttribute('value', 'male');
+      genderInputMale.classList.add('gender-radio')
       const genderLabelMale = document.createElement("label");
       genderField.appendChild(genderLabelMale);
       genderLabelMale.setAttribute('for', `male${i + 1}`);
       genderLabelMale.textContent = "Pan";
+      genderLabelMale.classList.add('passengers__gender')
       genderLabelMale.addEventListener('click', function () {
         localStorage.setItem(`gender_user${i + 1}`, this.getAttribute('for'));
       })
@@ -51,10 +54,12 @@ export class PassengersPageComponent implements OnInit {
       genderInputFemale.setAttribute('id', `female${i + 1}`);
       genderInputFemale.setAttribute('name', 'gender');
       genderInputFemale.setAttribute('value', 'female');
+      genderInputFemale.classList.add('gender-radio')
       const genderLabelFemale = document.createElement("label");
       genderField.appendChild(genderLabelFemale);
       genderLabelFemale.setAttribute('for', `female${i + 1}`);
       genderLabelFemale.textContent = "Pani";
+      genderLabelFemale.classList.add('passengers__gender');
       genderLabelFemale.addEventListener('click', function () {
         localStorage.setItem(`gender_user${i + 1}`, this.getAttribute('for'));
       })
@@ -67,17 +72,21 @@ export class PassengersPageComponent implements OnInit {
       nameField.appendChild(firstNameLabel);
       firstNameLabel.setAttribute('for', 'firstName');
       firstNameLabel.textContent = "Imię*:";
+      firstNameLabel.classList.add('passengers__label');
       const firstNameInput = document.createElement('input');
       firstNameInput.setAttribute('id', `firstName_user${i + 1}`);
+      firstNameInput.classList.add('passengers__input');
       firstNameInput.addEventListener('input', function () {
         localStorage.setItem(`firstName_user${i + 1}`, this.value);
       })
       nameField.appendChild(firstNameInput);
       const familyNameLabel = document.createElement("label");
       nameField.appendChild(familyNameLabel);
-      firstNameLabel.setAttribute('for', 'familyName');
+      familyNameLabel.setAttribute('for', 'familyName');
       familyNameLabel.textContent = "Nazwisko*:";
+      familyNameLabel.classList.add('passengers__label');
       const familyNameInput = document.createElement('input');
+      familyNameInput.classList.add('passengers__input');
       familyNameInput.setAttribute('id', `familyName_user${i + 1}`);
       familyNameInput.addEventListener('input', function () {
         localStorage.setItem(`familyName_user${i + 1}`, this.value);
@@ -108,8 +117,10 @@ export class PassengersPageComponent implements OnInit {
       nameField.appendChild(familyNameLabel);
       firstNameLabel.setAttribute('for', 'familyName');
       familyNameLabel.textContent = "Nazwisko*:";
+      familyNameLabel.classList.add('passengers__label');
       const familyNameInput = document.createElement('input');
       familyNameInput.setAttribute('id', `familyName_user${+this.adultsNumber + i + 1}`);
+      familyNameInput.classList.add('passengers__input');
       familyNameInput.addEventListener('input', function () {
         localStorage.setItem(`familyName_user${childUserNumber}`, this.value);
       })

@@ -33,15 +33,18 @@
   <!-- Klasy -->
   <h2 class="deatils-section-title">Wybierz klasę podróży</h2>
   <div class="class">
-    <div class="class__item" #economy id="economy">
-      <button class="class__btn" id="economyButton" (click)="saveClass(economy.id)">Economy</button>
+    <div class="class__item" #economy id="economy" (click)="saveClass(economy.id)">
+      <p class="class__btn" id="economyButton">Economy</p>
+      <p class="class__price">425 PLN</p>
     </div>
-    <div class=" class__item" #premiumeconomy id="premiumeconomy">
-      <button class="class__btn" id="premiumeconomyButton" (click)="saveClass(premiumeconomy.id)">Premium
-        economy</button>
+    <div class=" class__item" #premiumeconomy id="premiumeconomy" (click)="saveClass(premiumeconomy.id)">
+      <p class="class__btn" id="premiumeconomyButton">Premium
+        economy</p>
+      <p class="class__price">425 PLN</p>
     </div>
-    <div class="class__item" #business id="business">
-      <button class="class__btn" id="businessButton" (click)="saveClass(business.id)">Business</button>
+    <div class="class__item" #business id="business" (click)="saveClass(business.id)">
+      <p class="class__btn" id="businessButton">Business</p>
+      <p class="class__price">425 PLN</p>
     </div>
   </div>
   <!-- Koniec klas -->
