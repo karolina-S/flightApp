@@ -11,13 +11,15 @@ label {
 
 .form-container {
   display: flex;
+
 }
 
 .cities-container {
   padding: 32px;
   display: flex;
-  width: 400px;
   flex-direction: column;
+  width: 50vw;
+  background-color: #00f;
 
   &__item {
     padding: 12px 24px;
@@ -88,6 +90,10 @@ label {
     color: #807a7a;
   }
 
+  &__wrapper {
+    background-color: #ff0;
+  }
+
   &__label {
     text-transform: uppercase;
   }
@@ -117,22 +123,28 @@ label {
 }
 
 .passengers-container {
-
-
-  &__counter {
-    display: flex;
-    line-height: 50px;
-    font-size: 28px;
-    // border: 1px solid $main-color;
-    padding: 3px 12px;
-    border-radius: 5px;
-    background-color: $light-grey;
-    width: 50px;
-    text-align: center;
-  }
+  display: flex;
+  background-color: #f00;
+  justify-content: space-around;
+  margin-bottom: 5vh;
 }
 
-.label {
+.passengers-container__counter {
+  display: flex;
+  justify-content: space-around;
+}
+
+.passengers-counter {
+  line-height: 50px;
+  font-size: 28px;
+  padding: 3px 12px;
+  border-radius: 5px;
+  background-color: $light-grey;
+  width: 50px;
+  text-align: center;
+}
+
+.passengers-name {
   text-align: center;
   padding: 3px 0 5px 0;
 }

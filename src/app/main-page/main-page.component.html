@@ -45,46 +45,42 @@
         </div>
       </div>
     </div>
-
-    <div class="date">
-      <div class="date__container">
-        <label for="startDate" class="date__label">Wylot</label>
-        <input type="date" #startDate id="startDate" name="trip-start" [value]="date | date:'yyyy-MM-dd'"
-          class="date__input"></div>
-      <div class="date__container">
-        <label for="endDate" class="date__label">Powrót</label>
-        <input type="date" #endDate id="endDate" name="trip-end" class="date__input">
+    <div class="date__wrapper">
+      <div class="date">
+        <div class="date__container">
+          <label for="startDate" class="date__label">Wylot</label>
+          <input type="date" #startDate id="startDate" name="trip-start" [value]="date | date:'yyyy-MM-dd'"
+            class="date__input"></div>
+        <div class="date__container">
+          <label for="endDate" class="date__label">Powrót</label>
+          <input type="date" #endDate id="endDate" name="trip-end" class="date__input">
+        </div>
       </div>
     </div>
     <h2 class="passengers__label">Pasażerowie</h2>
-    <div class="passengers">
-      <div class="passengers-container">
-        <div class="passengers-container">
-          <p class="label">Dorośli:</p>
-          <small>pow. 16 lat</small>
-          <div class="passengers-container__counter">
-            <button (click)="lessAdultPassengers()" class="minusPlusButton">-</button>
-            <p class="adult-counter" id="adult-passengers">{{ adultPassengers }}</p>
-            <button (click)="moreAdultPassengers()" class="minusPlusButton">+</button>
-          </div>
+    <div class="passengers-container">
+      <div class="passengers-container__item">
+        <p class="passengers-name">Dorośli:</p>
+        <div class="passengers-container__counter">
+          <button (click)="lessAdultPassengers()" class="minusPlusButton">-</button>
+          <p class="passengers-counter" id="adult-passengers">{{ adultPassengers }}</p>
+          <button (click)="moreAdultPassengers()" class="minusPlusButton">+</button>
         </div>
-        <div class="passengers-container">
-          <p>Dzieci:</p>
-          <small>pow. 2 lat</small>
-          <div class="passengers-container__counter">
-            <button (click)="lessChildrenPassengers()" class="minusPlusButton">-</button>
-            <p class="children-counter" id="adult-passengers">{{ childrenPassengers }}</p>
-            <button (click)="moreChildrenPassengers()" class="minusPlusButton">+</button>
-          </div>
+      </div>
+      <div class="passengers-container__item">
+        <p class="passengers-name">Dzieci:</p>
+        <div class="passengers-container__counter">
+          <button (click)="lessChildrenPassengers()" class="minusPlusButton">-</button>
+          <p class="passengers-counter" id="adult-passengers">{{ childrenPassengers }}</p>
+          <button (click)="moreChildrenPassengers()" class="minusPlusButton">+</button>
         </div>
-        <div class="passengers-container">
-          <p>Niemowlęta:</p>
-          <small>do 24 miesięcy</small>
-          <div class="passengers-container__counter">
-            <button (click)="lessBabiesPassengers()" class="minusPlusButton">-</button>
-            <p class="babies-counter" id="adult-passengers">{{ babiesPassengers }}</p>
-            <button (click)="moreBabiesPassengers()" class="minusPlusButton">+</button>
-          </div>
+      </div>
+      <div class="passengerss-container__item">
+        <p class="passengers-name">Niemowlęta:</p>
+        <div class="passengers-container__counter">
+          <button (click)="lessBabiesPassengers()" class="minusPlusButton">-</button>
+          <p class="passengers-counter" id="adult-passengers">{{ babiesPassengers }}</p>
+          <button (click)="moreBabiesPassengers()" class="minusPlusButton">+</button>
         </div>
       </div>
     </div>
