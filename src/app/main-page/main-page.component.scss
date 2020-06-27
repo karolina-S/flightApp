@@ -9,17 +9,14 @@ label {
   cursor: pointer;
 }
 
-.form-container {
-  display: flex;
-
+.form {
+  width: 30vw;
+  background-color: #00f;
 }
 
 .cities-container {
-  padding: 32px;
-  display: flex;
-  flex-direction: column;
-  width: 50vw;
-  background-color: #00f;
+  padding: 22px;
+  width: 30vw;
 
   &__item {
     padding: 12px 24px;
@@ -50,7 +47,6 @@ label {
     }
   }
 
-
   &__item-group {
     background-color: #e2e1e6;
     color: #807a7a;
@@ -78,33 +74,51 @@ label {
   display: block;
   overflow-y: scroll;
   pointer-events: auto;
+  z-index: 1;
 }
 
 .date {
+  display: flex;
+  justify-content: space-evenly;
+
   &__container {
-    width: 336px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+    align-items: center;
+    font-size: 12px;
     background-color: #e2e1e6;
     padding: 12px 24px;
     border-radius: 8px;
     margin-bottom: 8px;
     color: #807a7a;
+
+    &:nth-child(1) {
+      margin-right: 50px;
+    }
   }
 
   &__wrapper {
-    background-color: #ff0;
+    // background-color: #ff0;
+    width: 30vw;
+    display: flex;
+    padding: 22px;
+    justify-content: space-evenly;
+
   }
 
   &__label {
     text-transform: uppercase;
+    text-align: center;
   }
 
   &__input {
     cursor: pointer;
     border: none;
     background-color: transparent;
-    font-size: 16px;
+    font-size: 14px;
     font-family: 'Montserrat', sans-serif;
-    margin-left: 10px;
 
     &:focus {
       outline: none;
@@ -124,9 +138,9 @@ label {
 
 .passengers-container {
   display: flex;
-  background-color: #f00;
   justify-content: space-around;
   margin-bottom: 5vh;
+  width: 30vw;
 }
 
 .passengers-container__counter {
