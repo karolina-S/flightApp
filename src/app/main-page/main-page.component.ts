@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ViewChild, ElementRef } from '@angular/core';
 import { flightConnections } from '../details';
 
 @Component({
@@ -7,10 +7,11 @@ import { flightConnections } from '../details';
   styleUrls: ['./main-page.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
+
 export class MainPageComponent implements OnInit {
 
   public options;
-  public start = document.getElementById('start');;
+  @ViewChild('start', { static: true }) start: ElementRef;
   public startCities = document.querySelectorAll('[name="startCity"]');;
   public startCitiesContainer = document.querySelectorAll('.cities-container__item');;
   public startArray = Array.from(this.startCities);;
@@ -127,6 +128,4 @@ export class MainPageComponent implements OnInit {
     localStorage.setItem('babies', this.babiesPassengers.toString());
     localStorage.setItem('adults', this.adultPassengers.toString());
   }
-
-
 }
