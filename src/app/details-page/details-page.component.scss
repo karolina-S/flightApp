@@ -158,6 +158,12 @@
       background-color: #1d7595;
     }
   }
+
+  &__btn {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+  }
 }
 
 .btn-summarybox {
@@ -189,6 +195,4 @@
       background-color: $dark-grey;
     }
   }
-
-
 }

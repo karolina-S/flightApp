@@ -6,7 +6,7 @@
     <h1 class="component-title">Znajdź lot dla siebie</h1>
     <div class="form__container">
       <div class="form__container-item">
-        <div #start class="cities-container">
+        <div id="start" class="cities-container">
           <div class="cities-container__item-selected" id="selected">Miasto wylotu</div>
           <div class="cities-container__item-group" id="citiesContainer">
             <div class="cities-container__item" (click)="getDestinations(cannes.id)">
@@ -84,6 +84,9 @@
         </div>
       </div>
     </div>
+
+    <div class="pop-up" #popUp>Proszę wybrać miasto wylotu i miasto docelowe</div>
+
     <a routerLink="/details-page">
       <button class="btn" (click)="saveBasicInformation(startDate.value, endDate.value)" id="button" disabled>Lecimy
         ✈</button>

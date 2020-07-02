@@ -27,48 +27,57 @@ export class PassengersPageComponent implements OnInit {
     for (let i = 0; i < this.adultsNumber; i++) {
       //  Pasażer + nr
       const p = document.createElement("p");
+      p.classList.add('passengers__subtitle');
       document.getElementById('adultPassengersContainer').appendChild(p);
-      p.textContent = `Pasażer nr ${i + 1}`
+      p.textContent = `Pasażer nr ${i + 1} - dorosły`
       // Tytuł (płeć)
-      const genderField = document.createElement('div');
+      const nameField = document.createElement('div');
+      nameField.classList.add('passengers__item-div')
+      document.getElementById('adultPassengersContainer').appendChild(nameField);
       const genderInputMale = document.createElement('input');
-      document.getElementById('adultPassengersContainer').appendChild(genderField);
-      genderField.setAttribute('id', `genderField${i + 1}`)
-      genderField.appendChild(genderInputMale);
+      nameField.setAttribute('id', `nameField${i + 1}`)
+      nameField.classList.add('passengers__item-div')
+      nameField.appendChild(genderInputMale);
       genderInputMale.setAttribute('type', 'radio');
       genderInputMale.setAttribute('id', `male${i + 1}`);
       genderInputMale.setAttribute('name', 'gender');
       genderInputMale.setAttribute('value', 'male');
       genderInputMale.classList.add('gender-radio')
       const genderLabelMale = document.createElement("label");
-      genderField.appendChild(genderLabelMale);
+      nameField.appendChild(genderLabelMale);
       genderLabelMale.setAttribute('for', `male${i + 1}`);
       genderLabelMale.textContent = "Pan";
       genderLabelMale.classList.add('passengers__gender')
       genderLabelMale.addEventListener('click', function () {
         localStorage.setItem(`gender_user${i + 1}`, this.getAttribute('for'));
+        genderLabelMale.style.backgroundColor = "#2286a9";
+        genderLabelMale.style.color = "white";
+        genderLabelFemale.style.backgroundColor = "#e2e1e6";
+        genderLabelFemale.style.color = "black";
       })
       const genderInputFemale = document.createElement('input');
-      genderField.appendChild(genderInputFemale);
+      nameField.appendChild(genderInputFemale);
       genderInputFemale.setAttribute('type', 'radio');
       genderInputFemale.setAttribute('id', `female${i + 1}`);
       genderInputFemale.setAttribute('name', 'gender');
       genderInputFemale.setAttribute('value', 'female');
       genderInputFemale.classList.add('gender-radio')
       const genderLabelFemale = document.createElement("label");
-      genderField.appendChild(genderLabelFemale);
+      nameField.appendChild(genderLabelFemale);
       genderLabelFemale.setAttribute('for', `female${i + 1}`);
       genderLabelFemale.textContent = "Pani";
       genderLabelFemale.classList.add('passengers__gender');
       genderLabelFemale.addEventListener('click', function () {
         localStorage.setItem(`gender_user${i + 1}`, this.getAttribute('for'));
+        genderLabelMale.style.backgroundColor = "#e2e1e6";
+        genderLabelMale.style.color = "black";
+        genderLabelFemale.style.backgroundColor = "#2286a9";
+        genderLabelFemale.style.color = "white";
       })
 
 
       // Imię i nazwisko
-      const nameField = document.createElement('div');
       const firstNameLabel = document.createElement("label");
-      document.getElementById('adultPassengersContainer').appendChild(nameField);
       nameField.appendChild(firstNameLabel);
       firstNameLabel.setAttribute('for', 'firstName');
       firstNameLabel.textContent = "Imię*:";
@@ -98,17 +107,21 @@ export class PassengersPageComponent implements OnInit {
       //  Pasażer + nr
       const p = document.createElement("p");
       document.getElementById('childrenPassengersContainer').appendChild(p);
-      p.textContent = `Pasażer nr ${+this.adultsNumber + i + 1}`;
+      p.classList.add('passengers__subtitle');
+      p.textContent = `Pasażer nr ${+this.adultsNumber + i + 1} - dziecko`;
       const childUserNumber = +this.adultsNumber + i + 1;
       // Imię i nazwisko
       const nameField = document.createElement('div');
+      nameField.classList.add('passengers__item-div');
       const firstNameLabel = document.createElement("label");
       document.getElementById('childrenPassengersContainer').appendChild(nameField);
       nameField.appendChild(firstNameLabel);
       firstNameLabel.setAttribute('for', 'firstName');
       firstNameLabel.textContent = "Imię*:";
+      firstNameLabel.classList.add('passengers__label');
       const firstNameInput = document.createElement('input');
       firstNameInput.setAttribute('id', `firstName_user${+this.adultsNumber + i + 1}`);
+      firstNameInput.classList.add('passengers__input');
       firstNameInput.addEventListener('input', function () {
         localStorage.setItem(`firstName_user${childUserNumber}`, this.value);
       })
@@ -126,16 +139,16 @@ export class PassengersPageComponent implements OnInit {
       })
       nameField.appendChild(familyNameInput);
       // Data urodzenia
-      const dateField = document.createElement('div');
       const childBirthDateLabel = document.createElement("label");
-      document.getElementById('childrenPassengersContainer').appendChild(dateField);
-      dateField.appendChild(childBirthDateLabel);
+      nameField.appendChild(childBirthDateLabel);
       childBirthDateLabel.setAttribute('for', 'childBirthDate');
       childBirthDateLabel.textContent = "Data urodzenia*:";
+      childBirthDateLabel.classList.add('passengers__label');
       const childBirthDateInput = document.createElement('input');
-      dateField.appendChild(childBirthDateInput);
+      nameField.appendChild(childBirthDateInput);
       childBirthDateInput.setAttribute('id', `birthDay_user${+this.adultsNumber + i + 1}`)
       childBirthDateInput.setAttribute('type', 'date');
+      childBirthDateInput.classList.add('passengers__input')
       childBirthDateInput.addEventListener('input', function () {
         localStorage.setItem(`birthDay_user${childUserNumber}`, this.value);
       })
@@ -143,20 +156,24 @@ export class PassengersPageComponent implements OnInit {
     for (let i = 0; i < this.babiesNumber; i++) {
       //  Pasażer + nr
       const p = document.createElement("p");
+      p.classList.add('passengers__subtitle');
       document.getElementById('babiesPassengersContainer').appendChild(p);
-      p.textContent = `Pasażer nr ${+this.adultsNumber + +this.childrenNumber + i + 1}`;
+      p.textContent = `Pasażer nr ${+this.adultsNumber + +this.childrenNumber + i + 1} - niemowlę`;
       const babyUserNumber = +this.adultsNumber + +this.childrenNumber + i + 1;
       // Data urodzenia
       const dateField = document.createElement('div');
       const babyBirthDateLabel = document.createElement("label");
       document.getElementById('babiesPassengersContainer').appendChild(dateField);
       dateField.appendChild(babyBirthDateLabel);
+      dateField.classList.add('passengers__item-div');
       babyBirthDateLabel.setAttribute('for', 'babyBirthDate');
       babyBirthDateLabel.textContent = "Data urodzenia*:";
+      babyBirthDateLabel.classList.add('passengers__label');
       const babyBirthDateInput = document.createElement('input');
       dateField.appendChild(babyBirthDateInput);
       babyBirthDateInput.setAttribute('id', `birthDay_user${+this.adultsNumber + +this.childrenNumber + i + 1}`)
       babyBirthDateInput.setAttribute('type', 'date');
+      babyBirthDateInput.classList.add('passengers__input')
       babyBirthDateInput.addEventListener('input', function () {
         localStorage.setItem(`birthDay_user${babyUserNumber}`, this.value);
       })

@@ -1,35 +1,32 @@
 <app-navigation-bar></app-navigation-bar>
 <div class="wrapper">
   <h1 class="component-title">Pasażerowie</h1>
-  <p>Dorośli: {{ adultsNumber }}, dzieci: {{ childrenNumber }}, niemowlęta: {{ babiesNumber }}</p>
+  <p class="passengers-number">dorośli: {{ adultsNumber }}, dzieci: {{ childrenNumber }}, niemowlęta: {{ babiesNumber }}
+  </p>
   <div class="passengers">
-    <p class="passengers__title">Pasażerowie dorośli</p>
-    <div id="adultPassengersContainer" class="passengers__item">
-
-    </div>
-    <p class="passengers__title" *ngIf="childrenNumber > 0">Dzieci</p>
-    <div id="childrenPassengersContainer" class="passengers__item">
-
-    </div>
-    <p class="passengers__title" *ngIf="babiesNumber > 0">Niemowlęta</p>
-    <div id="babiesPassengersContainer" class="passengers__item">
-
-    </div>
+    <div id="adultPassengersContainer" class="passengers__item"></div>
+    <div id="childrenPassengersContainer" class="passengers__item"></div>
+    <div id="babiesPassengersContainer" class="passengers__item"></div>
   </div>
-  <p>Dane kontaktowe</p>
-  <label for="emailAddress">Adres e-mail</label>
-  <input type="text" #emailAddress id="emailAddress">
-  <label for="phoneNumber">Nr telefonu</label>
-  <input type="text" #phoneNumber id="phoneNumber">
 
-  <input type="checkbox" id="rulesAgreement" name="yes" value="agreed" #rulesAgreement checked>
-  <label for="rulesAgreement">Zapoznałem/-am się i akceptuję Warunki Taryfy (w szczególności warunki zmiany/zwrotu
-    biletu), Regulamin Świadczenia Usług Drogą Elektroniczną, Politykę Prywatności oraz Warunki przewozu.*</label>
-  <p>Pola obowiązkowe (*)</p>
+  <p class="passengers__subtitle">Dane kontaktowe</p>
+  <div class="passengers__item-div">
+    <label for="emailAddress" class="passengers__label">Adres e-mail</label>
+    <input type="text" #emailAddress id="emailAddress" class="passengers__input">
+    <label for="phoneNumber" class="passengers__label">Nr telefonu</label>
+    <input type="text" #phoneNumber id="phoneNumber" class="passengers__input">
+  </div>
+  <div class="passengers__item-div">
+    <input type="checkbox" id="rulesAgreement" name="yes" value="agreed" #rulesAgreement checked
+      class="passengers__item-checkbox">
+    <label for="rulesAgreement">Zapoznałem/-am się i akceptuję Warunki Taryfy (w szczególności warunki zmiany/zwrotu
+      biletu), Regulamin Świadczenia Usług Drogą Elektroniczną, Politykę Prywatności oraz Warunki przewozu.*</label>
+  </div>
+  <p class="required">Pola obowiązkowe (*)</p>
 </div>
 
 <a routerLink="/seat-choice">
-  <button>Kontynuuj
+  <button class="btn-summarybox">Kontynuuj
     🡺</button>
 </a>
 

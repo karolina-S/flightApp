@@ -2,7 +2,21 @@
 @import '../general.scss';
 
 .wrapper {
-  max-width: 70%;
+  max-width: 50%;
+}
+
+.information-container {
+  margin: 0 auto;
+  border-radius: 8px;
+  background-color: #fff;
+  // border: 6px grey solid;
+  width: 400px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 20px;
 }
 
 .plane-container {
@@ -18,30 +32,29 @@
   &::-webkit-scrollbar {
     background-color: transparent;
     width: 8px;
-    // border-radius: 0 8px 8px 0;
   }
 
   &::-webkit-scrollbar-thumb {
     background-color: transparent;
-    // border-radius: 0 8px 8px 0;
   }
 }
 
 .country-plane-svg {
-  width: 40vw;
+  height: 100vh;
   cursor: pointer;
+  margin-right: 5vw;
 }
 
 .europe-plane-svg {
-  width: 40vw;
+  height: 150vh;
   cursor: pointer;
+  margin-right: 5vw;
 }
 
 .world-plane-svg {
   height: 150vh;
   cursor: pointer;
   margin-right: 5vw;
-
 }
 
 .seat-selected {
@@ -57,14 +70,37 @@
   cursor: pointer;
 }
 
-.seat-number-container {
-  width: 300px;
-  height: 100px;
-  background-color: #000;
-  color: #fff;
-  font-size: 28px;
-}
-
 .information-container {
   margin-top: 10vh;
+}
+
+.btn-summarybox {
+  position: fixed;
+  bottom: 5vh;
+  right: 2vw;
+  width: 16vw;
+  background-color: $main-color;
+  z-index: 1;
+  border: none;
+  height: 50px;
+  color: white;
+  font-family: Montserrat-Regular, Montserrat;
+  text-transform: uppercase;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 20px;
+  cursor: pointer;
+  outline: none;
+
+  &:hover {
+    background-color: #1d7595;
+  }
+
+  &:disabled {
+    background-color: $dark-grey;
+
+    &:hover {
+      background-color: $dark-grey;
+    }
+  }
 }

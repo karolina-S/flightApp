@@ -7,11 +7,10 @@ import { flightConnections } from '../details';
   styleUrls: ['./main-page.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-
 export class MainPageComponent implements OnInit {
 
   public options;
-  @ViewChild('start', { static: true }) start: ElementRef;
+  public start = document.getElementById('start');;
   public startCities = document.querySelectorAll('[name="startCity"]');;
   public startCitiesContainer = document.querySelectorAll('.cities-container__item');;
   public startArray = Array.from(this.startCities);;
@@ -20,10 +19,11 @@ export class MainPageComponent implements OnInit {
 
   public date = new Date();
   public dayToday = (this.date.getDate() < 9) ? '0' + this.date.getDate() : this.date.getDate();
+  public dayTomorrow = this.dayToday < 10 ? '0' + (+this.dayToday + 1) : +this.dayToday + 1;
   public monthToday = ((this.date.getMonth() + 1) < 9 ? '0' + (this.date.getMonth() + 1) : (this.date.getMonth() + 1));
   public yearToday = this.date.getFullYear();
   public dateToday = `${this.yearToday}-${this.monthToday}-${this.dayToday}`;
-  public dateTomorrow = `${this.yearToday}-${this.monthToday}-${+this.dayToday + 1}`;
+  public dateTomorrow = `${this.yearToday}-${this.monthToday}-${this.dayTomorrow}`;
   public dateMax = `${this.yearToday + 1}-${this.monthToday}-${this.dayToday}`;
   public startDateFiled;
   public endDateField;
@@ -42,6 +42,10 @@ export class MainPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log(this.dateToday)
+    console.log(this.dayToday)
+    console.log(this.dateTomorrow)
+    console.log(this.dayTomorrow)
     this.optionsContainer = document.getElementById('selected_destination');
     this.startDateFiled = document.getElementById('startDate');
     this.endDateField = document.getElementById('endDate');
@@ -54,7 +58,6 @@ export class MainPageComponent implements OnInit {
 
     this.originSelected = document.getElementById('selected');
     this.originOptionsContainer = document.getElementById('citiesContainer');
-
 
     this.originSelected.addEventListener('click', () => {
       this.originOptionsContainer.classList.toggle('active');
