@@ -1,21 +1,47 @@
 @import '../variables.scss';
 @import '../general.scss';
 
+//////////
+.cls-1,
+.cls-5 {
+  fill: #e2e1e6;
+}
+
+.cls-2 {
+  fill: #807a7a;
+}
+
+.cls-3 {
+  fill: #fff;
+}
+
+.cls-4 {
+  fill: #1d1d1d;
+}
+
+.cls-3,
+.cls-4 {
+  font-size: 14px;
+}
+
+.cls-6 {
+  fill: $main-color;
+}
+
+/////////
 .wrapper {
-  max-width: 50%;
+  max-width: 80vw;
 }
 
 .information-container {
-  margin: 0 auto;
+  margin-left: 25px;
   border-radius: 8px;
   background-color: #fff;
-  // border: 6px grey solid;
   width: 400px;
   height: 250px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+
   font-size: 20px;
 }
 
@@ -62,7 +88,7 @@
 }
 
 .seat-occupied {
-  fill: #807a7a;
+  fill: $dark-grey;
   cursor: not-allowed;
 }
 
@@ -102,5 +128,14 @@
     &:hover {
       background-color: $dark-grey;
     }
+  }
+}
+
+@media (max-width: 1200px) {
+
+  .country-plane-svg,
+  .europe-plane-svg,
+  .world-plane-svg {
+    transform: rotate(90deg);
   }
 }

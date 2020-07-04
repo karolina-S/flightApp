@@ -10,6 +10,18 @@
   right: 0;
   padding: 20px;
 
+  &__unfold {
+    position: fixed;
+    top: 12vh;
+    right: 1vw;
+    width: 40px;
+    height: 40px;
+    font-size: 40px;
+    color: $main-color;
+    transition: .5s;
+    cursor: pointer;
+  }
+
   &__title {
     text-transform: uppercase;
     font-weight: 400;
@@ -37,6 +49,25 @@
 
   &.second-plane {
     transform: rotate(180deg);
+  }
+
+}
+
+// Media Queries
+
+@media (max-width: 1200px) {
+  .summary-box {
+    right: -19vw;
+    transition: .5s;
+  }
+
+  .summary-box.unfold {
+    right: 0;
+  }
+
+  .summary-box__unfold.unfold {
+    right: 20vw;
+    transform: rotateY(180deg);
   }
 
 }

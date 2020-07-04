@@ -3,7 +3,7 @@
 
 .container {
   background-image: url(../../assets/img/bg_plane.jpg); //Photo by Andrik Langfield on Unsplash
-  background-size: 100%;
+  background-size: cover;
   background-position: center;
   display: flex;
   justify-content: center;
@@ -37,11 +37,8 @@
 
 .login {
   background: #43C6AC;
-  /* fallback for old browsers */
   background: -webkit-linear-gradient(to top, $dark-grey, $main-color);
-  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to top, $dark-grey, $main-color);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   -webkit-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.75);
@@ -117,5 +114,19 @@
     font-family: Montserrat-Regular, Montserrat;
     color: white;
     cursor: pointer;
+  }
+}
+
+// Media Queries
+
+@media (max-width: 550px) {
+  .login {
+    width: 350px
+  }
+}
+
+@media (max-width: 400px) {
+  .login {
+    width: 300px
   }
 }

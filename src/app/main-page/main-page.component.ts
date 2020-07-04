@@ -24,7 +24,7 @@ export class MainPageComponent implements OnInit {
   public yearToday = this.date.getFullYear();
   public dateToday = `${this.yearToday}-${this.monthToday}-${this.dayToday}`;
   public dateTomorrow = `${this.yearToday}-${this.monthToday}-${this.dayTomorrow}`;
-  public dateMax = `${this.yearToday + 1}-${this.monthToday}-${this.dayToday}`;
+  public dateMax = `${this.yearToday + 1}-${this.monthToday}-${+this.dayToday + 7}`;
   public startDateFiled;
   public endDateField;
 
@@ -36,6 +36,8 @@ export class MainPageComponent implements OnInit {
   public destinationSelected;
   public originOptionsContainer;
   public destinationOptionsContainer;
+
+  public plane;
 
 
   constructor() {
@@ -91,6 +93,8 @@ export class MainPageComponent implements OnInit {
             localStorage.setItem('endCity', flightConnections[i].destinations[j].id);
             document.getElementById('button').removeAttribute('disabled');
             document.getElementById('optionsContainer').classList.toggle('active');
+            localStorage.setItem('plane', flightConnections[i].destinations[j].plane)
+            localStorage.setItem('price', flightConnections[i].destinations[j].price)
           });
           divGroup.appendChild(div);
           div.appendChild(input);

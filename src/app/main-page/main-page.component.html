@@ -1,5 +1,5 @@
 <nav class="nav">
-  <a routerLink="/main-page"><img class="logo" src="../../assets/img/logo_blue2.png" alt=""></a>
+  <a routerLink="/main-page"><img class="nav__logo" src="../../assets/img/logo_blue2.png" alt=""></a>
 </nav>
 <main class="main">
   <div class="form">
@@ -84,9 +84,6 @@
         </div>
       </div>
     </div>
-
-    <div class="pop-up" #popUp>Proszę wybrać miasto wylotu i miasto docelowe</div>
-
     <a routerLink="/details-page">
       <button class="btn" (click)="saveBasicInformation(startDate.value, endDate.value)" id="button" disabled>Lecimy
         ✈</button>

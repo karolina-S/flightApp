@@ -22,10 +22,10 @@ export class SummaryBoxComponent implements OnInit {
   public babiesPriceTotal;
   public travelOptionChosen = localStorage.getItem('option');
   public travelClass = localStorage.getItem('class');
-  public startTimeThere = localStorage.getItem('startTimeThere')
-  public endTimeThere = localStorage.getItem('endTimeThere');
-  public startTimeBack = localStorage.getItem('startTimeBack');
-  public endTimeBack = localStorage.getItem('endTimeBack');
+  public startTimeThere;
+  public endTimeThere;
+  public startTimeBack;
+  public endTimeBack;
   public seatsChosen;
   public seatsPrice;
   public additionalLuggagePrice;
@@ -39,6 +39,11 @@ export class SummaryBoxComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.startTimeThere = localStorage.getItem('startTimeThere');
+    this.endTimeThere = localStorage.getItem('endTimeThere');
+    this.startTimeBack = localStorage.getItem('startTimeBack');
+    this.endTimeBack = localStorage.getItem('endTimeBack');
+
     // Number of passengers
     this.adultsNumber = localStorage.getItem('adults');
     this.childrenNumber = localStorage.getItem('children');
@@ -97,8 +102,11 @@ export class SummaryBoxComponent implements OnInit {
       document.getElementById('informationField').classList.remove('closed');
       document.getElementById('totalField').classList.remove('closed');
     }
+  }
 
-
+  showDetails() {
+    document.querySelector('.summary-box').classList.toggle('unfold');
+    document.querySelector('.summary-box__unfold').classList.toggle('unfold');
   }
 }
 

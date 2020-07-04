@@ -3,7 +3,11 @@
 
 .wrapper {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+}
+
+.details-page-wrapper {
+  width: 80%;
 }
 
 .travel-option {
@@ -82,10 +86,6 @@
   }
 }
 
-.details-page-wrapper {
-  width: 80%;
-}
-
 .flight-information-wrapper {
   margin-top: 5vh;
   display: flex;
@@ -138,7 +138,10 @@
   cursor: pointer;
 
   &__price {
-    margin-top: 10px;
+    margin-top: 60px;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
   }
 
   &__item {
@@ -162,7 +165,7 @@
   &__btn {
     text-align: center;
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 
@@ -194,5 +197,11 @@
     &:hover {
       background-color: $dark-grey;
     }
+  }
+}
+
+@media (max-width: 1200px) {
+  .details-page-wrapper {
+    width: 100%;
   }
 }

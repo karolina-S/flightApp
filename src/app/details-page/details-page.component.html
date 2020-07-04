@@ -35,16 +35,14 @@
   <div class="class">
     <div class="class__item" #economy id="economy" (click)="saveClass(economy.id)">
       <p class="class__btn" id="economyButton">Economy</p>
-      <p class="class__price">425 PLN</p>
     </div>
-    <div class=" class__item" #premiumeconomy id="premiumeconomy" (click)="saveClass(premiumeconomy.id)">
+    <div class=" class__item" #premiumeconomy id="premiumeconomy" (click)="saveClass(premiumeconomy.id)"
+      *ngIf="plane !== 'country'">
       <p class="class__btn" id="premiumeconomyButton">Premium
         economy</p>
-      <p class="class__price">425 PLN</p>
     </div>
-    <div class="class__item" #business id="business" (click)="saveClass(business.id)">
+    <div class="class__item" #business id="business" (click)="saveClass(business.id)" *ngIf="plane !== 'country'">
       <p class="class__btn" id="businessButton">Business</p>
-      <p class="class__price">425 PLN</p>
     </div>
   </div>
   <!-- Koniec klas -->
@@ -64,6 +62,7 @@
               class="fas fa-globe travel-option__conditions-list-icon"></i> Odprawa online do 2 dni przed
             odlotem</li>
         </ul>
+        <p class="class__price">{{ basicPrice }}{{ currencyChosen }}</p>
       </div>
       <div class="travel-option__additional">
         <p>Zmiana rezerwacji za dopłatą</p>
@@ -94,6 +93,7 @@
               class="fas fa-globe travel-option__conditions-list-icon"></i> Odprawa online do 30 dni przed
             odlotem</li>
         </ul>
+        <p class="class__price">{{ plusPrice }} {{ currencyChosen }}</p>
       </div>
       <div class="travel-option__additional">
         <p>Zmiana rezerwacji za dopłatą</p>
@@ -125,6 +125,7 @@
           <li class="travel-option__conditions-list-item"><i
               class="fas fa-check-circle travel-option__conditions-list-icon"></i> Automatyczna odprawa</li>
         </ul>
+        <p class="class__price">{{ premiumPrice }} {{ currencyChosen }}</p>
       </div>
       <div class="travel-option__additional">
         <p>Darmowa zmiana rezerwacji</p>

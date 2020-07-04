@@ -12,11 +12,23 @@ export class SeatChoiceComponent implements OnInit {
   public adultsNumber: number = Number(localStorage.getItem('adults'));
   public childrenNumber: number = Number(localStorage.getItem('children'));
   public totalNumber: number = +this.adultsNumber + +this.childrenNumber;
-
+  public plane;
   constructor() { }
 
   ngOnInit(): void {
     document.title = "Wybór miejsca | Bon Voyage | Zarezerwuj swój lot!"
+
+    // this.plane = localStorage.getItem('plane');
+    // if (this.plane === 'country') {
+    //   document.getElementById('europePlane').style.display = 'none';
+    //   document.getElementById('worldPlane').style.display = 'none';
+    // } else if (this.plane === 'international') {
+    //   document.getElementById('countryPlane').style.display = 'none';
+    //   document.getElementById('worldPlane').style.display = 'none';
+    // } else if (this.plane === 'world') {
+    //   document.getElementById('countryPlane').style.display = 'none';
+    //   document.getElementById('internationalPlane').style.display = 'none';
+    // }
     const seatsChosen = new Array();
     this.seatsArray = Array.from(document.querySelectorAll('.cls-1'));
     this.seatsArray.forEach(seat => {
