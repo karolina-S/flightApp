@@ -32,5 +32,19 @@
   </div>
 </div>
 
+<div class="pop-up" id="popUp">
+  <div class="pop-up__inside">
+    <div class="pop-up__close" (click)="hidePopup()"><i class="fas fa-times"></i></div>
+    <h2 class="pop-up__title">Sesja wygasła</h2>
+    <div class="pop-up__wrapper">
+      <i class="far fa-clock pop-up__icon"></i>
+      <p class="pop-up__text">Z powodu długiej bezczynności na stronie nastąpi wylogowanie. Możesz dalej kontynuować
+        bieżącą rezerwację lub rozpocząć nową.</p>
+    </div>
+    <button class="pop-up__button" (click)="hidePopup()">Kontynuuj rezerwację</button>
+    <a routerLink="/main-page" class="pop-up__back">Rozpocznij nową rezerwację</a>
+  </div>
+</div>
+
 
 <router-outlet></router-outlet>

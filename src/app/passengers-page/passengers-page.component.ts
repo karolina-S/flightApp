@@ -14,11 +14,28 @@ export class PassengersPageComponent implements OnInit {
   public babiesNumber;
   public total;
 
+  // public timeout;
+
 
   constructor(private router: Router) { }
 
   ngOnInit(): void {
     document.title = "Dane pasażerów | Bon Voyage | Zarezerwuj swój lot!"
+
+// document.addEventListener("mousemove", () => {
+//       clearInterval(this.timeout);
+//       this.timeout = setInterval(function () {
+//         alert("10sekund")
+//       }, 80000)
+//     });
+
+//     document.addEventListener("keyup", () => {
+//       clearInterval(this.timeout);
+//       this.timeout = setInterval(function () {
+//         alert("10sekund")
+//       }, 80000)
+//     })
+
     this.adultsNumber = localStorage.getItem('adults');
     this.childrenNumber = localStorage.getItem('children');
     this.babiesNumber = localStorage.getItem('babies');

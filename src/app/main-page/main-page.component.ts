@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewEncapsulation, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Router } from '@angular/router';
 import { flightConnections } from '../details';
 
 @Component({
@@ -40,14 +41,10 @@ export class MainPageComponent implements OnInit {
   public plane;
 
 
-  constructor() {
+  constructor(private router: Router) {
   }
 
   ngOnInit(): void {
-    console.log(this.dateToday)
-    console.log(this.dayToday)
-    console.log(this.dateTomorrow)
-    console.log(this.dayTomorrow)
     this.optionsContainer = document.getElementById('selected_destination');
     this.startDateFiled = document.getElementById('startDate');
     this.endDateField = document.getElementById('endDate');
@@ -63,6 +60,7 @@ export class MainPageComponent implements OnInit {
 
     this.originSelected.addEventListener('click', () => {
       this.originOptionsContainer.classList.toggle('active');
+      document.getElementById('selected').style.border = "none"
     });
   }
 
@@ -91,7 +89,7 @@ export class MainPageComponent implements OnInit {
           div.addEventListener('click', function () {
             document.getElementById('destinationSelected').innerText = flightConnections[i].destinations[j].name;
             localStorage.setItem('endCity', flightConnections[i].destinations[j].id);
-            document.getElementById('button').removeAttribute('disabled');
+            document.getElementById('button').classList.remove('disabled');
             document.getElementById('optionsContainer').classList.toggle('active');
             localStorage.setItem('plane', flightConnections[i].destinations[j].plane)
             localStorage.setItem('price', flightConnections[i].destinations[j].price)
@@ -134,5 +132,13 @@ export class MainPageComponent implements OnInit {
     localStorage.setItem('children', this.childrenPassengers.toString());
     localStorage.setItem('babies', this.babiesPassengers.toString());
     localStorage.setItem('adults', this.adultPassengers.toString());
+    this.router.navigate(['/details-page'])
   }
+
+  checkIfDisabled() {
+    if (document.getElementById('button').classList.contains('disabled')) {
+      alert("Proszę wybrać miasta")
+    }
+  }
+
 }

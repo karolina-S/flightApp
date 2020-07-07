@@ -36,9 +36,27 @@ export class SummaryBoxComponent implements OnInit {
   public currencyChosen;
   public currencyField;
 
+  public timeout;
+
   constructor() { }
 
   ngOnInit(): void {
+    document.addEventListener("mousemove", () => {
+      clearInterval(this.timeout);
+      this.timeout = setInterval(function () {
+        document.getElementById('popUp').style.display = 'block';
+        console.log('dziala')
+      }, 180000)
+    });
+
+    document.addEventListener("keyup", () => {
+      clearInterval(this.timeout);
+      this.timeout = setInterval(function () {
+        document.getElementById('popUp').style.display = 'block';
+        console.log('dziala')
+      }, 180000)
+    })
+
     this.startTimeThere = localStorage.getItem('startTimeThere');
     this.endTimeThere = localStorage.getItem('endTimeThere');
     this.startTimeBack = localStorage.getItem('startTimeBack');
@@ -86,19 +104,13 @@ export class SummaryBoxComponent implements OnInit {
     //   }
     // }
 
-    // Prices
     this.totalPrice = `${this.adultsPriceTotal + this.childrenPriceTotal + this.babiesPriceTotal}`
-
-    // Show invisible information
     if (window.location.href.indexOf("passengers-page") > -1) {
       document.getElementById('passengersField').classList.remove('closed');
-      // document.getElementById('optionsField').classList.remove('closed');
       document.getElementById('informationField').classList.remove('closed');
-      // document.getElementById('totalField').classList.remove('closed');
     }
     if (window.location.href.indexOf("seat-choice") > -1) {
       document.getElementById('passengersField').classList.remove('closed');
-      // document.getElementById('optionsField').classList.remove('closed');
       document.getElementById('informationField').classList.remove('closed');
       document.getElementById('totalField').classList.remove('closed');
     }
@@ -107,6 +119,10 @@ export class SummaryBoxComponent implements OnInit {
   showDetails() {
     document.querySelector('.summary-box').classList.toggle('unfold');
     document.querySelector('.summary-box__unfold').classList.toggle('unfold');
+  }
+
+  hidePopup() {
+    document.getElementById('popUp').style.display = 'none';
   }
 }
 

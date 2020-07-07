@@ -1,9 +1,14 @@
 <nav class="nav">
   <a routerLink="/main-page"><img class="nav__logo" src="../../assets/img/logo_blue2.png" alt=""></a>
+  <a href="#" class="nav__item">Strona główna</a>
+  <a href="#" class="nav__item">Promocje i oferty</a>
+  <a href="#" class="nav__item">Status lotu</a>
+  <a href="#" class="nav__item">Kontakt</a>
+  <a href="#" class="nav__item">Zaloguj się</a>
 </nav>
 <main class="main">
   <div class="form">
-    <h1 class="component-title">Znajdź lot dla siebie</h1>
+    <h1 class="component-title-main">Znajdź lot dla siebie</h1>
     <div class="form__container">
       <div class="form__container-item">
         <div id="start" class="cities-container">
@@ -84,14 +89,12 @@
         </div>
       </div>
     </div>
-    <a routerLink="/details-page">
-      <button class="btn" (click)="saveBasicInformation(startDate.value, endDate.value)" id="button" disabled>Lecimy
-        ✈</button>
-    </a>
+    <div (click)="checkIfDisabled()">
+      <button class="btn disabled" (click)="saveBasicInformation(startDate.value, endDate.value)" id="button">Lecimy
+        ✈</button></div>
   </div>
-
 </main>
 
-<footer class="footer">© 2020 Karolina Stefańczyk</footer>
+<footer class="footer">Projekt zaliczeniowy CDV | © 2020 Karolina Stefańczyk</footer>
 
 <router-outlet></router-outlet>

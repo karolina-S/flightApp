@@ -34,12 +34,29 @@ export class DetailsPageComponent implements OnInit {
   public premiumPrice;
 
   public currencyChosen;
+
+  // public timeout;
+
   constructor() {
 
   }
 
   ngOnInit(): void {
     document.title = "Wybór taryfy | Bon Voyage | Zarezerwuj swój lot!"
+
+    // document.addEventListener("mousemove", () => {
+    //   clearInterval(this.timeout);
+    //   this.timeout = setInterval(function () {
+    //     alert("10sekund")
+    //   }, 180000)
+    // });
+
+    // document.addEventListener("keyup", () => {
+    //   clearInterval(this.timeout);
+    //   this.timeout = setInterval(function () {
+    //     alert("10sekund")
+    //   }, 180000)
+    // })
 
     flightConnections.forEach(city => {
       if (city.id == this.origin) {
@@ -79,6 +96,10 @@ export class DetailsPageComponent implements OnInit {
   lessLuggage32() { this.luggage32kg <= 0 ? alert("Nieprawidłowa ilość!") : this.luggage32kg = this.luggage32kg - 1 }
   moreLuggage32() { this.luggage32kg >= 5 ? alert("Osiągnięto maksymalną ilość bagażu") : this.luggage32kg = this.luggage32kg + 1 }
 
+  resetTimeout() {
+
+  }
+
   // Saving
 
   saveTravelOption(option) {
@@ -98,7 +119,6 @@ export class DetailsPageComponent implements OnInit {
   }
 
   saveClass(classOption) {
-    console.log('click')
     localStorage.setItem('class', classOption);
     document.getElementById('economy').style.boxShadow = '';
     document.getElementById(classOption).style.boxShadow = "0px 0px 9px 0px #807a7a";

@@ -80,12 +80,6 @@
     color: black;
     transition: 0.25s;
     font-weight: 300;
-
-    &:focus {
-      background-color: white;
-      width: 300px;
-      color: black;
-    }
   }
 
   &__button {

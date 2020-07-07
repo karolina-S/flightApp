@@ -45,12 +45,91 @@
 .fas {
   padding: 0 5px;
   font-size: .75em;
-  margin-bottom: 5px;
 
   &.second-plane {
     transform: rotate(180deg);
   }
+}
 
+.pop-up {
+  background: rgba(226, 225, 230, .7);
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: none;
+
+  &__inside {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -42%);
+    background: #fff;
+    width: 500px;
+    height: 300px;
+    z-index: 1;
+    -webkit-box-shadow: 0px 0px 15px 0px $dark-grey;
+    -moz-box-shadow: 0px 0px 15px 0px $dark-grey;
+    box-shadow: 0px 0px 15px 0px $dark-grey;
+    padding: 30px 25px;
+    align-self: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 26px;
+    cursor: pointer;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__icon {
+    font-size: 80px;
+    margin: 20px 20px 20px 0;
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__text {
+    font-size: 14px;
+    text-align: justify;
+  }
+
+  &__button {
+    width: 250px;
+    font-family: $main-font;
+    font-size: 20px;
+    background-color: $main-color;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+    color: white;
+  }
+
+  &__back {
+    display: block;
+    color: $main-color;
+    font-size: 14px;
+    text-decoration: none;
+  }
 }
 
 // Media Queries
@@ -70,4 +149,44 @@
     transform: rotateY(180deg);
   }
 
+}
+
+@media (max-width: 450px) {
+  .summary-box {
+    width: 100vw;
+    height: 30%;
+    position: fixed;
+    top: -40vh;
+    right: 0;
+    padding: 20px;
+    z-index: 1;
+    -webkit-box-shadow: 0px 0px 15px 0px $light-grey;
+    -moz-box-shadow: 0px 0px 15px 0px $light-grey;
+    box-shadow: 0px 0px 15px 0px $light-grey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+
+    &__unfold {
+      font-size: 30px;
+      position: fixed;
+      top: 11vh;
+      right: 0vw;
+      transform: rotate(-90deg);
+    }
+  }
+
+  .summary-box.unfold {
+    opacity: 1;
+    top: 10vh;
+    right: 0;
+    overflow-y: scroll;
+  }
+
+  .summary-box__unfold.unfold {
+    top: 40vh;
+    right: 0vw;
+    transform: rotate(90deg);
+  }
 }

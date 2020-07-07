@@ -14,8 +14,7 @@
   align-items: center;
   z-index: 2;
   padding: 0 2vw;
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
   top: 0;
   margin-bottom: 5vh;
   font-size: .875rem; // 14px
@@ -45,4 +44,33 @@
 .logo {
   margin: 0 3vw 0 .5vw;
   cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+  .navigation-bar {
+    &__step {
+      color: #e2e1e6;
+      padding: 10px;
+    }
+  }
+}
+
+@media (max-width:450px) {
+  .done {
+    display: none;
+  }
+
+  .navigation-bar {
+    &__step {
+      display: none;
+    }
+
+    &__arrow {
+      display: none;
+    }
+  }
+
+  .logo {
+    width: 50vw;
+  }
 }
