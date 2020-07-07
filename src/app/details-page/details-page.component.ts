@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { flightConnections } from '../details'
+import { flightConnections } from '../details';
 
 @Component({
   selector: 'app-details-page',
@@ -35,28 +35,10 @@ export class DetailsPageComponent implements OnInit {
 
   public currencyChosen;
 
-  // public timeout;
-
-  constructor() {
-
-  }
+  constructor() { }
 
   ngOnInit(): void {
     document.title = "Wybór taryfy | Bon Voyage | Zarezerwuj swój lot!"
-
-    // document.addEventListener("mousemove", () => {
-    //   clearInterval(this.timeout);
-    //   this.timeout = setInterval(function () {
-    //     alert("10sekund")
-    //   }, 180000)
-    // });
-
-    // document.addEventListener("keyup", () => {
-    //   clearInterval(this.timeout);
-    //   this.timeout = setInterval(function () {
-    //     alert("10sekund")
-    //   }, 180000)
-    // })
 
     flightConnections.forEach(city => {
       if (city.id == this.origin) {
@@ -96,12 +78,6 @@ export class DetailsPageComponent implements OnInit {
   lessLuggage32() { this.luggage32kg <= 0 ? alert("Nieprawidłowa ilość!") : this.luggage32kg = this.luggage32kg - 1 }
   moreLuggage32() { this.luggage32kg >= 5 ? alert("Osiągnięto maksymalną ilość bagażu") : this.luggage32kg = this.luggage32kg + 1 }
 
-  resetTimeout() {
-
-  }
-
-  // Saving
-
   saveTravelOption(option) {
     localStorage.setItem('option', option);
     document.getElementById('basic').style.boxShadow = '';
@@ -124,6 +100,7 @@ export class DetailsPageComponent implements OnInit {
     document.getElementById(classOption).style.boxShadow = "0px 0px 9px 0px #807a7a";
     this.classClicked = true;
     this.optionClicked && this.classClicked ? document.getElementById('button').removeAttribute('disabled') : null;
+    this.currencyChosen = localStorage.getItem('currency') || 'PLN';
     if (classOption == 'economy') {
       this.basicPrice = Math.round(+this.price);
       this.plusPrice = Math.round(+this.price * 1.67);
@@ -142,6 +119,32 @@ export class DetailsPageComponent implements OnInit {
       this.premiumPrice = Math.round(+this.price * 2.78 * 2.5);
       document.getElementById('premiumeconomy').style.boxShadow = '';
       document.getElementById('business').style.boxShadow = '';
+    }
+
+    if (this.currencyChosen !== 'PLN') {
+      fetch(`http://api.nbp.pl/api/exchangerates/rates/A/${this.currencyChosen}/`)
+        .then((resp) => resp.json())
+        .then((data) => {
+          if (classOption == 'economy') {
+            this.basicPrice = Math.round((+this.price) / (data.rates[0].mid));
+            this.plusPrice = Math.round((+this.price * 1.67) / (data.rates[0].mid));
+            this.premiumPrice = Math.round((+this.price * 2.78) / (data.rates[0].mid));
+          }
+          else if (classOption == 'premiumeconomy') {
+            this.basicPrice = Math.round((+this.price * 1.5) / (data.rates[0].mid));
+            this.plusPrice = Math.round((+this.price * 1.67 * 1.5) / (data.rates[0].mid));
+            this.premiumPrice = Math.round((+this.price * 2.78 * 1.5) / (data.rates[0].mid));
+            document.getElementById('premiumeconomy').style.boxShadow = '';
+            document.getElementById('business').style.boxShadow = '';
+          }
+          else if (classOption == 'business') {
+            this.basicPrice = Math.round((+this.price * 2.5) / (data.rates[0].mid));
+            this.plusPrice = Math.round((+this.price * 1.67 * 2.5) / (data.rates[0].mid));
+            this.premiumPrice = Math.round((+this.price * 2.78 * 2.5) / (data.rates[0].mid));
+            document.getElementById('premiumeconomy').style.boxShadow = '';
+            document.getElementById('business').style.boxShadow = '';
+          }
+        })
     }
 
   }

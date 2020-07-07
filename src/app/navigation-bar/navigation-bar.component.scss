@@ -36,9 +36,34 @@
   border-radius: 5px;
 }
 
-.currency-container {
-  margin: 0 1vw 0 4vw;
-  cursor: pointer;
+.currency {
+  &__container {
+    margin: 0 1vw 0 4vw;
+    cursor: pointer;
+    display: flex;
+    padding: 0 5px;
+  }
+
+  &__option {
+    padding: 0 5px;
+    background-color: transparent;
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: $main-font;
+    color: $dark-grey;
+    border-bottom: 2px solid transparent;
+
+    &:hover {
+      color: $main-color;
+      border-bottom: 2px solid $main-color;
+    }
+
+    &.selected {
+      color: $main-color;
+      border-bottom: 2px solid $main-color;
+    }
+  }
 }
 
 .logo {

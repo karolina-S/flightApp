@@ -19,9 +19,10 @@
     <div class="navigation-bar__step" id="navbarStep5">
         Odbierz bilet i leć!
     </div>
-    <select class="currency-container" id="currencyContainer">
-        <option value="pln" #pln class="currency-option" selected>PLN</option>
-        <option value="eur" #eur class="currency-option">EUR</option>
-        <option value="usd" #usd class="currency-option">USD</option>
-    </select>
+    <div class="currency__container" id="currencyContainer">
+        <button value="pln" #pln id="pln" class="currency__option selected"
+            (click)="changeCurrency(pln.value)">PLN</button>
+        <button value="eur" #eur id="eur" class="currency__option" (click)="changeCurrency(eur.value)">EUR</button>
+        <button value="usd" #usd id="usd" class="currency__option" (click)="changeCurrency(usd.value)">USD</button>
+    </div>
 </div>

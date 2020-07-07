@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-navigation-bar',
   templateUrl: './navigation-bar.component.html',
@@ -54,7 +55,14 @@ export class NavigationBarComponent implements OnInit {
       document.getElementById('arrow3').classList.add('done');
       document.getElementById('arrow4').classList.add('current');
     }
-
   }
 
+  changeCurrency(currency) {
+    console.log(currency);
+    document.getElementById('pln').classList.remove('selected');
+    document.getElementById('eur').classList.remove('selected');
+    document.getElementById('usd').classList.remove('selected');
+    document.getElementById(`${currency}`).classList.add('selected');
+    localStorage.setItem('currency', currency.toUpperCase());
+  }
 }
