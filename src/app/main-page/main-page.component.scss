@@ -279,12 +279,19 @@ label {
 
 
 // Media Queries
+@media (max-width: 1199px) {
+  .nav {
+    &__item {
+      display: none;
+    }
+  }
+}
 
 @media (max-width: 630px) {
   .form {
-    width: 300px;
-    right: 50%;
-    transform: translateX(50%);
+    width: 80vw;
+    // right: 50%;
+    // transform: translateX(50%);
   }
 
   .btn {

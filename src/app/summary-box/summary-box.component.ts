@@ -112,7 +112,6 @@ export class SummaryBoxComponent implements OnInit {
     if (window.location.href.indexOf("seat-choice") > -1) {
       document.getElementById('passengersField').classList.remove('closed');
       document.getElementById('informationField').classList.remove('closed');
-      document.getElementById('totalField').classList.remove('closed');
     }
   }
 

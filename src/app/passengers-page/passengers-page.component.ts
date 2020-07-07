@@ -13,6 +13,7 @@ export class PassengersPageComponent implements OnInit {
   public childrenNumber;
   public babiesNumber;
   public total;
+  public plane;
 
   // public timeout;
 
@@ -20,21 +21,22 @@ export class PassengersPageComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
+    this.plane = localStorage.getItem('plane');
     document.title = "Dane pasażerów | Bon Voyage | Zarezerwuj swój lot!"
 
-// document.addEventListener("mousemove", () => {
-//       clearInterval(this.timeout);
-//       this.timeout = setInterval(function () {
-//         alert("10sekund")
-//       }, 80000)
-//     });
+    // document.addEventListener("mousemove", () => {
+    //       clearInterval(this.timeout);
+    //       this.timeout = setInterval(function () {
+    //         alert("10sekund")
+    //       }, 80000)
+    //     });
 
-//     document.addEventListener("keyup", () => {
-//       clearInterval(this.timeout);
-//       this.timeout = setInterval(function () {
-//         alert("10sekund")
-//       }, 80000)
-//     })
+    //     document.addEventListener("keyup", () => {
+    //       clearInterval(this.timeout);
+    //       this.timeout = setInterval(function () {
+    //         alert("10sekund")
+    //       }, 80000)
+    //     })
 
     this.adultsNumber = localStorage.getItem('adults');
     this.childrenNumber = localStorage.getItem('children');
@@ -195,6 +197,14 @@ export class PassengersPageComponent implements OnInit {
         localStorage.setItem(`birthDay_user${babyUserNumber}`, this.value);
       })
     }
+  }
+
+  savePersonalData() {
+    if (this.plane == 'country') { this.router.navigate(['/seat-choice']) }
+    else if (this.plane == 'international') { this.router.navigate(['/seat-choice-international']) }
+    else if (this.plane == 'world') { this.router.navigate(['/seat-choice-world']) }
+    console.log(this.plane)
+
   }
 
   // savePersonalData(emailAddress, phoneNumber, rulesAgreement) {

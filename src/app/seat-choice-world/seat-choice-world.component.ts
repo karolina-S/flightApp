@@ -1,12 +1,11 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-seat-choice',
-  templateUrl: './seat-choice.component.html',
-  styleUrls: ['./seat-choice.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  selector: 'app-seat-choice-world',
+  templateUrl: './seat-choice-world.component.html',
+  styleUrls: ['./seat-choice-world.component.scss']
 })
-export class SeatChoiceComponent implements OnInit {
+export class SeatChoiceWorldComponent implements OnInit {
   public seatsArray;
 
   public adultsNumber: number = Number(localStorage.getItem('adults'));
@@ -50,5 +49,16 @@ export class SeatChoiceComponent implements OnInit {
       )
     });
 
+    this.plane = localStorage.getItem('plane');
+    if (this.plane === 'country') {
+      document.getElementById('europePlane').style.display = 'none';
+      document.getElementById('worldPlane').style.display = 'none';
+    } else if (this.plane === 'international') {
+      document.getElementById('countryPlane').style.display = 'none';
+      document.getElementById('worldPlane').style.display = 'none';
+    } else if (this.plane === 'world') {
+      document.getElementById('countryPlane').style.display = 'none';
+      document.getElementById('europePlane').style.display = 'none';
+    }
   }
 }

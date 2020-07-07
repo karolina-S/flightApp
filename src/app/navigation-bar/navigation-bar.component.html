@@ -1,5 +1,5 @@
 <div class="navigation-bar">
-    <a routerLink="/main-page"><img class="logo" src="../../assets/img/logo_blue2.png" alt=""></a>
+    <a routerLink="/main-page"><img class="logo" src="https://i.ibb.co/cvBxqMy/logo-blue2.png" alt=""></a>
     <div class="navigation-bar__step done" id="navbarStep1">
         Wybierz datę i cel podróży
     </div>
@@ -20,8 +20,7 @@
         Odbierz bilet i leć!
     </div>
     <div class="currency__container" id="currencyContainer">
-        <button value="pln" #pln id="pln" class="currency__option selected"
-            (click)="changeCurrency(pln.value)">PLN</button>
+        <button value="pln" #pln id="pln" class="currency__option" (click)="changeCurrency(pln.value)">PLN</button>
         <button value="eur" #eur id="eur" class="currency__option" (click)="changeCurrency(eur.value)">EUR</button>
         <button value="usd" #usd id="usd" class="currency__option" (click)="changeCurrency(usd.value)">USD</button>
     </div>

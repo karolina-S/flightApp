@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -7,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navigation-bar.component.scss']
 })
 export class NavigationBarComponent implements OnInit {
-
-  constructor() { }
+  public currency = localStorage.getItem('currency');
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+
     if (window.location.href.indexOf("details-page") > -1) {
       document.getElementById('navbarStep2').classList.add('current');
       document.getElementById('arrow1').classList.add('current');
@@ -58,6 +60,7 @@ export class NavigationBarComponent implements OnInit {
   }
 
   changeCurrency(currency) {
+    window.location.reload();
     console.log(currency);
     document.getElementById('pln').classList.remove('selected');
     document.getElementById('eur').classList.remove('selected');

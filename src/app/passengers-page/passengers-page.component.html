@@ -25,11 +25,7 @@
   <p class="required">Pola obowiązkowe (*)</p>
 </div>
 
-<a routerLink="/seat-choice">
-  <button class="btn-summarybox">Kontynuuj
-    🡺</button>
-</a>
-
-<!-- (click)="savePersonalData(emailAddress.value, phoneNumber.value, rulesAgreement.checked)" -->
+<button class="btn-summarybox" (click)="savePersonalData()">Kontynuuj
+  🡺</button>
 <app-summary-box></app-summary-box>
 <router-outlet></router-outlet>

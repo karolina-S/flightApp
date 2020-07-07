@@ -155,15 +155,17 @@
     width: 300px;
     margin: 30px 0;
   }
-}
 
-@media (max-width: 520px) {
   .required {
     position: absolute;
     top: 12vh;
     left: 12px;
     font-size: 10px;
   }
+
+}
+
+@media (max-width: 520px) {
 
   .passengers {
     &__item {

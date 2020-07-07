@@ -15,6 +15,8 @@ import { SummaryBoxComponent } from './summary-box/summary-box.component';
 import { SeatChoiceComponent } from './seat-choice/seat-choice.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { SeatChoiceInternationalComponent } from './seat-choice-international/seat-choice-international.component';
+import { SeatChoiceWorldComponent } from './seat-choice-world/seat-choice-world.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { HttpClientModule } from '@angular/common/http';
     PassengersPageComponent,
     NavigationBarComponent,
     SummaryBoxComponent,
-    SeatChoiceComponent
+    SeatChoiceComponent,
+    SeatChoiceInternationalComponent,
+    SeatChoiceWorldComponent
   ],
   imports: [
     BrowserModule,
