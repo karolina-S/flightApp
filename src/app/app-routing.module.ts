@@ -8,6 +8,8 @@ import { SummaryPageComponent } from './summary-page/summary-page.component';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { PassengersPageComponent } from './passengers-page/passengers-page.component';
 import { SeatChoiceComponent } from './seat-choice/seat-choice.component';
+import { SeatChoiceInternationalComponent } from './seat-choice-international/seat-choice-international.component';
+import { SeatChoiceWorldComponent } from './seat-choice-world/seat-choice-world.component';
 import { SummaryBoxComponent } from './summary-box/summary-box.component';
 
 
@@ -20,6 +22,8 @@ const routes: Routes = [
   { path: 'navigation-bar', component: NavigationBarComponent },
   { path: 'passengers-page', component: PassengersPageComponent },
   { path: 'seat-choice', component: SeatChoiceComponent },
+  { path: 'seat-choice-international', component: SeatChoiceInternationalComponent },
+  { path: 'seat-choice-world', component: SeatChoiceWorldComponent },
   { path: 'summary-box', component: SummaryBoxComponent }
 ];
 

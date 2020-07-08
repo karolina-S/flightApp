@@ -49,12 +49,9 @@ export class MainPageComponent implements OnInit {
     this.startDateFiled = document.getElementById('startDate');
     this.endDateField = document.getElementById('endDate');
     this.startDateFiled.setAttribute('value', `${this.dateToday}`)
-    this.endDateField.setAttribute('value', `${this.dateTomorrow}`)
     this.startDateFiled.setAttribute('min', `${this.dateToday}`)
     this.startDateFiled.setAttribute('max', `${this.dateMax}`)
-    this.endDateField.setAttribute('min', `${this.dateTomorrow}`)
     this.endDateField.setAttribute('max', `${this.dateMax}`)
-
     this.originSelected = document.getElementById('selected');
     this.originOptionsContainer = document.getElementById('citiesContainer');
 
@@ -85,7 +82,7 @@ export class MainPageComponent implements OnInit {
           const input = document.createElement('input');
           const label = document.createElement('label');
           const div = document.createElement('div');
-          div.classList.add('cities-container__item'); // klasa
+          div.classList.add('cities-container__item');
           div.addEventListener('click', function () {
             document.getElementById('destinationSelected').innerText = flightConnections[i].destinations[j].name;
             localStorage.setItem('endCity', flightConnections[i].destinations[j].id);
@@ -108,22 +105,22 @@ export class MainPageComponent implements OnInit {
     }
   }
 
-  lessAdultPassengers() { this.adultPassengers <= 1 ? alert("Nieprawidłowa ilość!") : this.adultPassengers = this.adultPassengers - 1 }
+  lessAdultPassengers() { this.adultPassengers <= 1 ? null : this.adultPassengers = this.adultPassengers - 1 }
   moreAdultPassengers() {
     (this.adultPassengers >= 9) || ((this.adultPassengers + this.childrenPassengers + this.babiesPassengers) >= 9) ?
-      alert("Osiągnięto maksymalną ilość osób") : this.adultPassengers = this.adultPassengers + 1
+      null : this.adultPassengers = this.adultPassengers + 1
   }
 
-  lessChildrenPassengers() { this.childrenPassengers <= 0 ? alert("Nieprawidłowa ilość!") : this.childrenPassengers = this.childrenPassengers - 1 }
+  lessChildrenPassengers() { this.childrenPassengers <= 0 ? null : this.childrenPassengers = this.childrenPassengers - 1 }
   moreChildrenPassengers() {
     (this.childrenPassengers >= 9) || ((this.adultPassengers + this.childrenPassengers + this.babiesPassengers) >= 9) ?
-      alert("Osiągnięto maksymalną ilość osób") : this.childrenPassengers = this.childrenPassengers + 1
+      null : this.childrenPassengers = this.childrenPassengers + 1
   }
 
-  lessBabiesPassengers() { this.babiesPassengers <= 0 ? alert("Nieprawidłowa ilość!") : this.babiesPassengers = this.babiesPassengers - 1 }
+  lessBabiesPassengers() { this.babiesPassengers <= 0 ? null : this.babiesPassengers = this.babiesPassengers - 1 }
   moreBabiesPassengers() {
     (this.babiesPassengers >= 9) || ((this.adultPassengers + this.childrenPassengers + this.babiesPassengers) >= 9) ?
-      alert("Osiągnięto maksymalną ilość osób") : this.babiesPassengers = this.babiesPassengers + 1
+      null : this.babiesPassengers = this.babiesPassengers + 1
   }
 
   saveBasicInformation(startDate, endDate) {
@@ -137,8 +134,15 @@ export class MainPageComponent implements OnInit {
 
   checkIfDisabled() {
     if (document.getElementById('button').classList.contains('disabled')) {
-      alert("Proszę wybrać miasta")
+      document.getElementById('selected').style.border = "2px solid red";
+      document.getElementById('destinationSelected').style.border = "2px solid red";
     }
+  }
+
+  getEndDate() {
+    console.log(this.startDateFiled.value.slice(0, 8), +this.startDateFiled.value.slice(8) + 1)
+    this.endDateField.setAttribute('value', `${this.startDateFiled.value.slice(0, 8)}${+this.startDateFiled.value.slice(8) + 1}`)
+    this.endDateField.setAttribute('min', `${this.startDateFiled.value.slice(0, 8)}${+this.startDateFiled.value.slice(8) + 1}`)
   }
 
 }

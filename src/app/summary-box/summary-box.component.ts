@@ -44,16 +44,14 @@ export class SummaryBoxComponent implements OnInit {
     document.addEventListener("mousemove", () => {
       clearInterval(this.timeout);
       this.timeout = setInterval(function () {
-        document.getElementById('popUp').style.display = 'block';
-        console.log('dziala')
+        document.getElementById('popUp').style.display = 'block'
       }, 180000)
     });
 
     document.addEventListener("keyup", () => {
       clearInterval(this.timeout);
       this.timeout = setInterval(function () {
-        document.getElementById('popUp').style.display = 'block';
-        console.log('dziala')
+        document.getElementById('popUp').style.display = 'block'
       }, 180000)
     })
 
@@ -76,35 +74,8 @@ export class SummaryBoxComponent implements OnInit {
       destination.id == this.destination ? this.destinationCity = destination.start : null;
     });
 
-    // Details
-    // for (let i = 0; i < flightConnections.length; i++) {
-    //   if (flightConnections[i].id == this.originCity && flightConnections[i].destinations.id == this.destinationCity) {
-    //     this.originCity = flightConnections[i].start.name;
-    //     this.destinationCity = flightConnections[i].destinations.name;
-    //     if (this.travelOptionChosen === 'basic') {
-    //       this.adultsPriceTotal = +(flightConnections[i].price.adults.basic) * 2 * this.adultsNumber
-    //       this.childrenPriceTotal = +(flightConnections[i].price.children.basic) * 2 * this.childrenNumber
-    //       localStorage.setItem('adultsPrice', this.adultsPriceTotal)
-    //       localStorage.setItem('childrenPrice', this.childrenPriceTotal)
-    //     }
-    //     else if (this.travelOptionChosen === 'plus') {
-    //       this.adultsPriceTotal = +(flightDetails[i].price.adults.plus) * 2 * this.adultsNumber
-    //       this.childrenPriceTotal = +(flightDetails[i].price.children.plus) * 2 * this.childrenNumber
-    //       localStorage.setItem('adultsPrice', this.adultsPriceTotal)
-    //       localStorage.setItem('childrenPrice', this.childrenPriceTotal)
-    //     }
-    //     else if (this.travelOptionChosen === 'premium') {
-    //       this.adultsPriceTotal = +(flightDetails[i].price.adults.premium) * 2 * this.adultsNumber
-    //       this.childrenPriceTotal = +(flightDetails[i].price.children.premium) * 2 * this.childrenNumber
-    //       localStorage.setItem('adultsPrice', this.adultsPriceTotal)
-    //       localStorage.setItem('childrenPrice', this.childrenPriceTotal)
-    //     }
-    //     this.babiesPriceTotal = +(flightDetails[i].price.babies) * this.babiesNumber
-    //     localStorage.setItem('babiesPrice', this.babiesPriceTotal)
-    //   }
-    // }
-
     this.totalPrice = `${this.adultsPriceTotal + this.childrenPriceTotal + this.babiesPriceTotal}`
+
     if (window.location.href.indexOf("passengers-page") > -1) {
       document.getElementById('passengersField').classList.remove('closed');
       document.getElementById('informationField').classList.remove('closed');

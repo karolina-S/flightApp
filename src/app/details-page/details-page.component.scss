@@ -22,7 +22,7 @@
   align-items: center;
 
   &__title {
-    font-family: Montserrat-Regular, Montserrat;
+    font-family: $main-font;
     font-weight: 400;
     text-transform: uppercase;
     color: $dark-grey;

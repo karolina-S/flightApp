@@ -189,4 +189,44 @@
     right: 0vw;
     transform: rotate(90deg);
   }
+
+  .pop-up {
+    background: rgba(226, 225, 230, .7);
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: none;
+
+    &__inside {
+      width: 90vw;
+      height: auto;
+    }
+
+    &__close {
+      font-size: 22px;
+    }
+
+    &__wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__icon {
+      font-size: 60px;
+    }
+
+    &__text {
+      font-size: 12px;
+      text-align: justify;
+    }
+
+    &__back {
+      font-size: 10px;
+    }
+  }
 }

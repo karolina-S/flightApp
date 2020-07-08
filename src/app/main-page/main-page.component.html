@@ -56,7 +56,7 @@
         <div class="date__container">
           <label for="startDate" class="date__label">Wylot</label>
           <input type="date" #startDate id="startDate" name="trip-start" [value]="date | date:'yyyy-MM-dd'"
-            class="date__input"></div>
+            class="date__input" (change)="getEndDate()"></div>
         <div class="date__container">
           <label for="endDate" class="date__label">Powrót</label>
           <input type="date" #endDate id="endDate" name="trip-end" class="date__input">

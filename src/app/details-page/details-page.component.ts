@@ -86,6 +86,14 @@ export class DetailsPageComponent implements OnInit {
     document.getElementById(option).style.boxShadow = "0px 0px 9px 0px #807a7a";
     this.optionClicked = true;
     this.optionClicked && this.classClicked ? document.getElementById('button').removeAttribute('disabled') : null;
+    if (option === 'basic') {
+      localStorage.setItem('price', this.basicPrice);
+    } else if (option === 'plus') {
+      localStorage.setItem('price', this.plusPrice);
+    } else if (option === 'premium') {
+      localStorage.setItem('price', this.premiumPrice);
+    }
+
   }
 
   saveLuggage() {

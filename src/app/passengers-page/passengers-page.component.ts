@@ -24,20 +24,6 @@ export class PassengersPageComponent implements OnInit {
     this.plane = localStorage.getItem('plane');
     document.title = "Dane pasażerów | Bon Voyage | Zarezerwuj swój lot!"
 
-    // document.addEventListener("mousemove", () => {
-    //       clearInterval(this.timeout);
-    //       this.timeout = setInterval(function () {
-    //         alert("10sekund")
-    //       }, 80000)
-    //     });
-
-    //     document.addEventListener("keyup", () => {
-    //       clearInterval(this.timeout);
-    //       this.timeout = setInterval(function () {
-    //         alert("10sekund")
-    //       }, 80000)
-    //     })
-
     this.adultsNumber = localStorage.getItem('adults');
     this.childrenNumber = localStorage.getItem('children');
     this.babiesNumber = localStorage.getItem('babies');
@@ -203,34 +189,6 @@ export class PassengersPageComponent implements OnInit {
     if (this.plane == 'country') { this.router.navigate(['/seat-choice']) }
     else if (this.plane == 'international') { this.router.navigate(['/seat-choice-international']) }
     else if (this.plane == 'world') { this.router.navigate(['/seat-choice-world']) }
-    console.log(this.plane)
-
+    console.log(this.plane);
   }
-
-  // savePersonalData(emailAddress, phoneNumber, rulesAgreement) {
-  //   for (let i = 0; i < this.adultsNumber; i++) {
-  //     if ((localStorage.getItem(`gender_user${i + 1}`) !== null) && (localStorage.getItem(`firstName_user${i + 1}`) !== null) && (localStorage.getItem(`familyName_user${i + 1}`) !== null)) {
-  //       for (let j = 0; j < this.childrenNumber; j++) {
-  //         if ((localStorage.getItem(`firstName_user${this.adultsNumber + j + 1}`) !== null) && (localStorage.getItem(`familyName_user${this.adultsNumber + j + 1}`) !== null) && (localStorage.getItem(`birthDay_user${this.adultsNumber + j + 1}`) !== null)) {
-  //           if (emailAddress != '' && phoneNumber != '') {
-  //             if (rulesAgreement === true) {
-  //               localStorage.setItem('emailAddress', emailAddress);
-  //               localStorage.setItem('phoneNumber', phoneNumber);
-  //               localStorage.setItem('rulesAgreement', rulesAgreement);
-  //               this.router.navigate(['/seat-choice']);
-  //             } else {
-  //               alert('Proszę zaakceptować regulamin!');
-  //             }
-  //           } else {
-  //             alert('Proszę wypełnić wszystkie pola!')
-  //           }
-  //         } else {
-  //           alert('Proszę wypełnić wszystkie pola dziecka!')
-  //         }
-  //       }
-  //     } else {
-  //       alert('Proszę wypełnić wszystkie pola dorosłego!');
-  //     }
-  //   }
-  // }
 }

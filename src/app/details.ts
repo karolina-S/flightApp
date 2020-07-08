@@ -228,13 +228,6 @@ const flightConnections = [{
     }]
 }
 ],
-    luggageDetails = [
-        {
-            luggage10: '87',
-            luggage20: '114',
-            luggage32: '158'
-        }
-    ],
     priceDetails = [
         {
             premiumEconomy: 1.67,
@@ -244,4 +237,4 @@ const flightConnections = [{
         }
     ]
 
-export { flightConnections, luggageDetails, priceDetails }
+export { flightConnections, priceDetails }

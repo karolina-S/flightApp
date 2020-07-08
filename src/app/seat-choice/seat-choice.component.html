@@ -220,7 +220,22 @@
   </div>
 </div>
 
+<div class="seat-choice__popup" id="occupiedPopUp">
+  <p>Miejsce niedostępne</p>
+  <button class="seat-choice__button" (click)="hidePopup()">X</button>
+</div>
+<div class="seat-choice__popup" id="tooMuchPopUp">
+  <p>Przekroczono dopuszczalną ilość miejsc</p>
+  <button class="seat-choice__button" (click)="hidePopup()">X</button>
+</div>
+<div class="seat-choice__popup" id="notEnoughPopUp">
+  <p>Proszę wybrać miejsca dla wszystkich pasażerów</p>
+  <button class="seat-choice__button" (click)="hidePopup()">X</button>
+</div>
+
+
+
 <app-summary-box></app-summary-box>
-<a routerLink="/summary-page"> <button class="btn-summarybox">Kontynuuj 🡺</button> </a>
+<button class="btn-summarybox" (click)="checkIfAllChosen()">Kontynuuj 🡺</button>
 
 <router-outlet></router-outlet>

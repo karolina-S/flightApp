@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-seat-choice',
@@ -14,7 +15,7 @@ export class SeatChoiceComponent implements OnInit {
   public totalNumber: number = +this.adultsNumber + +this.childrenNumber;
   public plane;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     document.title = "Wybór miejsca | Bon Voyage | Zarezerwuj swój lot!"
@@ -25,7 +26,6 @@ export class SeatChoiceComponent implements OnInit {
       seat.addEventListener('click', function () {
         const clickedSeat = document.getElementById(this.id);
         if (clickedSeat.classList.contains('seat-selected')) {
-          console.log('tak')
           clickedSeat.classList.add('cls-1');
           clickedSeat.classList.remove('seat-selected');
           seatsChosen.splice(seatsChosen.indexOf(this.id.slice(1)), 1);
@@ -35,15 +35,12 @@ export class SeatChoiceComponent implements OnInit {
         else {
           if (!(clickedSeat.classList.contains('seat-occupied')) && (seatsChosen.length < (+(localStorage.getItem('adults')) + +(localStorage.getItem('children'))))) {
             clickedSeat.classList.add('seat-selected');
-            // clickedSeat.classList.remove('cls-1');
             seatsChosen.push(this.id.slice(1));
             localStorage.setItem('seats', seatsChosen.join(', '))
             document.getElementById('seatsField').innerHTML = `${seatsChosen.join(', ')}`;
-            console.log(this.id)
-            console.log('nie')
 
           } else {
-            clickedSeat.classList.contains('seat-occupied') ? alert('miejsce zajęte') : alert('zbyt dużo');
+            clickedSeat.classList.contains('seat-occupied') ? document.getElementById('occupiedPopUp').style.display = 'flex' : document.getElementById('tooMuchPopUp').style.display = 'flex';
           }
         }
       }
@@ -51,4 +48,15 @@ export class SeatChoiceComponent implements OnInit {
     });
 
   }
+
+  hidePopup() {
+    document.getElementById('occupiedPopUp').style.display = 'none';
+    document.getElementById('tooMuchPopUp').style.display = 'none';
+    document.getElementById('notEnoughPopUp').style.display = 'none';
+  }
+
+  checkIfAllChosen() {
+    localStorage.getItem('seats').split(', ').length < this.totalNumber ? document.getElementById('notEnoughPopUp').style.display = 'flex' : this.router.navigate(['/summary-page']);
+  }
+
 }

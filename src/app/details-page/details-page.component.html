@@ -1,7 +1,7 @@
 <app-navigation-bar></app-navigation-bar>
 <div class="details-page-wrapper">
   <h1 class="component-title">Twój lot</h1>
-  <!-- Informacje o locie -->
+
   <div class="flight-information-wrapper">
     <div class="flight-information">
       <div class="flight-information__details">
@@ -30,7 +30,7 @@
       </div>
     </div>
   </div>
-  <!-- Klasy -->
+
   <h2 class="deatils-section-title">Wybierz klasę podróży</h2>
   <div class="class">
     <div class="class__item" #economy id="economy" (click)="saveClass(economy.id)">
@@ -45,9 +45,7 @@
       <p class="class__btn" id="businessButton">Business</p>
     </div>
   </div>
-  <!-- Koniec klas -->
 
-  <!-- Taryfy -->
   <h2 class="deatils-section-title">Wybierz wariant podróży</h2>
   <div class="wrapper">
     <div class="travel-option" #basic id="basic">
@@ -58,6 +56,8 @@
               class="fas fa-shopping-bag travel-option__conditions-list-icon"></i> Bezpłatny bagaż
             podręczny (40x30x20) w kabinie, umieszczony
             pod fotelem</li>
+          <li class="travel-option__conditions-list-item"><i
+              class="fas fa-map-pin travel-option__conditions-list-icon"></i> Bezpłatny wybór miejsc</li>
           <li class="travel-option__conditions-list-item"><i
               class="fas fa-globe travel-option__conditions-list-icon"></i> Odprawa online do 2 dni przed
             odlotem</li>
@@ -134,9 +134,7 @@
       <button class="travel-option__btn" (click)="saveTravelOption(premium.id)">Wybierz</button>
     </div>
   </div>
-  <!-- Koniec taryf -->
 
-  <!-- Usługi dodatkowe -->
   <h2 class="deatils-section-title">Dodatkowy bagaż</h2>
 
   <div class="luggage-wrapper">
@@ -165,12 +163,10 @@
       </div>
     </div>
   </div>
-  <!-- Koniec usług dodatkowych -->
-
 
   <a routerLink="/login-page"><button class="btn-summarybox" (click)="saveLuggage()" id="button" disabled>Kontynuuj
       🡺</button></a>
 </div>
-<app-summary-box></app-summary-box>
 
+<app-summary-box></app-summary-box>
 <router-outlet></router-outlet>

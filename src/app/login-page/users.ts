@@ -21,7 +21,7 @@ export const users = [
     },
     {
         "id": 5,
-        "login": "randomUser",
+        "login": "randomuser",
         "password": "1234"
     },
     {

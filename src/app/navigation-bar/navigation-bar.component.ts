@@ -16,6 +16,7 @@ export class NavigationBarComponent implements OnInit {
     if (window.location.href.indexOf("details-page") > -1) {
       document.getElementById('navbarStep2').classList.add('current');
       document.getElementById('arrow1').classList.add('current');
+      document.getElementById('currencyContainer').style.display = "flex";
     }
 
     if (window.location.href.indexOf("passengers-page") > -1) {
