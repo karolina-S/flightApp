@@ -38,11 +38,20 @@ export class SummaryPageComponent implements OnInit {
             const wrapper = document.createElement('div');
             wrapper.classList.add('summary__wrapper');
             document.getElementById('passengersDeatils').appendChild(wrapper);
+            const passNumber = document.createElement('p');
+            passNumber.textContent = `Pasażer nr ${i + 1}`
+            passNumber.classList.add('summary__subtitle')
+            wrapper.appendChild(passNumber);
             const name = document.createElement('p');
-
             name.textContent = `Imię i nazwisko: ${localStorage.getItem(`firstName_user${i + 1}`)} ${localStorage.getItem(`familyName_user${i + 1}`)}`;
-
+            const seat = document.createElement('p');
+            seat.textContent = `Miejsce: ${localStorage.getItem('seats').split(', ')[i]}`;
+            wrapper.appendChild(seat);
             wrapper.appendChild(name);
+            if (localStorage.getItem(`firstName_user${i + 1}`) === null) {
+                name.textContent = 'Imię i nazwisko: nd (niemowlę)';
+                seat.textContent = 'Miejsce: nd (niemowlę)'
+            };
             const date = document.createElement('p');
             date.textContent = `Data urodzenia: ${localStorage.getItem(`birthDay_user${i + 1}`)}`
             localStorage.getItem(`birthDay_user${i + 1}`) === null ? null : wrapper.appendChild(date);

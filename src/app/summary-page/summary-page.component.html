@@ -3,21 +3,21 @@
 <h1 class="component-title">Podsumowanie rezerwacji</h1>
 <p class="summary__subtitle">Dziękujemy za założenie rezerwacji.</p>
 <div class="summary__container" id="passengersDeatils">
+        <p class="summary__subtitle">Liczba pasażerów:</p>
         <p class="summary__text">
-                Liczba pasażerów: {{ total }}
-        </p>
-        <p class="summary__text">
-                Dane pasażerów:
+                {{ total }}
         </p>
 </div>
-<div class="summary__container">
+<!-- <div class="summary__container">
+        <p class="summary__subtitle">Wybrane miejsca:</p>
         <p class="summary__text">
-                Wybrane miejsca: {{ seats }}
+                {{ seats }}
         </p>
-</div>
+</div> -->
 <div class="summary__container">
+        <p class="summary__subtitle">Do zapłaty:</p>
         <p class="summary__text">
-                Do zapłaty: {{ totalPrice }} {{ currency }}
+                {{ totalPrice }} {{ currency }}
         </p>
 </div>
 <div class="details"></div>
